@@ -1,7 +1,7 @@
-# Shop system compare
+# Comparing requirements of shop systems
 
 ## Project Idea
-In our website we want to compare different shop systems. We want to differentiate things like Cloud-based and self-hosted, Open-Source and Closed-Source, managed security and self managed.
+In our website we want to compare different shop systems. We want to differentiate things like Cloud-based and self-hosted, Open-Source and Closed-Source, managed security and self managed, target audience, Support & Community
 
 ## Target Audience
 Our website is for peolpe who want to select or operare a shop system
