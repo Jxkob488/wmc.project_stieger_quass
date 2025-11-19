@@ -5,19 +5,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hosting Models</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Hosting Models</h1>
-    <p>
-        Shop systems can be delivered in different ways. <br>
-        <strong>Cloud-based (SaaS)</strong> systems run on the provider's servers,
-        and the provider takes care of updates, security, and maintenance. <br>
-        <strong>Self-hosted</strong> systems are installed and run on the user's own servers
-        or web hosting. In this case, the user is responsible for installation, security, and maintenance.
-        The choice of hosting model affects costs, flexibility, and technical effort.
-        <p>Cloud-based hosting models are more expensive in the long run, but cheaper initially because no technical setup is required.</p>
-    </p>
+    <header>
+        <a href="startscreen.html">
+            <button class="back">back</button>
+        </a>
+        <h1>Overview: Hosting Models</h1>
+        <p>A brief description of common hosting models and when they are appropriate.</p>
+    </header>
+
+    <main>
+        <section id="saas">
+            <h2>SaaS (Software as a Service)</h2>
+            <p>Fully hosted, cloud-based applications that are rented as a service. The provider handles hosting,
+                updates, and security.</p>
+            <ul>
+                <li>Examples: Shopify, BigCommerce, SaaS admin tools</li>
+                <li>Advantages: quick setup, low maintenance</li>
+                <li>Disadvantages: ongoing fees, limited customization</li>
+            </ul>
+        </section>
+
+        <section id="paas">
+            <h2>PaaS (Platform as a Service)</h2>
+            <p>Platforms that provide runtime environments, databases, and deployment tools—developers build and run
+                apps without managing infrastructure.</p>
+            <ul>
+                <li>Examples: Heroku, Google App Engine</li>
+                <li>Advantages: focus on development, automatic scaling</li>
+                <li>Disadvantages: platform lock-in, less control over the environment</li>
+            </ul>
+        </section>
+
+        <section id="iaas">
+            <h2>IaaS (Infrastructure as a Service)</h2>
+            <p>Virtual servers, storage, and networking resources in the cloud. Highly flexible, technical
+                administration remains with the user.</p>
+            <ul>
+                <li>Examples: AWS EC2, Azure Virtual Machines, Google Compute Engine</li>
+                <li>Advantages: full control, highly scalable</li>
+                <li>Disadvantages: responsibility for security, backups, and updates</li>
+            </ul>
+        </section>
+
+        <section id="managed-hosting">
+            <h2>Managed Hosting</h2>
+            <p>Hosting providers manage server operations such as updates, backups, and monitoring. Customers use
+                dedicated or virtual servers.</p>
+            <ul>
+                <li>Examples: Managed VPS, Managed WordPress hosting</li>
+                <li>Advantages: less operational burden than self-hosting</li>
+                <li>Disadvantages: higher costs compared to basic hosting</li>
+            </ul>
+        </section>
+
+        <section id="self-hosted">
+            <h2>Self-hosted / On-premises</h2>
+            <p>Infrastructure is owned and operated by the organization, either on-site or via a data center under full
+                customer control.</p>
+            <ul>
+                <li>Advantages: maximum control, easier compliance management</li>
+                <li>Disadvantages: high cost for hardware, maintenance, and security</li>
+            </ul>
+        </section>
+
+        <section id="cloud-hosting">
+            <h2>Cloud Hosting (public / private / hybrid)</h2>
+            <p>Hosting in public or private cloud environments, or a mix (hybrid). Provides scalability and flexible
+                pricing.</p>
+            <ul>
+                <li>Public cloud: cost-effective, highly scalable</li>
+                <li>Private cloud: more control, better for strict compliance needs</li>
+                <li>Hybrid cloud: combines advantages of both</li>
+            </ul>
+        </section>
+
+        <section id="selection-criteria">
+            <h2>How to Choose the Right Model?</h2>
+            <ol>
+                <li>Identify requirements: traffic, data sensitivity, budget, scalability.</li>
+                <li>Evaluate available IT resources and expertise.</li>
+                <li>Check compliance and data protection needs (e.g., GDPR).</li>
+                <li>Consider long-term flexibility: how hard is it to switch later?</li>
+                <li>Test where possible: proof-of-concept or pilot projects.</li>
+            </ol>
+        </section>
 </body>
+
 
 </html>
