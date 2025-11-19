@@ -1,27 +1,40 @@
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 button {
-    border-radius: 5px;
-}
-
-.back {
-    display: flex;
-    justify-content: start;
+  border-radius: 5px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 button:hover {
-    background-color: rgb(23, 188, 89);
-    cursor: pointer;
+  transform: scale(1.05);
+  background-color: rgb(191, 197, 201);
+  cursor: pointer;
+  color: black;
 }
 
-#startHeader {
-    background-color: #3498db; 
-    color: white; 
-    text-align: center;
-    padding: 50px 10px; 
-    font-family: Arial, sans-serif;
-
+#buttonsForNav {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    
 }
 
+.back {
+  display: flex;
+  justify-content: start;
+  color: black;
+}
+
+header {
+  background-color: #3498db;
+  color: white;
+  text-align: center;
+  padding: 50px 10px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
