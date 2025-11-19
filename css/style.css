@@ -1,8 +1,18 @@
+body {
+  margin: 0;
+  min-height: 200vh; 
+  background: linear-gradient(120deg, #89f7fe, #66a6ff);
+  background-attachment: fixed;     
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
 a {
   text-decoration: none;
 }
 
-button {
+button { 
   border-radius: 5px;
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
@@ -15,11 +25,12 @@ button:hover {
 }
 
 #buttonsForNav {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  margin-top: 100px;
 }
+
 
 .back {
   display: flex;
@@ -28,7 +39,6 @@ button:hover {
 }
 
 header {
-  background-color: #3498db;
   color: white;
   text-align: center;
   padding: 50px 10px;
@@ -37,4 +47,15 @@ header {
 
 h1 {
   text-align: center;
+}
+
+#headerIntro {
+    margin-top: 150px;
+    text-align: center;
+    color: white;
+}
+
+#intro {
+    color: white;
+    text-align: center;
 }
