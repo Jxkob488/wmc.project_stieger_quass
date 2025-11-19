@@ -1,7 +1,26 @@
-.link-for-navigation {
+a {
     text-decoration: none;
 }
 
 button {
     border-radius: 5px;
 }
+
+.back {
+    display: flex;
+    justify-content: start;
+}
+
+button:hover {
+    background-color: rgb(23, 188, 89);
+    cursor: pointer;
+}
+
+header {
+    background-color: #3498db; 
+    color: white; 
+    text-align: center;
+    padding: 50px 10px; 
+    font-family: Arial, sans-serif;
+}
+
