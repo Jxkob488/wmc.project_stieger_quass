@@ -16,11 +16,12 @@ button:hover {
     cursor: pointer;
 }
 
-header {
+#startHeader {
     background-color: #3498db; 
     color: white; 
     text-align: center;
     padding: 50px 10px; 
     font-family: Arial, sans-serif;
+
 }
 
