@@ -12,6 +12,14 @@ a {
   text-decoration: none;
 }
 
+p {
+  color: white;
+}
+
+thead {
+  color: white;
+}
+
 button { 
   border-radius: 5px;
   transition: transform 0.2s ease, background-color 0.2s ease;
@@ -24,12 +32,20 @@ button:hover {
   color: black;
 }
 
-#buttonsForNav {
+#topButtonLayer {
   display: flex;
   justify-content: center;
   gap: 100px;
   margin-top: 100px;
 }
+
+#downButtonLayer {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  margin-top: 100px;
+}
+
 
 
 .back {
