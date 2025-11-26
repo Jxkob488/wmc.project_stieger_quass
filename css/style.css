@@ -1,12 +1,15 @@
 body {
   margin: 0;
   min-height: 200vh; 
-  background: linear-gradient(120deg, #89f7fe, #66a6ff);
   background-attachment: fixed;     
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+#myFirst {
+  background: linear-gradient(120deg, #89f7fe, #66a6ff);
+
+}
 
 a {
   text-decoration: none;
@@ -46,15 +49,13 @@ button:hover {
   margin-top: 100px;
 }
 
-
-
 .back {
   display: flex;
   justify-content: start;
   color: black;
 }
 
-header {
+#startHeader {
   color: white;
   text-align: center;
   padding: 50px 10px;
