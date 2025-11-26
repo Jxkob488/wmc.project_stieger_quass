@@ -1,4 +1,3 @@
-/* Grundlayout */
 body {
     margin: 0;
     min-height: 200vh;
@@ -7,7 +6,6 @@ body {
     background-size: cover;
 }
 
-/* Hintergrund-Verlauf deiner Seite */
 #myFirst {
     background: linear-gradient(120deg, #89f7fe, #66a6ff);
 }
@@ -72,16 +70,11 @@ h1 {
     text-align: center;
 }
 
-/* ========================================== */
-/*  SIDEBAR — FIXED LINKS OBEN mit Verlauf    */
-/* ========================================== */
-
 .layout {
     display: flex;
     min-height: 100vh;
 }
 
-/* Sidebar links fixieren */
 .sidebar {
     position: fixed;
     top: 0;
@@ -91,14 +84,12 @@ h1 {
     padding: 20px;
     box-sizing: border-box;
 
-    /* dein Farbverlauf passend zum Rest */
     background: linear-gradient(120deg, #89f7fe, #66a6ff);
 
     border-right: 2px solid rgba(255, 255, 255, 0.25);
     z-index: 10;
 }
 
-/* Navigation */
 .sidebar nav {
     display: flex;
     flex-direction: column;
@@ -127,11 +118,10 @@ h1 {
 .content {
     flex: 1;
     padding: 40px;
-    margin-left: 240px;   /* Platz für Sidebar */
+    margin-left: 240px;  
     color: white;
 }
 
-/* Damit alles sichtbar bleibt */
 .content h1,
 .content h2,
 .content p {
