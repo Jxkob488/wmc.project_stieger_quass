@@ -53,6 +53,8 @@ button:hover {
   display: flex;
   justify-content: start;
   color: black;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 #startHeader {
