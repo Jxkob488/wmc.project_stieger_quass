@@ -4,9 +4,6 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-#myFirst {
     background: linear-gradient(120deg, #89f7fe, #66a6ff);
 }
 
@@ -57,6 +54,11 @@ button:hover {
 
 h1 {
     text-align: center;
+    color: white;
+}
+
+section {
+    color: white;
 }
 
 #headerIntro {
