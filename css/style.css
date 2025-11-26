@@ -4,7 +4,8 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    background: linear-gradient(120deg, #89f7fe, #66a6ff);
+    background: linear-gradient(120deg, #09cdc7, #021735);
+
 }
 
 a {
@@ -86,7 +87,7 @@ section {
     padding: 20px;
     box-sizing: border-box;
 
-    background: linear-gradient(120deg, #89f7fe, #66a6ff);
+    background: linear-gradient(120deg, #09cdc7, #021735);
 
     border-right: 2px solid rgba(255, 255, 255, 0.25);
     z-index: 10;
