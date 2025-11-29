@@ -5,52 +5,16 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background: linear-gradient(120deg, #4c8fdb, #012455);
-
+    font-family: Arial, sans-serif;
 }
 
 a {
     text-decoration: none;
+    color: white;
 }
 
 p {
     color: white;
-}
-
-thead {
-    color: white;
-}
-
-button {
-    border-radius: 5px;
-    transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-button:hover {
-    transform: scale(1.05);
-    background-color: rgb(191, 197, 201);
-    cursor: pointer;
-    color: black;
-}
-
-#topButtonLayer {
-    display: flex;
-    justify-content: center;
-    gap: 100px;
-    margin-top: 100px;
-}
-
-#downButtonLayer {
-    display: flex;
-    justify-content: center;
-    gap: 100px;
-    margin-top: 100px;
-}
-
-#startHeader {
-    color: white;
-    text-align: center;
-    padding: 50px 10px;
-    font-family: Arial, sans-serif;
 }
 
 h1 {
@@ -58,19 +22,8 @@ h1 {
     color: white;
 }
 
-section {
+h2 {
     color: white;
-}
-
-#headerIntro {
-    margin-top: 30px;
-    text-align: center;
-    color: white;
-}
-
-#intro {
-    color: white;
-    text-align: center;
 }
 
 table {
@@ -78,8 +31,13 @@ table {
     margin-right: auto;
     border: 3px solid white;
     border-collapse: collapse;
+    color: white;
 }
 
+th, td {
+    padding: 8px;
+    border: 1px solid white;
+}
 
 .layout {
     display: flex;
@@ -93,48 +51,54 @@ table {
     width: 220px;
     height: 100vh;
     padding: 20px;
-    box-sizing: border-box;
-
     background: linear-gradient(120deg, #4c8fdb, #012455);
+    border-right: 2px solid rgba(255,255,255,0.3);
+}
 
-    border-right: 2px solid rgba(255, 255, 255, 0.25);
-    z-index: 10;
+.sidebar h2 {
+    margin-top: 0;
 }
 
 .sidebar nav {
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     gap: 12px;
-    margin-top: 20px;
 }
 
 .sidebar nav a {
     padding: 10px;
+    background: rgba(255,255,255,0.25);
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.25);
-    color: white;
-    font-weight: 500;
-    transition: 0.15s ease;
+    transition: 0.2s;
 }
 
 .sidebar nav a:hover {
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255,255,255,0.45);
 }
 
 .sidebar nav a.active {
-    background: rgba(255, 255, 255, 0.55);
+    background: rgba(255,255,255,0.6);
     color: #003d88;
 }
 
 .content {
     flex: 1;
     padding: 40px;
-    margin-left: 240px;  
+    margin-left: 240px;
+    max-width: 900px;
     color: white;
 }
 
-.content h1,
-.content h2,
-.content p {
+section {
     color: white;
+}
+
+#intro {
+    text-align: center;
+}
+
+#headerIntro {
+    margin-top: 30px;
+    text-align: center;
 }
