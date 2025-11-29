@@ -73,6 +73,14 @@ section {
     text-align: center;
 }
 
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid white;
+    border-collapse: collapse;
+}
+
+
 .layout {
     display: flex;
     min-height: 100vh;
