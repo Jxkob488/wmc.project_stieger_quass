@@ -1,91 +1,100 @@
-body{
-    margin:0;
-    background: linear-gradient(125deg, #2f3d4d 0%, #4c5c6e 100%);
-    font-family: Arial;
-    color:white;
+body {
+  margin: 0;
+  background: linear-gradient(125deg, #2f3d4d 0%, #4c5c6e 100%);
+  font-family: Arial;
+  color: white;
 }
 
-h1{color:white;text-align:center;}
-h2{color:white;}
-
-a{text-decoration:none;color:white}
-
-.layout{
-    display:flex;
-    min-height:100vh;
+h1 {
+  color: white;
+  text-align: center;
+}
+h2 {
+  color: white;
 }
 
-.sidebar{
-    width:230px;
-    padding:20px;
-    background:linear-gradient(130deg,#394958,#2a3743);
-    position:fixed;
-    top:0;
-    left:0;
-    height:100vh;
-    border-right:1px solid rgba(255,255,255,0.15);
+a {
+  text-decoration: none;
+  color: white;
 }
 
-.sidebar h2{
-    margin-top:5px;
-    margin-bottom:25px;
+.layout {
+  display: flex;
+  min-height: 100vh;
 }
 
-.sidebar nav{
-    display:flex;
-    gap:10px;
-    flex-direction:column;
+.sidebar {
+  width: 230px;
+  padding: 20px;
+  background: linear-gradient(130deg, #394958, #2a3743);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.sidebar nav a{
-    background:rgba(255,255,255,0.12);
-    padding:11px;
-    border-radius:7px;
-    transition:0.2s;
+.sidebar h2 {
+  margin-top: 5px;
+  margin-bottom: 25px;
 }
 
-.sidebar nav a:hover{
-    background:rgba(255,255,255,0.28);
+.sidebar nav {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
 }
 
-.sidebar nav a.active{
-    background:white;
-    color:#2a3743;
+.sidebar nav a {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 11px;
+  border-radius: 7px;
+  transition: 0.2s;
 }
 
-.content{
-    margin-left:250px;
-    padding:40px;
-    max-width:1000px;
+.sidebar nav a:hover {
+  background: rgba(255, 255, 255, 0.28);
 }
 
-p{
-    line-height:1.5;
+.sidebar nav a.active {
+  background: white;
+  color: #2a3743;
 }
 
-section{
-    margin-bottom:35px;
+.content {
+  margin-left: 250px;
+  padding: 40px;
+  max-width: 1000px;
 }
 
-table{
-    margin:auto;
-    border:1px solid rgba(255,255,255,0.18);
-    border-collapse:collapse;
-    width:80%;
-    background:rgba(255,255,255,0.05);
+p {
+  line-height: 1.5;
 }
 
-th{
-    background:rgba(255,255,255,0.15);
-    padding:10px;
+section {
+  margin-bottom: 35px;
 }
 
-td{
-    padding:10px;
-    border:1px solid rgba(255,255,255,0.1)
+table {
+  margin: auto;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-collapse: collapse;
+  width: 80%;
+  background: rgba(255, 255, 255, 0.05);
+
+}
+
+th {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 10px;
+}
+
+td {
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 footer {
-    font-size: 10px;
-    text-align: center;
+  font-size: 10px;
+  text-align: center;
 }
