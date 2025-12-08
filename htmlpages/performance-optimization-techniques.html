@@ -29,136 +29,139 @@
     </aside>
 
     <main class="content" role="main">
-      <h1>Performance Optimization Techniques</h1>
+      <div class="center-wrapper">
+        <div class="center-box">
 
-      <section id="intro">
-        <h2>Why performance matters</h2>
-        <p>
-          Fast loading pages improve user experience, reduce bounce rates and increase conversions.
-          Search engines also rank faster sites better, so performance is important for both users.
-        </p>
-      </section>
-
-      <section id="caching">
-        <h2>Caching</h2>
-        <p>
-          Caching stores prebuilt responses so the server doesn't have to recreate them on every request.
-          Use multiple caching layers for best results.
-        </p>
-        <ul>
-          <li><strong>Page cache:</strong> serve full HTML pages for anonymous users (very fast).</li>
-          <li><strong>Object cache:</strong> cache database query results (Redis, Memcached).</li>
-          <li><strong>Browser cache:</strong> set long cache headers for static assets (images, CSS, JS).</li>
-        </ul>
-      </section>
-
-      <section id="cdn">
-        <h2>CDN (Content Delivery Network)</h2>
-        <p>
-          A CDN replicates static assets across many servers worldwide so visitors download resources
-          from the geographically nearest node. This reduces latency and server load.
-        </p>
-        <ul>
-          <li>Use CDN for images, fonts, JS and CSS.</li>
-          <li>Enable HTTP/2 or HTTP/3 on CDN to improve multiplexing and latency.</li>
-        </ul>
-      </section>
-
-      <section id="images">
-        <h2>Image Optimization</h2>
-        <p>
-          Images are often the largest resources on a page. Optimizing them gives immediate speed gains.
-        </p>
-        <ul>
-          <li>Convert to efficient formats (WebP, AVIF) when supported.</li>
-          <li>Generate responsive image sizes and use <code>srcset</code>.</li>
-          <li>Compress images and avoid serving overly large files.</li>
-        </ul>
-      </section>
-
-      <section id="lazyloading">
-        <h2>Lazy Loading</h2>
-        <p>
-          Load images and media only when they enter the viewport. This reduces initial payload and speeds up
-          the first meaningful paint.
-        </p>
-        <ul>
-          <li>Use native <code>loading="lazy"</code> for images where possible.</li>
-          <li>Defer offscreen iframes and heavy third‑party widgets.</li>
-        </ul>
-      </section>
-
-      <section id="assets">
-        <h2>Minification & Bundling</h2>
-        <p>
-          Minify CSS and JavaScript and bundle them to reduce the number of requests. Consider splitting
-          code into critical and non‑critical bundles.
-        </p>
-        <ul>
-          <li>Minify and compress CSS/JS (gzip / brotli).</li>
-          <li>Use code splitting and only load what is needed for the initial view.</li>
-        </ul>
-      </section>
-
-      <section id="critical">
-        <h2>Critical CSS & Preload</h2>
-        <p>
-          Inline critical CSS required for the above‑the‑fold content and preload important fonts/resources
-          so the browser can prioritize them.
-        </p>
-      </section>
-
-      <section id="protocols">
-        <h2>HTTP/2, HTTP/3 & Server Tuning</h2>
-        <p>
-          Modern protocols (HTTP/2, HTTP/3) improve parallelism and latency. Tune server settings for
-          keep‑alive,
-          TLS session resumption and proper caching headers.
-        </p>
-      </section>
-
-      <section id="server">
-        <h2>Server & Database Optimizations</h2>
-        <p>
-          Backend improvements are equally important: optimize queries, add indexes and use connection
-          pooling.
-        </p>
-        <ul>
-          <li>Profile slow queries and add indexes where needed.</li>
-          <li>Use a persistent object cache for frequent operations.</li>
-          <li>Consider read replicas or managed database services for scale.</li>
-        </ul>
-      </section>
-
-      <section id="thirdparty">
-        <h2>Third‑Party Scripts</h2>
-        <p>
-          External widgets (analytics, chat, payment scripts) can block rendering. Audit and lazy‑load them.
-        </p>
-      </section>
-
-      <section id="monitoring">
-        <h2>Monitoring & Testing</h2>
-        <p>
-          Measure performance regularly and test under realistic conditions.
-        </p>
-        <ul>
-          <li>Use synthetic tests (Lighthouse, WebPageTest) and real user monitoring (RUM).</li>
-          <li>Track Core Web Vitals: LCP, FID/INP, CLS.</li>
-          <li>Run load tests before big promotions or releases.</li>
-        </ul>
-      </section>
-
-      <section id="quicktips">
-        <h2>Quick Tips</h2>
-        <ul>
+          <h1>Performance Optimization Techniques</h1>
+          
+        <section id="intro">
+          <h2>Why performance matters</h2>
+          <p>
+            Fast loading pages improve user experience, reduce bounce rates and increase conversions.
+            Search engines also rank faster sites better, so performance is important for both users.
+          </p>
+        </section>
+        
+        <section id="caching">
+          <h2>Caching</h2>
+          <p>
+            Caching stores prebuilt responses so the server doesn't have to recreate them on every request.
+            Use multiple caching layers for best results.
+          </p>
+          <ul>
+            <li><strong>Page cache:</strong> serve full HTML pages for anonymous users (very fast).</li>
+            <li><strong>Object cache:</strong> cache database query results (Redis, Memcached).</li>
+            <li><strong>Browser cache:</strong> set long cache headers for static assets (images, CSS, JS).</li>
+          </ul>
+        </section>
+        
+        <section id="cdn">
+          <h2>CDN (Content Delivery Network)</h2>
+          <p>
+            A CDN replicates static assets across many servers worldwide so visitors download resources
+            from the geographically nearest node. This reduces latency and server load.
+          </p>
+          <ul>
+            <li>Use CDN for images, fonts, JS and CSS.</li>
+            <li>Enable HTTP/2 or HTTP/3 on CDN to improve multiplexing and latency.</li>
+          </ul>
+        </section>
+        
+        <section id="images">
+          <h2>Image Optimization</h2>
+          <p>
+            Images are often the largest resources on a page. Optimizing them gives immediate speed gains.
+          </p>
+          <ul>
+            <li>Convert to efficient formats (WebP, AVIF) when supported.</li>
+            <li>Generate responsive image sizes and use <code>srcset</code>.</li>
+            <li>Compress images and avoid serving overly large files.</li>
+          </ul>
+        </section>
+        
+        <section id="lazyloading">
+          <h2>Lazy Loading</h2>
+          <p>
+            Load images and media only when they enter the viewport. This reduces initial payload and speeds up
+            the first meaningful paint.
+          </p>
+          <ul>
+            <li>Use native <code>loading="lazy"</code> for images where possible.</li>
+            <li>Defer offscreen iframes and heavy third‑party widgets.</li>
+          </ul>
+        </section>
+        
+        <section id="assets">
+          <h2>Minification & Bundling</h2>
+          <p>
+            Minify CSS and JavaScript and bundle them to reduce the number of requests. Consider splitting
+            code into critical and non‑critical bundles.
+          </p>
+          <ul>
+            <li>Minify and compress CSS/JS (gzip / brotli).</li>
+            <li>Use code splitting and only load what is needed for the initial view.</li>
+          </ul>
+        </section>
+        
+        <section id="critical">
+          <h2>Critical CSS & Preload</h2>
+          <p>
+            Inline critical CSS required for the above‑the‑fold content and preload important fonts/resources
+            so the browser can prioritize them.
+          </p>
+        </section>
+        
+        <section id="protocols">
+          <h2>HTTP/2, HTTP/3 & Server Tuning</h2>
+          <p>
+            Modern protocols (HTTP/2, HTTP/3) improve parallelism and latency. Tune server settings for
+            keep‑alive,
+            TLS session resumption and proper caching headers.
+          </p>
+        </section>
+        
+        <section id="server">
+          <h2>Server & Database Optimizations</h2>
+          <p>
+            Backend improvements are equally important: optimize queries, add indexes and use connection
+            pooling.
+          </p>
+          <ul>
+            <li>Profile slow queries and add indexes where needed.</li>
+            <li>Use a persistent object cache for frequent operations.</li>
+            <li>Consider read replicas or managed database services for scale.</li>
+          </ul>
+        </section>
+      
+        <section id="thirdparty">
+          <h2>Third‑Party Scripts</h2>
+          <p>
+            External widgets (analytics, chat, payment scripts) can block rendering. Audit and lazy‑load them.
+          </p>
+        </section>
+        
+        <section id="monitoring">
+          <h2>Monitoring & Testing</h2>
+          <p>
+            Measure performance regularly and test under realistic conditions.
+          </p>
+          <ul>
+            <li>Use synthetic tests (Lighthouse, WebPageTest) and real user monitoring (RUM).</li>
+            <li>Track Core Web Vitals: LCP, FID/INP, CLS.</li>
+            <li>Run load tests before big promotions or releases.</li>
+          </ul>
+        </section>
+        
+        <section id="quicktips">
+          <h2>Quick Tips</h2>
+          <ul>
           <li>Enable compression (brotli/gzip).</li>
           <li>Serve images scaled to display size.</li>
           <li>Reduce main‑thread JavaScript work.</li>
           <li>Cache API responses where safe.</li>
         </ul>
       </section>
-
+      
       <aside class="right-panel" aria-labelledby="performance-facts">
         <h3 id="performance-facts">At a glance</h3>
         <ul>
@@ -167,7 +170,7 @@
           <li>Image work often yields the best size reduction.</li>
           <li>Measure and validate with tools (Lighthouse).</li>
         </ul>
-
+        
         <div class="contact-card">
           <h4>Checklist</h4>
           <ol>
@@ -178,12 +181,14 @@
           </ol>
         </div>
       </aside>
-
-    </main>
-
-  </div>
-  <footer>
-    <p>© 2025 Shop System Guide by Jakob Stieger & Timo Quass</p>
+      
+    </div>
+    </div>
+  </main>
+  
+</div>
+<footer>
+  <p>© 2025 Shop System Guide by Jakob Stieger & Timo Quass</p>
   </footer>
 </body>
 

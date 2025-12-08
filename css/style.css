@@ -81,7 +81,6 @@ table {
   border-collapse: collapse;
   width: 80%;
   background: rgba(255, 255, 255, 0.05);
-
 }
 
 th {
@@ -97,4 +96,22 @@ td {
 footer {
   font-size: 10px;
   text-align: center;
+}
+
+.center-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 100vh;
+}
+
+.center-box {
+    background: rgba(255, 255, 255, 0.75);
+    padding: 60px 50px;
+    max-width: 900px;
+    min-height: 350px;
+    border-radius: 18px;
+    text-align: center;
+    color: #1f1f1f;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 }
