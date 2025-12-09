@@ -1,126 +1,149 @@
 body {
-  margin: 0;
-  background: linear-gradient(125deg, #2f3d4d 0%, #4c5c6e 100%);
-  font-family: Arial;
-  color: white;
+    margin: 0;
+    background: linear-gradient(125deg, #2f3d4d 0%, #4c5c6e 100%);
+    font-family: Arial;
+    color: white;
 }
 
 h1 {
-  color: white;
-  text-align: center;
+    color: white;
+    text-align: center;
 }
+
 h2 {
-  color: white;
+    color: white;
 }
 
 a {
-  text-decoration: none;
-  color: rgb(57, 148, 204);
+    text-decoration: none;
+    color: rgb(57, 148, 204);
 }
 
 .layout {
-  display: flex;
-  min-height: 100vh;
+    display: flex;
+    min-height: 100vh;
 }
 
 .sidebar {
-  width: 230px;
-  padding: 20px;
-  background: linear-gradient(130deg, #394958, #2a3743);
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  border-right: 1px solid rgba(255, 255, 255, 0.15);
+    width: 230px;
+    padding: 20px;
+    background: linear-gradient(130deg, #394958, #2a3743);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .sidebar h2 {
-  margin-top: 5px;
-  margin-bottom: 25px;
+    margin-top: 5px;
+    margin-bottom: 25px;
 }
 
 .sidebar nav {
-  display: flex;
-  gap: 10px;
-  flex-direction: column;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
 }
 
 .sidebar nav a {
-  background: rgba(255, 255, 255, 0.12);
-  padding: 11px;
-  border-radius: 7px;
-  transition: 0.2s;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 11px;
+    border-radius: 7px;
+    transition: 0.2s;
+    color: white;
+    outline: 0;
 }
 
 .sidebar nav a:hover {
-  background: rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.22);
+    outline: 2px solid white;
+    outline-offset: 0;
 }
 
 .sidebar nav a.active {
-  background: white;
-  color: #2a3743;
+    background: white;
+    color: #2a3743;
 }
 
 p {
-  line-height: 1.5;
+    line-height: 1.5;
 }
 
 section {
-  margin-bottom: 35px;
+    margin-bottom: 35px;
 }
 
 table {
-  margin: auto;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-collapse: collapse;
-  width: 80%;
-  background: rgba(255, 255, 255, 0.05);
+    margin: auto;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-collapse: collapse;
+    width: 80%;
+    background: rgba(255, 255, 255, 0.05);
 }
 
 th {
-  background: rgba(255, 255, 255, 0.15);
-  padding: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 10px;
 }
 
 td {
-  padding: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
-  min-height: calc(100vh - 40px); 
-  margin-left: 250px; 
-  padding: 40px;
-  box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 40px);
+    margin-left: 250px;
+    padding: 40px;
+    box-sizing: border-box;
 }
 
 .center-wrapper {
-  flex: 1 1 auto;
-  display: flex;
-  justify-content: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 footer {
-  margin-top: auto;
-  position: relative; 
-  text-align: center;
-  font-size: 12px;
+    margin-top: auto;
+    position: relative;
+    text-align: center;
+    font-size: 12px;
 }
 
 .center-box {
-    width: 900px;              /* feste Breite für ALLE Seiten */
-    max-width: 90%;            /* falls Bildschirm kleiner ist */
+    width: 900px;
+    max-width: 90%;
     background: rgba(255, 255, 255, 0.85);
     padding: 60px 50px;
     min-height: 350px;
     border-radius: 18px;
     text-align: center;
     color: #1f1f1f;
-    margin: 0 auto;            /* zentriert horizontal */
+    margin: 0 auto;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
     backdrop-filter: blur(8px);
+}
+
+body, .content, .content * {
+    color: white !important;
+}
+
+.center-box,
+.center-box * {
+    color: black !important;
+}
+
+.content a {
+    color: #3b9efc !important;
+}
+
+.content a:hover {
+    color: #78bfff !important;
+    text-decoration: underline;
 }
