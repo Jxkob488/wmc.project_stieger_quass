@@ -15,7 +15,7 @@ h2 {
 
 a {
   text-decoration: none;
-  color: white;
+  color: rgb(57, 148, 204);
 }
 
 .layout {
@@ -104,19 +104,23 @@ td {
   padding-bottom: 20px;
 }
 
-.footer {
+footer {
   margin-top: auto;
   position: relative; 
   text-align: center;
+  font-size: 12px;
 }
 
 .center-box {
-    background: rgba(255, 255, 255, 0.75);
+    width: 900px;              /* feste Breite für ALLE Seiten */
+    max-width: 90%;            /* falls Bildschirm kleiner ist */
+    background: rgba(255, 255, 255, 0.85);
     padding: 60px 50px;
-    max-width: 900px;
     min-height: 350px;
     border-radius: 18px;
     text-align: center;
     color: #1f1f1f;
+    margin: 0 auto;            /* zentriert horizontal */
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(8px);
 }
