@@ -68,14 +68,17 @@ a {
 
 p {
     line-height: 1.5;
+    margin-bottom: 18px;
 }
 
 section {
-    margin-bottom: 35px;
+    margin-bottom: 45px;
 }
 
 table {
     margin: auto;
+    margin-top: 25px;
+    margin-bottom: 35px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     border-collapse: collapse;
     width: 80%;
@@ -130,6 +133,11 @@ footer {
     backdrop-filter: blur(8px);
 }
 
+.center-box > * {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 body, .content, .content * {
     color: white !important;
 }
@@ -146,4 +154,13 @@ body, .content, .content * {
 .content a:hover {
     color: #78bfff !important;
     text-decoration: underline;
+}
+
+.center-box img {
+    width: 80%;       
+    max-width: 500px; 
+    height: auto;      
+    display: block;
+    margin: 25px auto; 
+    border-radius: 12px;
 }
