@@ -6,24 +6,84 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-const seeMore = document.getElementById("specialB");
-let alreadyDone = true;
+const saasBtn = document.getElementById("saas");
 
-seeMore.addEventListener("click", () => {
-  const parent = seeMore.parentElement;
-  const extend = document.createElement("div");
-  extend.classList.add("extra-content");
+saasBtn.addEventListener("click", function () {
 
-  if (alreadyDone) {
-    extend.innerHTML = `
-        <p>
-        Additional platforms include:
-        <a href="https://www.woocommerce.com" target="_blank">WooCommerce</a>,
-        <a href="https://www.shopware.com" target="_blank">Shopware</a>
-        </p>
-        `;
+    const parent = saasBtn.parentElement;
 
-    parent.appendChild(extend);
-    alreadyDone = false;
-  }
+    if (parent.querySelector(".extra-saas")) return;
+
+    const div = document.createElement("div");
+    div.className = "extra-saas";
+
+    div.innerHTML = `
+        <br>
+        <a href="https://www.wix.com/ecommerce" target="_blank">Wix eCommerce</a>,
+        <a href="https://www.squarespace.com/ecommerce" target="_blank">
+            Squarespace Commerce
+        </a>,<br>
+        <a href="https://www.salesforce.com/commerce/" target="_blank">
+            Salesforce Commerce Cloud
+        </a>,
+        <a href="https://www.sap.com/products/crm/commerce-cloud.html" target="_blank">
+            SAP Commerce Cloud
+        </a>,<br>
+        <a href="https://www.ecwid.com" target="_blank">Ecwid</a>,
+        <a href="https://www.lightspeedhq.com/ecommerce" target="_blank">
+            Lightspeed eCommerce
+        </a>,
+        <a href="https://www.volusion.com" target="_blank">Volusion</a>,
+        <a href="https://www.shopline.com" target="_blank">Shopline</a>
+    `;
+
+    parent.appendChild(div);
+});
+
+const paasBtn = document.getElementById("paas");
+
+paasBtn.addEventListener("click", function () {
+
+    const parent = paasBtn.parentElement;
+
+    if (parent.querySelector(".extra-paas")) return;
+
+    const div = document.createElement("div");
+    div.className = "extra-paas";
+
+    div.innerHTML = `
+        <br>
+        <a href="https://aws.amazon.com/elasticbeanstalk/" target="_blank">
+            AWS Elastic Beanstalk
+        </a>,
+        <a href="https://cloud.google.com/run" target="_blank">
+            Google Cloud Run
+        </a>
+    `;
+
+    parent.appendChild(div);
+});
+
+const iaasBtn = document.getElementById("iaas");
+
+iaasBtn.addEventListener("click", function () {
+
+    const parent = iaasBtn.parentElement;
+
+    if (parent.querySelector(".extra-iaas")) return;
+
+    const div = document.createElement("div");
+    div.className = "extra-iaas";
+
+    div.innerHTML = `
+        <br>
+        <a href="https://cloud.google.com/compute" target="_blank">
+            Google Compute Engine
+        </a>,
+        <a href="https://www.digitalocean.com" target="_blank">
+            DigitalOcean
+        </a>
+    `;
+
+    parent.appendChild(div);
 });

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,126 +11,124 @@
 
 <body>
 
-<div class="layout">
+    <div class="layout">
 
-    <!-- Sidebar -->
-    <aside class="sidebar">
-        <h2>Shop System Guide</h2>
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Shop System Guide</h2>
 
-        <nav>
-            <a href="startscreen.html">Start</a>
-            <a href="hosting-models.html" class="active">Hosting Models</a>
-            <a href="target-audience.html">Target Audience</a>
-            <a href="cost-structure.html">Cost Structure</a>
-            <a href="internationalization.html">Internationalization</a>
-            <a href="technical-requirements.html">Technical Requirements</a>
-            <a href="checkout.html">Checkout Process</a>
-            <a href="performance-optimization-techniques.html">Performance Optimization</a>
-            <a href="payment.html">Payment</a>
-            <a href="templates.html">Templates</a>
-        </nav>
-    </aside>
+            <nav>
+                <a href="startscreen.html">Start</a>
+                <a href="hosting-models.html" class="active">Hosting Models</a>
+                <a href="target-audience.html">Target Audience</a>
+                <a href="cost-structure.html">Cost Structure</a>
+                <a href="internationalization.html">Internationalization</a>
+                <a href="technical-requirements.html">Technical Requirements</a>
+                <a href="checkout.html">Checkout Process</a>
+                <a href="performance-optimization-techniques.html">Performance Optimization</a>
+                <a href="payment.html">Payment</a>
+                <a href="templates.html">Templates</a>
+            </nav>
+        </aside>
 
-    <main class="content">
+        <main class="content">
 
-        <div class="center-wrapper">
-            <div class="center-box">
+            <div class="center-wrapper">
+                <div class="center-box">
 
-                <h1>Hosting Models</h1>
+                    <h1>Hosting Models</h1>
 
-                <p>
-                    Hosting models describe how and where an online shop is hosted.
-                    They differ in terms of control, scalability, maintenance effort
-                    and cost. Choosing the right model depends on the size of the
-                    business and technical requirements.
-                </p>
+                    <p>
+                        Hosting models describe how and where an online shop is hosted.
+                        They differ in terms of control, scalability, maintenance effort
+                        and cost. Choosing the right model depends on the size of the
+                        business and technical requirements.
+                    </p>
 
-                <div class="content-group">
-                    <button class="content-toggle">
-                        SaaS – Software as a Service
-                    </button>
-                    <div class="content-details">
-                        <p>
-                            SaaS solutions are fully hosted platforms. The provider
-                            takes care of servers, updates and security.
-                        </p>
-                        <div class="sectionForLinks">
-                            Examples:
-                            <a href="https://www.shopify.com" target="_blank">Shopify</a>,
-                            <a href="https://www.bigcommerce.com" target="_blank">BigCommerce</a>,
-                            <button id="specialB">Click for more</button>
+                    <div class="content-group">
+                        <button class="content-toggle">
+                            SaaS – Software as a Service
+                        </button>
+                        <div class="content-details">
+                            <p>
+                                SaaS solutions are fully hosted platforms. The provider
+                                takes care of servers, updates and security.
+                            </p>
+                            <div class="sectionForLinks">
+                                Examples:
+                                <a href="https://www.shopify.com" target="_blank">Shopify</a>,
+                                <a href="https://www.bigcommerce.com" target="_blank">BigCommerce</a>,
+                                <button id="saas">Click for more</button>
+                            </div>
+                            <p>
+                                Advantages: fast setup, low maintenance<br>
+                                Disadvantages: limited customization, ongoing fees
+                            </p>
                         </div>
-                        <p>
-                            Advantages: fast setup, low maintenance<br>
-                            Disadvantages: limited customization, ongoing fees
-                        </p>
                     </div>
-                </div>
 
-                <!-- PaaS -->
-                <div class="content-group">
-                    <button class="content-toggle">
-                        PaaS – Platform as a Service
-                    </button>
-                    <div class="content-details">
-                        <p>
-                            PaaS provides a platform for developers to build and deploy
-                            applications without managing the underlying infrastructure.
-                        </p>
-                        <p>
-                            Examples:
-                            <a href="https://www.heroku.com" target="_blank">Heroku</a>,
-                            <a href="https://cloud.google.com/appengine" target="_blank">
-                                Google App Engine
-                            </a>
-                        </p>
-                        <p>
-                            Advantages: scalable, developer-friendly<br>
-                            Disadvantages: platform dependency
-                        </p>
+                    <!-- PaaS -->
+                    <div class="content-group">
+                        <button class="content-toggle">
+                            PaaS – Platform as a Service
+                        </button>
+                        <div class="content-details">
+                            <p>
+                                PaaS provides a platform for developers to build and deploy
+                                applications without managing the underlying infrastructure.
+                            </p>
+                            <p>
+                                Examples:
+                                <a href="https://www.heroku.com" target="_blank">Heroku</a>,
+                                <a href="https://cloud.google.com/appengine" target="_blank"> Google App Engine</a>
+                                <button id="paas">Click for more</button>
+                            </p>
+                            <p>
+                                Advantages: scalable, developer-friendly<br>
+                                Disadvantages: platform dependency
+                            </p>
+                        </div>
                     </div>
-                </div>
 
-                <!-- IaaS -->
-                <div class="content-group">
-                    <button class="content-toggle">
-                        IaaS – Infrastructure as a Service
-                    </button>
-                    <div class="content-details">
-                        <p>
-                            IaaS offers virtual servers and infrastructure with full
-                            control over the environment.
-                        </p>
-                        <p>
-                            Examples:
-                            <a href="https://aws.amazon.com/ec2/" target="_blank">AWS EC2</a>,
-                            <a href="https://azure.microsoft.com" target="_blank">
-                                Microsoft Azure
-                            </a>
-                        </p>
-                        <p>
-                            Advantages: maximum flexibility, high scalability<br>
-                            Disadvantages: higher technical complexity
-                        </p>
+                    <!-- IaaS -->
+                    <div class="content-group">
+                        <button class="content-toggle">
+                            IaaS – Infrastructure as a Service
+                        </button>
+                        <div class="content-details">
+                            <p>
+                                IaaS offers virtual servers and infrastructure with full
+                                control over the environment.
+                            </p>
+                            <p>
+                                Examples:
+                                <a href="https://aws.amazon.com/ec2/" target="_blank">AWS EC2</a>,
+                                <a href="https://azure.microsoft.com" target="_blank">Microsoft Azure </a>
+                                <button id="iaas">Click for more</button>
+                            </p>
+                            <p>
+                                Advantages: maximum flexibility, high scalability<br>
+                                Disadvantages: higher technical complexity
+                            </p>
+                        </div>
                     </div>
+
+                    <div class="pictur">
+
+                    </div>
+
                 </div>
-
-                <div class="pictur">
-
-                </div>
-
             </div>
-        </div>
 
-        <footer>
-            <p>© 2025 Shop System Guide by Jakob Stieger &amp; Timo Quass</p>
-        </footer>
+            <footer>
+                <p>© 2025 Shop System Guide by Jakob Stieger &amp; Timo Quass</p>
+            </footer>
 
-    </main>
+        </main>
 
-</div>
+    </div>
 
-<script src="../JavaScript/subpoints.js"></script>
+    <script src="../JavaScript/subpoints.js"></script>
 
 </body>
 </html>
