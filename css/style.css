@@ -203,8 +203,6 @@ td {
     padding: 10px;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
-
-
 /* =========================
    Footer
    ========================= */
@@ -264,4 +262,22 @@ footer {
 
 .extra-examples {
     margin-top: 6px;
+}
+
+.hostingPic {
+    width: 60% !important;
+    max-width: 420px !important;
+    height: auto !important;
+    display: block;
+    margin: 20px auto;
+}
+
+.content-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.content-group.open .content-details {
+    max-height: 2000px;
 }

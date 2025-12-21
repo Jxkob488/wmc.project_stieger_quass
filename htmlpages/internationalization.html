@@ -1,118 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Internationalization</title>
+
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
-    <div class="layout">
 
-        <aside class="sidebar">
-            <h2>Shop System Guide</h2>
+<div class="layout">
 
-            <nav>
-                <a href="startscreen.html">Start</a>
-                <a href="hosting-models.html">Hosting Models</a>
-                <a href="target-audience.html">Target Audience</a>
-                <a href="cost-structure.html">Cost Structure</a>
-                <a href="internationalization.html" class="active">Internationalization</a>
-                <a href="technical-requirements.html">Technical Requirements</a>
-                <a href="checkout.html">Checkout Process</a>
-                <a href="performance-optimization-techniques.html">Performance Optimization</a>
-                <a href="payment.html">Payment Methodes</a>
-                <a href="templates.html">Templates</a>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>Shop System Guide</h2>
 
-            </nav>
-        </aside>
+        <nav>
+            <a href="startscreen.html">Start</a>
+            <a href="hosting-models.html">Hosting Models</a>
+            <a href="target-audience.html">Target Audience</a>
+            <a href="cost-structure.html">Cost Structure</a>
+            <a href="internationalization.html" class="active">Internationalization</a>
+            <a href="technical-requirements.html">Technical Requirements</a>
+            <a href="checkout.html">Checkout Process</a>
+            <a href="performance-optimization-techniques.html">Performance Optimization</a>
+            <a href="payment.html">Payment</a>
+            <a href="templates.html">Templates</a>
+        </nav>
+    </aside>
 
-        <main class="content">
-            <div class="center-wrapper">
-                <div class="center-box">
+    <!-- Content -->
+    <main class="content">
 
+        <div class="center-wrapper">
+            <div class="center-box">
 
-                    <h1>Overview: Internationalization</h1>
+                <h1>Internationalization</h1>
 
-                    <section id="intro">
-                        <h2>What is Internationalization?</h2>
-                        <p>Internationalization means preparing a shop system so that it can be used in multiple
-                            countries,
-                            languages, and markets. It ensures that the technical foundation supports multilingual
-                            content,
-                            different
-                            currencies, local laws, and cultural differences.</p>
-                    </section>
+                <p>
+                    Internationalization describes the preparation of an online shop
+                    to operate in multiple countries and markets. A well-prepared
+                    shop system makes it possible to adapt content, prices and legal
+                    settings for different regions.
+                </p>
 
-                    <section id="languages">
-                        <h2>Multilingual Capabilities</h2>
-                        <p>A system must support different languages for:</p>
-                        <ul>
-                            <li>Product descriptions</li>
-                            <li>User interface elements</li>
-                            <li>Emails and order confirmations</li>
-                        </ul>
-                    </section>
+                <!-- Languages -->
+                <div class="content-group" id="languages">
+                    <button class="content-toggle" id="btn-languages">
+                        Multilingual Support
+                    </button>
 
-                    <section id="currencies">
-                        <h2>Multiple Currencies</h2>
-                        <p>International shops should support:</p>
-                        <ul>
-                            <li>Dynamic or manual currency conversion</li>
-                            <li>Different rounding rules</li>
-                            <li>Accurate display of local prices</li>
-                        </ul>
-                    </section>
-
-                    <section id="localization">
-                        <h2>Localization & Regional Formats</h2>
-                        <p>Regional differences affect:</p>
-                        <ul>
-                            <li>Date formats (e.g., DD.MM.YYYY vs. MM/DD/YYYY)</li>
-                            <li>Decimal and thousand separators</li>
-                            <li>Measurement units (cm, inch, kg, lb)</li>
-                        </ul>
-                    </section>
-
-                    <section id="laws">
-                        <h2>Legal and Tax Requirements</h2>
-                        <p>Each country has its own legal rules. Shops need adjustable settings for:</p>
-                        <ul>
-                            <li>Different VAT rates</li>
-                            <li>EU-specific rules (e.g., reverse charge)</li>
-                            <li>Privacy requirements such as GDPR</li>
-                        </ul>
-                    </section>
-
-                    <section id="payment-shipping">
-                        <h2>Payment & Shipping for Multiple Countries</h2>
-                        <p>International customers expect familiar service options:</p>
-                        <ul>
-                            <li>Country-specific payment methods</li>
-                            <li>Different shipping zones</li>
-                            <li>Worldwide delivery options</li>
-                        </ul>
-                    </section>
-
-                    <section id="seo">
-                        <h2>SEO for International Markets</h2>
-                        <p>To rank globally, shops need:</p>
-                        <ul>
-                            <li>hreflang tags</li>
-                            <li>Localized URLs</li>
-                            <li>Translated metadata</li>
-                        </ul>
-                    </section>
-
+                    <div class="content-details">
+                        <p>
+                            Multilingual support allows customers to use the shop in
+                            their preferred language. This includes translated product
+                            descriptions, navigation elements and system messages.
+                        </p>
+                        <p>
+                            A consistent language experience increases trust and
+                            reduces misunderstandings during the shopping process.
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <footer>
-                <p>© 2025 Shop System Guide by Jakob Stieger & Timo Quass</p>
-            </footer>
-        </main>
-    </div>
-</body>
 
+                <!-- Currencies -->
+                <div class="content-group" id="currencies">
+                    <button class="content-toggle" id="btn-currencies">
+                        Multiple Currencies
+                    </button>
+
+                    <div class="content-details">
+                        <p>
+                            International customers expect prices to be displayed
+                            in their local currency. Modern shop systems can convert
+                            prices automatically based on current exchange rates.
+                        </p>
+                        <p>
+                            Correct currency handling also includes proper rounding
+                            and tax calculation.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Localization -->
+                <div class="content-group" id="localization">
+                    <button class="content-toggle" id="btn-localization">
+                        Localization
+                    </button>
+
+                    <div class="content-details">
+                        <p>
+                            Localization adapts the shop to regional standards and
+                            cultural expectations. This affects date formats,
+                            number formats and measurement units.
+                        </p>
+                        <p>
+                            A localized shop feels familiar and professional to
+                            international customers.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Legal -->
+                <div class="content-group" id="legal">
+                    <button class="content-toggle" id="btn-legal">
+                        Legal & Tax Requirements
+                    </button>
+
+                    <div class="content-details">
+                        <p>
+                            Different countries have different legal and tax rules.
+                            Shop systems must support country-specific VAT rates
+                            and legal requirements.
+                        </p>
+                        <p>
+                            Compliance with regulations such as GDPR is especially
+                            important for European markets.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Payment & Shipping -->
+                <div class="content-group" id="payment-shipping">
+                    <button class="content-toggle" id="btn-payment-shipping">
+                        International Payment & Shipping
+                    </button>
+
+                    <div class="content-details">
+                        <p>
+                            International shops should offer familiar payment methods
+                            and reliable shipping options for different regions.
+                        </p>
+                        <p>
+                            Transparent delivery times and costs help reduce cart
+                            abandonment.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- SEO -->
+                <div class="content-group" id="seo">
+                    <button class="content-toggle" id="btn-seo">
+                        International SEO
+                    </button>
+
+                    <div class="content-details">
+                        <p>
+                            International SEO ensures that a shop is visible in
+                            different countries and languages.
+                        </p>
+                        <p>
+                            This includes localized URLs, translated metadata and
+                            proper language targeting for search engines.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 Shop System Guide by Jakob Stieger &amp; Timo Quass</p>
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="../JavaScript/subpoints.js"></script>
+
+</body>
 </html>
