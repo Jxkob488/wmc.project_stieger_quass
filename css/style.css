@@ -15,24 +15,13 @@ h2 {
 
 a {
     text-decoration: none;
-    color: inherit;
     color: rgb(0, 0, 255);
 }
-
-
-/* =========================
-   Layout
-   ========================= */
 
 .layout {
     display: flex;
     min-height: 100vh;
 }
-
-
-/* =========================
-   Sidebar
-   ========================= */
 
 .sidebar {
     width: 230px;
@@ -56,7 +45,6 @@ a {
     gap: 10px;
 }
 
-/* normale Navigationslinks */
 .sidebar nav a {
     background: rgba(255, 255, 255, 0.12);
     padding: 11px;
@@ -73,11 +61,6 @@ a {
     background: white;
     color: #2a3743;
 }
-
-
-/* =========================
-   Sidebar Unterpunkte
-   ========================= */
 
 .nav-group {
     display: flex;
@@ -100,7 +83,6 @@ a {
     background: rgba(255, 255, 255, 0.22);
 }
 
-/* Pfeil */
 .nav-toggle::after {
     content: "▸";
     float: right;
@@ -129,11 +111,6 @@ a {
 .nav-group.open .nav-sub {
     max-height: 300px;
 }
-
-
-/* =========================
-   Content
-   ========================= */
 
 .content {
     margin-left: 250px;
@@ -167,11 +144,6 @@ a {
     margin-bottom: 20px;
 }
 
-
-/* =========================
-   Images
-   ========================= */
-
 .center-box img {
     width: 80%;
     max-width: 500px;
@@ -180,11 +152,6 @@ a {
     margin: 25px auto;
     border-radius: 12px;
 }
-
-
-/* =========================
-   Tables
-   ========================= */
 
 table {
     margin: 25px auto 35px;
@@ -203,9 +170,6 @@ td {
     padding: 10px;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
-/* =========================
-   Footer
-   ========================= */
 
 footer {
     text-align: center;
@@ -245,12 +209,12 @@ footer {
 .content-details {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.4s ease;
     margin-top: 10px;
 }
 
 .content-group.open .content-details {
-    max-height: 500px;
+    max-height: 2000px;
 }
 
 .specialB {
@@ -265,19 +229,9 @@ footer {
 }
 
 .hostingPic {
-    width: 60% !important;
-    max-width: 420px !important;
-    height: auto !important;
+    width: 60%;
+    max-width: 420px;
+    height: auto;
     display: block;
     margin: 20px auto;
-}
-
-.content-details {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-}
-
-.content-group.open .content-details {
-    max-height: 2000px;
 }
