@@ -4,99 +4,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Methods</title>
+    <title>Payment – Shop System Guide</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
-    <div class="layout">
 
-        <aside class="sidebar">
-            <h2>Shop System Guide</h2>
+<div class="layout">
 
-            <nav>
-                <a href="(1)startscreen.html">Start</a>
-                <a href="(2)hosting-models.html">Hosting Models</a>
-                <a href="(3)target-audience.html">Target Audience</a>
-                <a href="(4)cost-structure.html">Cost Structure</a>
-                <a href="(5)internationalization.html">Internationalization</a>
-                <a href="(6)technical-requirements.html">Technical Requirements</a>
-                <a href="(7)checkout.html">Checkout Process</a>
-                <a href="(8)performance-optimization-techniques.html">Performance Optimization</a>
-                <a href="(9)payment.html" class="active">Payment</a>
-                <a href="(10)templates.html">Templates</a>
+    <aside class="sidebar">
+        <h2>Shop System Guide</h2>
+        <nav>
+            <a href="(1)startscreen.html">Start</a>
+            <a href="(2)hosting-models.html">Hosting Models</a>
+            <a href="(3)target-audience.html">Target Audience</a>
+            <a href="(4)cost-structure.html">Cost Structure</a>
+            <a href="(5)internationalization.html">Internationalization</a>
+            <a href="(6)technical-requirements.html">Technical Requirements</a>
+            <a href="(7)checkout.html">Checkout Process</a>
+            <a href="(8)performance-optimization-techniques.html">Performance Optimization</a>
+            <a href="(9)payment.html" class="active">Payment</a>
+            <a href="(10)templates.html">Templates</a>
+        </nav>
+    </aside>
 
-            </nav>
-        </aside>
+    <main class="content">
 
-        <main class="content">
-            <div class="center-wrapper">
-                <div class="center-box">
+        <div class="center-wrapper">
+            <div class="center-box">
 
+                <h1>Payment Methods</h1>
 
-                    <h1>Payment Methods in Online Shops</h1>
+                <p>
+                    Payment options are a central factor for trust and conversion in online shops.
+                    Customers expect familiar, secure and convenient payment methods that fit their
+                    personal preferences and regional habits.
+                </p>
 
-                    <section>
+                <div class="content-group">
+                    <button class="content-toggle">
+                        Role of Payment in Online Shops
+                    </button>
+                    <div class="content-details">
                         <p>
-                            Payment methods are a crucial part of every online shop because they directly influence the
-                            conversion
-                            rate. Customers expect their preferred payment option to be available — otherwise many
-                            abandon the
-                            checkout
-                            process. Modern shops integrate multiple payment providers to stay flexible and competitive.
+                            Payment is one of the final steps in the purchasing process and therefore
+                            highly sensitive. If customers do not find a suitable payment option,
+                            they often abandon the checkout entirely.
                         </p>
-
                         <p>
-                            Common payment gateways include PayPal, Stripe, Klarna, Mollie, and Amazon Pay. Depending on
-                            the target
-                            audience and the country, different methods may perform better or worse.
+                            A well-designed payment setup increases confidence and reduces friction
+                            at the most critical moment of the buying journey.
                         </p>
-                    </section>
-
-                    <section>
-                        <h3>Popular Payment Methods</h3>
-                        <ul>
-                            <li><strong>Credit & Debit Cards:</strong> Visa, Mastercard, American Express — widely used
-                                and fast.
-                            </li>
-                            <li><strong>PayPal:</strong> very popular due to buyer protection and convenience.</li>
-                            <li><strong>Klarna / Buy Now Pay Later:</strong> allows customers to pay later or in
-                                installments.</li>
-                            <li><strong>Bank Transfer (SEPA):</strong> secure and especially common in Europe.</li>
-                            <li><strong>Digital Wallets:</strong> Apple Pay, Google Pay — fast mobile checkout.</li>
-                            <li><strong>Local Methods:</strong> Sofortüberweisung, iDEAL, EPS, Bancontact depending on
-                                region.</li>
-                        </ul>
-                    </section>
-
-                    <section>
-                        <h3>Cost Factors</h3>
-                        <ul>
-                            <li><strong>Transaction fees:</strong> percentage + fixed fee per order.</li>
-                            <li><strong>Currency conversion fees:</strong> relevant for international customers.</li>
-                            <li><strong>Chargeback fees:</strong> when customers request refunds via their bank.</li>
-                            <li><strong>Monthly gateway fees:</strong> some providers charge extra for premium features.
-                            </li>
-                        </ul>
-                    </section>
-
-                    <section>
-                        <h3>Security & Compliance</h3>
-                        <ul>
-                            <li><strong>3D Secure 2:</strong> additional verification for credit card payments.</li>
-                            <li><strong>PCI‑DSS:</strong> security standard for handling card data.</li>
-                            <li><strong>Fraud protection:</strong> automatic risk checks and monitoring.</li>
-                        </ul>
-                    </section>
-
+                    </div>
                 </div>
+
+                <div class="content-group">
+                    <button class="content-toggle">
+                        Variety & Customer Expectations
+                    </button>
+                    <div class="content-details">
+                        <p>
+                            Different target groups prefer different payment methods. While some users
+                            favor credit cards, others rely on digital wallets or buy-now-pay-later
+                            services.
+                        </p>
+                        <p>
+                            Offering multiple options allows shops to address a broader audience
+                            without forcing customers into unfamiliar processes.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="content-group">
+                    <button class="content-toggle">
+                        Costs & Fees
+                    </button>
+                    <div class="content-details">
+                        <p>
+                            Payment providers usually charge transaction-based fees. These costs vary
+                            depending on the provider, the country and the selected payment method.
+                        </p>
+                        <p>
+                            For international shops, additional costs such as currency conversion
+                            fees and chargebacks must also be considered.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="content-group">
+                    <button class="content-toggle">
+                        Security & Compliance
+                    </button>
+                    <div class="content-details">
+                        <p>
+                            Security is a key requirement for payment processing. Customers must trust
+                            that their data is handled safely and professionally.
+                        </p>
+                        <p>
+                            Secure payment systems rely on encryption, fraud prevention mechanisms
+                            and compliance with industry standards such as PCI-DSS.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="content-group">
+                    <button class="content-toggle">
+                        International Payments
+                    </button>
+                    <div class="content-details">
+                        <p>
+                            International shops often need to support region-specific payment methods
+                            to meet local expectations.
+                        </p>
+                        <p>
+                            Adapting payment options to different markets can significantly improve
+                            conversion rates and customer satisfaction.
+                        </p>
+                    </div>
+                </div>
+
             </div>
-            <footer>
-                <p>© 2025 Shop System Guide by Jakob Stieger & Timo Quass</p>
-            </footer>
-        </main>
+        </div>
 
-    </div>
+        <footer>
+            <p>© 2025 Shop System Guide by Jakob Stieger &amp; Timo Quass</p>
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../JavaScript/subpoints.js"></script>
+
 </body>
-
 </html>
