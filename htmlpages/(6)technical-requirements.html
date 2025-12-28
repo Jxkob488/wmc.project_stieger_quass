@@ -2,193 +2,159 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Technical Requirements</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Requirements – Shop System Guide</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
-    <div class="layout">
 
-        <aside class="sidebar" aria-label="Main navigation">
-            <h2>Shop System Guide</h2>
-            <nav>
-                <a href="(1)startscreen.html">Start</a>
-                <a href="(2)hosting-models.html">Hosting Models</a>
-                <a href="(3)target-audience.html">Target Audience</a>
-                <a href="(4)cost-structure.html">Cost Structure</a>
-                <a href="(5)internationalization.html">Internationalization</a>
-                <a href="(6)technical-requirements.html" class="active">Technical Requirements</a>
-                <a href="(7)checkout.html">Checkout Process</a>
-                <a href="(8)performance-optimization-techniques.html">Performance Optimization</a>
-                <a href="(9)payment.html">Payment</a>
-                <a href="(10)templates.html">Templates</a>
+<div class="layout">
 
-            </nav>
-        </aside>
+    <aside class="sidebar">
+        <h2>Shop System Guide</h2>
+        <nav>
+            <a href="(1)startscreen.html">Start</a>
+            <a href="(2)hosting-models.html">Hosting Models</a>
+            <a href="(3)target-audience.html">Target Audience</a>
+            <a href="(4)cost-structure.html">Cost Structure</a>
+            <a href="(5)internationalization.html">Internationalization</a>
+            <a href="(6)technical-requirements.html" class="active">Technical Requirements</a>
+            <a href="(7)checkout.html">Checkout Process</a>
+            <a href="(8)performance-optimization-techniques.html">Performance Optimization</a>
+            <a href="(9)payment.html">Payment</a>
+            <a href="(10)templates.html">Templates</a>
+        </nav>
+    </aside>
 
-        <main class="content" role="main">
+    <main class="content">
 
-            <div class="center-wrapper">
-                <div class="center-box">
+        <div class="center-wrapper">
+            <div class="center-box">
 
-                    <h1>Overview: Technical Requirements</h1>
-                    
-                    <article class="main-article">
+                <h1>Technical Requirements</h1>
 
-                        <section id="overview">
-                            <p>
-                                To run an online shop reliably you need a set of technical basics. These make sure the store
-                                is fast, secure and able to grow when traffic increases. Below are the most important areas to
-                                consider, explained in simple terms.
-                    </p>
-                </section>
-                
-                <section id="performance">
-                    <h2>Server performance & speed</h2>
-                    <p>
-                        Customers expect pages to load quickly. Good performance requires a well-provisioned server,
-                        caching and optimized assets.
-                    </p>
-                    <ul>
-                        <li>Enough CPU and memory for your traffic</li>
-                        <li>Caching (e.g. Redis, Varnish) and optimized queries</li>
-                        <li>CDN for images, fonts and scripts</li>
-                        <li>Target: typical page load under ~2 seconds</li>
-                    </ul>
-                </section>
-                
-                <section id="security">
-                    <h2>Security & data protection</h2>
-                    <p>
-                        Shops handle personal and payment information, so security is essential.
-                    </p>
-                    <ul>
-                        <li>Use HTTPS everywhere (valid SSL certificate)</li>
-                        <li>Keep software and plugins up to date</li>
-                        <li>Protect against SQL injection and XSS</li>
-                        <li>Use strong admin passwords and enable 2FA where possible</li>
-                        <li>Implement regular backups and test restores</li>
-                        <li>Follow applicable privacy rules (e.g. GDPR)</li>
-                    </ul>
-                </section>
-                
-                <section id="extensibility">
-                    <h2>Extensibility & integrations</h2>
-                    <p>
-                        Your shop should be easy to extend and connect to other systems.
-                    </p>
-                    <ul>
-                        <li>Support for plugins or modules</li>
-                        <li>APIs (REST/GraphQL) for integrations</li>
-                        <li>Webhooks for real‑time events (orders, stock changes)</li>
-                        <li>Connectors for ERP, CRM, shipping and accounting systems</li>
-                    </ul>
-                </section>
-                
-                <section id="mobile">
-                    <h2>Mobile & frontend</h2>
-                    <p>
-                        Many customers use phones — the shop must work well on small screens.
-                    </p>
-                    <ul>
-                        <li>Responsive layout or mobile‑specific templates</li>
-                        <li>Optimized images (WebP, srcset) and lazy loading</li>
-                        <li>Touch‑friendly controls and accessible forms</li>
-                    </ul>
-                </section>
-                
-                <section id="database">
-                    <h2>Databases & structure</h2>
-                    <p>
-                        A good database design keeps your shop fast and maintainable as it grows.
-                    </p>
-                    <ul>
-                        <li>Proper indexing and query optimization</li>
-                        <li>Scalable storage and regular maintenance</li>
-                        <li>Clear data model for products, orders and customers</li>
-                    </ul>
-                </section>
-                
-                <section id="payments">
-                    <h2>Payments & checkout</h2>
-                    <p>
-                        The checkout must be secure and easy to use.
-                    </p>
-                    <ul>
-                        <li>Integrate reliable payment providers (Stripe, PayPal, Klarna)</li>
-                        <li>Follow PCI rules or use hosted payment pages</li>
-                        <li>Handle payment errors and edge cases gracefully</li>
-                    </ul>
-                </section>
-                
-                <section id="scalability">
-                    <h2>Scalability & reliability</h2>
-                    <p>
-                        Prepare for growth and traffic peaks.
-                    </p>
-                    <ul>
-                        <li>Horizontal scaling (multiple instances) or vertical scaling</li>
-                        <li>Load balancing and session handling</li>
-                        <li>Monitoring, alerts and backup plans</li>
-                    </ul>
-                </section>
-                
-                <section id="seo">
-                    <h2>Technical SEO</h2>
-                    <p>
-                        Make sure search engines can index and understand your content.
-                    </p>
-                    <ul>
-                        <li>Clean URLs and canonical tags</li>
-                        <li>XML sitemap and robots.txt</li>
-                        <li>Structured data for products and breadcrumbs</li>
-                        <li>Correct handling of redirects and error codes</li>
-                    </ul>
-                </section>
-                
-                <section id="operations">
-                    <h2>Operations & maintenance</h2>
-                    <p>
-                        Ongoing maintenance keeps the shop healthy and secure.
-                    </p>
-                    <ul>
-                        <li>Automated backups with restore tests</li>
-                        <li>Centralized logging and retention policy</li>
-                        <li>Uptime monitoring and an incident response plan</li>
-                    </ul>
-                </section>
-                
-            </article>
-            
-            <aside class="right-panel" aria-labelledby="quick-facts">
-                <h3 id="quick-facts">Quick facts</h3>
-                <ul>
-                    <li>Always use HTTPS</li>
-                    <li>Keep core software &amp; plugins updated</li>
-                    <li>Enable caching and a CDN</li>
-                    <li>Test backups regularly</li>
-                </ul>
-                
-                <div class="contact-card">
-                    <h4>Short checklist</h4>
-                    <ol>
-                        <li>Server: Nginx/Apache + PHP 8+</li>
-                        <li>DB backups: daily</li>
-                        <li>Security updates: weekly</li>
-                    </ol>
+                <p>
+                    A reliable shop system needs a solid technical foundation. Performance, security
+                    and scalability all depend on the underlying technology. The following sections
+                    explain the most important technical requirements in a practical and understandable way.
+                </p>
+
+                <div class="content-group">
+                    <button class="content-toggle">
+                        Server Performance & Speed
+                    </button>
+                    <div class="content-details">
+                        <p>
+                            Fast loading times are essential for user experience and conversion rates.
+                            A shop system must be able to handle traffic spikes without slowing down.
+                            This requires sufficient server resources, optimized software configuration
+                            and efficient caching mechanisms.
+                        </p>
+                        <p>
+                            Customers expect pages to load within a few seconds. If performance is poor,
+                            many users leave before completing a purchase.
+                        </p>
+                    </div>
                 </div>
-            </aside>
-            
-        </div>
-        </div>
-        <footer>
-            <p>© 2025 Shop System Guide by Jakob Stieger & Timo Quass</p>
-        </footer>
-        </main>
-        
-    </div>
-</body>
 
+                <div class="content-group">
+                    <button class="content-toggle">
+                        Security & Data Protection
+                    </button>
+                    <div class="content-details">
+                        <p>
+                            Online shops process sensitive customer and payment data, which makes security
+                            a critical requirement. A secure shop system protects data against unauthorized
+                            access and cyber attacks.
+                        </p>
+                        <p>
+                            This includes encrypted connections, regular software updates and compliance
+                            with legal requirements such as GDPR.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="content-group">
+                    <button class="content-toggle">
+                        Scalability & Reliability
+                    </button>
+                    <div class="content-details">
+                        <p>
+                            As a business grows, the shop system must grow with it. Scalability ensures
+                            that increased traffic, more products and higher order volumes can be handled
+                            without technical problems.
+                        </p>
+                        <p>
+                            Reliable systems minimize downtime and ensure that the shop is available
+                            even during high-demand periods such as sales or promotions.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="content-group">
+                    <button class="content-toggle">
+                        Integration & Extensibility
+                    </button>
+                    <div class="content-details">
+                        <p>
+                            Modern shops rarely work as standalone systems. They need to integrate with
+                            payment providers, shipping services, ERP systems and marketing tools.
+                        </p>
+                        <p>
+                            A flexible shop system offers interfaces and extensions that allow new
+                            features to be added without rebuilding the entire platform.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="content-group">
+                    <button class="content-toggle">
+                        Mobile & Frontend Compatibility
+                    </button>
+                    <div class="content-details">
+                        <p>
+                            A large percentage of customers shop on mobile devices. Therefore, the
+                            frontend must adapt smoothly to different screen sizes and input methods.
+                        </p>
+                        <p>
+                            Responsive design, touch-friendly navigation and optimized media loading
+                            are essential for a professional mobile shopping experience.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="content-group">
+                    <button class="content-toggle">
+                        Maintenance & Updates
+                    </button>
+                    <div class="content-details">
+                        <p>
+                            A shop system is not a one-time setup. Regular maintenance is required to
+                            keep the software secure, stable and compatible with new technologies.
+                        </p>
+                        <p>
+                            This includes updates, backups and monitoring to quickly detect and resolve
+                            potential issues.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 Shop System Guide by Jakob Stieger &amp; Timo Quass</p>
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../JavaScript/subpoints.js"></script>
+
+</body>
 </html>

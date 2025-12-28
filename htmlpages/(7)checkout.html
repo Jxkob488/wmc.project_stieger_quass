@@ -4,89 +4,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Checkout Process – Shop System Guide</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
-  <div class="layout">
+
+<div class="layout">
 
     <aside class="sidebar">
-      <h2>Shop System Guide</h2>
-
-      <nav>
-                <a href="(1)startscreen.html" >Start</a>
-                <a href="(2)hosting-models.html">Hosting Models</a>
-                <a href="(3)target-audience.html">Target Audience</a>
-                <a href="(4)cost-structure.html">Cost Structure</a>
-                <a href="(5)internationalization.html">Internationalization</a>
-                <a href="(6)technical-requirements.html">Technical Requirements</a>
-                <a href="(7)checkout.html" class="active">Checkout Process</a>
-                <a href="(8)performance-optimization-techniques.html">Performance Optimization</a>
-                <a href="(9)payment.html">Payment</a>
-                <a href="(10)templates.html">Templates</a>
-      </nav>
+        <h2>Shop System Guide</h2>
+        <nav>
+            <a href="(1)startscreen.html">Start</a>
+            <a href="(2)hosting-models.html">Hosting Models</a>
+            <a href="(3)target-audience.html">Target Audience</a>
+            <a href="(4)cost-structure.html">Cost Structure</a>
+            <a href="(5)internationalization.html">Internationalization</a>
+            <a href="(6)technical-requirements.html">Technical Requirements</a>
+            <a href="(7)checkout.html" class="active">Checkout Process</a>
+            <a href="(8)performance-optimization-techniques.html">Performance Optimization</a>
+            <a href="(9)payment.html">Payment</a>
+            <a href="(10)templates.html">Templates</a>
+        </nav>
     </aside>
 
     <main class="content">
 
-      <div class="center-wrapper">
-        <div class="center-box">
+        <div class="center-wrapper">
+            <div class="center-box">
 
-          <h1>Checkout Process</h1>
+                <h1>Checkout Process</h1>
 
-          <section>
-            <h2>What is the checkout process?</h2>
-            <p>
-              The checkout process is the final step before a customer completes their order.
-              A smooth and fast checkout is extremely important — every second counts, because
-              complicated steps can lead to cart abandonment.
-            </p>
-          </section>
+                <p>
+                    The checkout process is the final interaction between the customer and the shop.
+                    A clear and fast checkout experience is essential, because unnecessary complexity
+                    often leads to abandoned carts.
+                </p>
 
-          <section>
-            <h2>Main Checkout Steps</h2>
-            <ol>
-              <li><strong>Shopping Cart Review:</strong> customers confirm products and quantities.</li>
-              <li><strong>Customer Information:</strong> personal data and email address.</li>
-              <li><strong>Shipping Details:</strong> address and delivery options.</li>
-              <li><strong>Payment Method:</strong> selection of credit card, PayPal, Klarna, etc.</li>
-              <li><strong>Order Review:</strong> final summary before submitting.</li>
-              <li><strong>Confirmation Page:</strong> order number + email confirmation.</li>
-            </ol>
-          </section>
+                <div class="content-group">
+                    <button class="content-toggle">
+                        Purpose of the Checkout
+                    </button>
+                    <div class="content-details">
+                        <p>
+                            The main goal of the checkout process is to guide customers smoothly from
+                            their shopping cart to a completed order. Every step should feel logical
+                            and predictable.
+                        </p>
+                        <p>
+                            A well-designed checkout builds trust and reduces hesitation at the most
+                            critical moment of the buying process.
+                        </p>
+                    </div>
+                </div>
 
-          <section>
-            <h2>Good Practices</h2>
-            <ul>
-              <li>Use a <strong>one‑page checkout</strong> to reduce clicks.</li>
-              <li>Offer <strong>guest checkout</strong> without mandatory account creation.</li>
-              <li>Keep the design clean with minimal distractions.</li>
-              <li>Auto‑fill fields (address suggestions, saved payment methods).</li>
-              <li>Show progress indicators (e.g. Step 1 → Step 2 → Step 3).</li>
-              <li>Ensure mobile‑friendly fields and buttons.</li>
-            </ul>
-          </section>
+                <div class="content-group">
+                    <button class="content-toggle">
+                        User Experience & Simplicity
+                    </button>
+                    <div class="content-details">
+                        <p>
+                            Checkout flows should focus on simplicity. Customers should immediately
+                            understand what information is required and why.
+                        </p>
+                        <p>
+                            Clear input fields, helpful validation messages and minimal distractions
+                            significantly improve completion rates.
+                        </p>
+                    </div>
+                </div>
 
-          <section>
-            <h2>Examples</h2>
-            <ul>
-              <li><a href="https://www.shopify.com" target="_blank">Shopify Checkout</a> – fast & optimized.</li>
-              <li><a href="https://woocommerce.com" target="_blank">WooCommerce Checkout</a> – customizable for developers.</li>
-              <li><a href="https://www.wix.com" target="_blank">Wix Checkout</a> – beginner‑friendly.</li>
-            </ul>
-          </section>
+                <div class="content-group">
+                    <button class="content-toggle">
+                        Guest Checkout & Flexibility
+                    </button>
+                    <div class="content-details">
+                        <p>
+                            Not all customers want to create an account. Offering a guest checkout
+                            option removes an important barrier and speeds up the purchase process.
+                        </p>
+                        <p>
+                            Account creation can still be offered after the order has been completed.
+                        </p>
+                    </div>
+                </div>
 
+                <div class="content-group">
+                    <button class="content-toggle">
+                        Error Handling & Transparency
+                    </button>
+                    <div class="content-details">
+                        <p>
+                            Errors during checkout should be communicated clearly and immediately.
+                            Customers need to know what went wrong and how to fix it.
+                        </p>
+                        <p>
+                            Transparent pricing, shipping costs and delivery times help avoid surprises
+                            and increase trust.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="content-group">
+                    <button class="content-toggle">
+                        Mobile Checkout
+                    </button>
+                    <div class="content-details">
+                        <p>
+                            Many purchases are completed on mobile devices. Checkout processes must
+                            therefore be optimized for smaller screens and touch input.
+                        </p>
+                        <p>
+                            Large buttons, simple forms and responsive layouts are key to a successful
+                            mobile checkout experience.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
         </div>
-      </div>
 
-      <footer class="footer">
-        <p>© 2025 Shop System Guide by Jakob Stieger & Timo Quass</p>
-      </footer>
+        <footer>
+            <p>© 2025 Shop System Guide by Jakob Stieger &amp; Timo Quass</p>
+        </footer>
 
     </main>
-  </div>
+
+</div>
+
+<script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../JavaScript/subpoints.js"></script>
+
 </body>
-
-
 </html>

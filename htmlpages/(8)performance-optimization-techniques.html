@@ -2,194 +2,140 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Performance Optimization Techniques</title>
-  <link rel="stylesheet" href="../css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Optimization – Shop System Guide</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
-  <div class="layout">
 
-    <aside class="sidebar" aria-label="Main navigation">
-      <h2>Shop System Guide</h2>
-      <nav>
-        <a href="(1)startscreen.html" >Start</a>
-        <a href="(2)hosting-models.html">Hosting Models</a>
-        <a href="(3)target-audience.html">Target Audience</a>
-        <a href="(4)cost-structure.html">Cost Structure</a>
-        <a href="(5)internationalization.html">Internationalization</a>
-        <a href="(6)technical-requirements.html">Technical Requirements</a>
-        <a href="(7)checkout.html">Checkout Process</a>
-        <a href="(8)performance-optimization-techniques.html" class="active">Performance Optimization</a>
-        <a href="(9)payment.html">Payment</a>
-        <a href="(10)templates.html">Templates</a>
+<div class="layout">
 
-      </nav>
+    <aside class="sidebar">
+        <h2>Shop System Guide</h2>
+        <nav>
+            <a href="(1)startscreen.html">Start</a>
+            <a href="(2)hosting-models.html">Hosting Models</a>
+            <a href="(3)target-audience.html">Target Audience</a>
+            <a href="(4)cost-structure.html">Cost Structure</a>
+            <a href="(5)internationalization.html">Internationalization</a>
+            <a href="(6)technical-requirements.html">Technical Requirements</a>
+            <a href="(7)checkout.html">Checkout Process</a>
+            <a href="(8)performance-optimization-techniques.html" class="active">Performance Optimization</a>
+            <a href="(9)payment.html">Payment</a>
+            <a href="(10)templates.html">Templates</a>
+        </nav>
     </aside>
 
-    <main class="content" role="main">
-      <div class="center-wrapper">
-        <div class="center-box">
+    <main class="content">
 
-          <h1>Performance Optimization Techniques</h1>
+        <div class="center-wrapper">
+            <div class="center-box">
 
-          <section id="intro">
-            <h2>Why performance matters</h2>
-            <p>
-              Fast loading pages improve user experience, reduce bounce rates and increase conversions.
-              Search engines also rank faster sites better, so performance is important for both users.
-            </p>
-          </section>
+                <h1>Performance Optimization</h1>
 
-          <section id="caching">
-            <h2>Caching</h2>
-            <p>
-              Caching stores prebuilt responses so the server doesn't have to recreate them on every request.
-              Use multiple caching layers for best results.
-            </p>
-            <ul>
-              <li><strong>Page cache:</strong> serve full HTML pages for anonymous users (very fast).</li>
-              <li><strong>Object cache:</strong> cache database query results (Redis, Memcached).</li>
-              <li><strong>Browser cache:</strong> set long cache headers for static assets (images, CSS, JS).</li>
-            </ul>
-          </section>
+                <p>
+                    Website performance plays a crucial role in user satisfaction and conversion rates.
+                    Slow loading times often lead to higher bounce rates and lower trust in the shop.
+                </p>
 
-          <section id="cdn">
-            <h2>CDN (Content Delivery Network)</h2>
-            <p>
-              A CDN replicates static assets across many servers worldwide so visitors download resources
-              from the geographically nearest node. This reduces latency and server load.
-            </p>
-            <ul>
-              <li>Use CDN for images, fonts, JS and CSS.</li>
-              <li>Enable HTTP/2 or HTTP/3 on CDN to improve multiplexing and latency.</li>
-            </ul>
-          </section>
+                <div class="content-group">
+                    <button class="content-toggle">
+                        Why Performance Matters
+                    </button>
+                    <div class="content-details">
+                        <p>
+                            Customers expect fast and responsive websites. Even small delays can
+                            negatively affect user perception and sales.
+                        </p>
+                        <p>
+                            Performance is also a ranking factor for search engines, which makes it
+                            important for visibility and reach.
+                        </p>
+                    </div>
+                </div>
 
-          <section id="images">
-            <h2>Image Optimization</h2>
-            <p>
-              Images are often the largest resources on a page. Optimizing them gives immediate speed gains.
-            </p>
-            <ul>
-              <li>Convert to efficient formats (WebP, AVIF) when supported.</li>
-              <li>Generate responsive image sizes and use <code>srcset</code>.</li>
-              <li>Compress images and avoid serving overly large files.</li>
-            </ul>
-          </section>
+                <div class="content-group">
+                    <button class="content-toggle">
+                        Server & Backend Optimization
+                    </button>
+                    <div class="content-details">
+                        <p>
+                            Backend performance directly influences page loading speed. Efficient
+                            server configuration and optimized database queries reduce response times.
+                        </p>
+                        <p>
+                            Caching frequently requested data helps avoid unnecessary processing and
+                            improves overall stability.
+                        </p>
+                    </div>
+                </div>
 
-          <section id="lazyloading">
-            <h2>Lazy Loading</h2>
-            <p>
-              Load images and media only when they enter the viewport. This reduces initial payload and speeds up
-              the first meaningful paint.
-            </p>
-            <ul>
-              <li>Use native <code>loading="lazy"</code> for images where possible.</li>
-              <li>Defer offscreen iframes and heavy third‑party widgets.</li>
-            </ul>
-          </section>
+                <div class="content-group">
+                    <button class="content-toggle">
+                        Frontend Optimization
+                    </button>
+                    <div class="content-details">
+                        <p>
+                            The frontend should be optimized to load only what is necessary. Large
+                            images, uncompressed assets and excessive scripts slow down the page.
+                        </p>
+                        <p>
+                            Clean code, optimized media and deferred loading improve the perceived
+                            speed for users.
+                        </p>
+                    </div>
+                </div>
 
-          <section id="assets">
-            <h2>Minification & Bundling</h2>
-            <p>
-              Minify CSS and JavaScript and bundle them to reduce the number of requests. Consider splitting
-              code into critical and non‑critical bundles.
-            </p>
-            <ul>
-              <li>Minify and compress CSS/JS (gzip / brotli).</li>
-              <li>Use code splitting and only load what is needed for the initial view.</li>
-            </ul>
-          </section>
+                <div class="content-group">
+                    <button class="content-toggle">
+                        Content Delivery Networks
+                    </button>
+                    <div class="content-details">
+                        <p>
+                            CDNs distribute static content across multiple locations worldwide.
+                            This reduces latency by serving data from servers closer to the user.
+                        </p>
+                        <p>
+                            International shops especially benefit from CDN usage.
+                        </p>
+                    </div>
+                </div>
 
-          <section id="critical">
-            <h2>Critical CSS & Preload</h2>
-            <p>
-              Inline critical CSS required for the above‑the‑fold content and preload important fonts/resources
-              so the browser can prioritize them.
-            </p>
-          </section>
+                <div class="content-group">
+                    <button class="content-toggle">
+                        Monitoring & Continuous Improvement
+                    </button>
+                    <div class="content-details">
+                        <p>
+                            Performance optimization is not a one-time task. Continuous monitoring
+                            helps identify bottlenecks and performance regressions.
+                        </p>
+                        <p>
+                            Regular testing ensures that new features do not negatively affect
+                            loading times.
+                        </p>
+                    </div>
+                </div>
 
-          <section id="protocols">
-            <h2>HTTP/2, HTTP/3 & Server Tuning</h2>
-            <p>
-              Modern protocols (HTTP/2, HTTP/3) improve parallelism and latency. Tune server settings for
-              keep‑alive,
-              TLS session resumption and proper caching headers.
-            </p>
-          </section>
-
-          <section id="server">
-            <h2>Server & Database Optimizations</h2>
-            <p>
-              Backend improvements are equally important: optimize queries, add indexes and use connection
-              pooling.
-            </p>
-            <ul>
-              <li>Profile slow queries and add indexes where needed.</li>
-              <li>Use a persistent object cache for frequent operations.</li>
-              <li>Consider read replicas or managed database services for scale.</li>
-            </ul>
-          </section>
-
-          <section id="thirdparty">
-            <h2>Third‑Party Scripts</h2>
-            <p>
-              External widgets (analytics, chat, payment scripts) can block rendering. Audit and lazy‑load them.
-            </p>
-          </section>
-
-          <section id="monitoring">
-            <h2>Monitoring & Testing</h2>
-            <p>
-              Measure performance regularly and test under realistic conditions.
-            </p>
-            <ul>
-              <li>Use synthetic tests (Lighthouse, WebPageTest) and real user monitoring (RUM).</li>
-              <li>Track Core Web Vitals: LCP, FID/INP, CLS.</li>
-              <li>Run load tests before big promotions or releases.</li>
-            </ul>
-          </section>
-
-          <section id="quicktips">
-            <h2>Quick Tips</h2>
-            <ul>
-              <li>Enable compression (brotli/gzip).</li>
-              <li>Serve images scaled to display size.</li>
-              <li>Reduce main‑thread JavaScript work.</li>
-              <li>Cache API responses where safe.</li>
-            </ul>
-          </section>
-
-          <aside class="right-panel" aria-labelledby="performance-facts">
-            <h3 id="performance-facts">At a glance</h3>
-            <ul>
-              <li>Caching gives the biggest immediate win.</li>
-              <li>CDN helps international performance.</li>
-              <li>Image work often yields the best size reduction.</li>
-              <li>Measure and validate with tools (Lighthouse).</li>
-            </ul>
-
-            <div class="contact-card">
-              <h4>Checklist</h4>
-              <ol>
-                <li>Enable page & object caching</li>
-                <li>Use CDN for static assets</li>
-                <li>Optimize and lazy‑load images</li>
-                <li>Minify assets and enable compression</li>
-              </ol>
             </div>
-          </aside>
-
         </div>
-      </div>
-      <footer>
-        <p>© 2025 Shop System Guide by Jakob Stieger & Timo Quass</p>
-      </footer>
+
+        <footer>
+            <p>© 2025 Shop System Guide by Jakob Stieger &amp; Timo Quass</p>
+        </footer>
+
     </main>
 
-  </div>
-</body>
+</div>
 
+<script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../JavaScript/subpoints.js"></script>
+
+</body>
 </html>
+
+git config --global user.email "t.quass@students.htl-leonding.ac.at"
+git config --global user.name "tquass10"
