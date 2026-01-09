@@ -1,160 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Technical Requirements – Shop System Guide</title>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body>
+<body class="text-light">
 
-<div class="layout">
+<div class="container-fluid">
+    <div class="row">
 
-    <aside class="sidebar">
-        <h2>Shop System Guide</h2>
-        <nav>
-            <a href="(1)startscreen.html">Start</a>
-            <a href="(2)hosting-models.html">Hosting Models</a>
-            <a href="(3)target-audience.html">Target Audience</a>
-            <a href="(4)cost-structure.html">Cost Structure</a>
-            <a href="(5)internationalization.html">Internationalization</a>
-            <a href="(6)technical-requirements.html" class="active">Technical Requirements</a>
-            <a href="(7)checkout.html">Checkout Process</a>
-            <a href="(8)performance-optimization-techniques.html">Performance Optimization</a>
-            <a href="(9)payment.html">Payment</a>
-            <a href="(10)templates.html">Templates</a>
-        </nav>
-    </aside>
+        <aside class="col-12 col-md-3 col-lg-2 p-4 sidebar">
+            <h4 class="mb-4">Shop System<br>Guide</h4>
+            <nav class="nav flex-column gap-2">
+                <a class="nav-link" href="(1)startscreen.html">Start</a>
+                <a class="nav-link" href="(2)hosting-models.html">Hosting Models</a>
+                <a class="nav-link" href="(3)target-audience.html">Target Audience</a>
+                <a class="nav-link" href="(4)cost-structure.html">Cost Structure</a>
+                <a class="nav-link" href="(5)internationalization.html">Internationalization</a>
+                <a class="nav-link active" href="(6)technical-requirements.html">Technical Requirements</a>
+                <a class="nav-link" href="(7)checkout.html">Checkout Process</a>
+                <a class="nav-link" href="(8)performance-optimization-techniques.html">Performance Optimization</a>
+                <a class="nav-link" href="(9)payment.html">Payment</a>
+                <a class="nav-link" href="(10)templates.html">Templates</a>
+            </nav>
+        </aside>
 
-    <main class="content">
-
-        <div class="center-wrapper">
-            <div class="center-box">
-
-                <h1>Technical Requirements</h1>
-
-                <p>
-                    A reliable shop system needs a solid technical foundation. Performance, security
-                    and scalability all depend on the underlying technology. The following sections
-                    explain the most important technical requirements in a practical and understandable way.
-                </p>
-
-                <div class="content-group">
-                    <button class="content-toggle">
-                        Server Performance & Speed
-                    </button>
-                    <div class="content-details">
-                        <p>
-                            Fast loading times are essential for user experience and conversion rates.
-                            A shop system must be able to handle traffic spikes without slowing down.
-                            This requires sufficient server resources, optimized software configuration
-                            and efficient caching mechanisms.
-                        </p>
-                        <p>
-                            Customers expect pages to load within a few seconds. If performance is poor,
-                            many users leave before completing a purchase.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="content-group">
-                    <button class="content-toggle">
-                        Security & Data Protection
-                    </button>
-                    <div class="content-details">
-                        <p>
-                            Online shops process sensitive customer and payment data, which makes security
-                            a critical requirement. A secure shop system protects data against unauthorized
-                            access and cyber attacks.
-                        </p>
-                        <p>
-                            This includes encrypted connections, regular software updates and compliance
-                            with legal requirements such as GDPR.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="content-group">
-                    <button class="content-toggle">
-                        Scalability & Reliability
-                    </button>
-                    <div class="content-details">
-                        <p>
-                            As a business grows, the shop system must grow with it. Scalability ensures
-                            that increased traffic, more products and higher order volumes can be handled
-                            without technical problems.
-                        </p>
-                        <p>
-                            Reliable systems minimize downtime and ensure that the shop is available
-                            even during high-demand periods such as sales or promotions.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="content-group">
-                    <button class="content-toggle">
-                        Integration & Extensibility
-                    </button>
-                    <div class="content-details">
-                        <p>
-                            Modern shops rarely work as standalone systems. They need to integrate with
-                            payment providers, shipping services, ERP systems and marketing tools.
-                        </p>
-                        <p>
-                            A flexible shop system offers interfaces and extensions that allow new
-                            features to be added without rebuilding the entire platform.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="content-group">
-                    <button class="content-toggle">
-                        Mobile & Frontend Compatibility
-                    </button>
-                    <div class="content-details">
-                        <p>
-                            A large percentage of customers shop on mobile devices. Therefore, the
-                            frontend must adapt smoothly to different screen sizes and input methods.
-                        </p>
-                        <p>
-                            Responsive design, touch-friendly navigation and optimized media loading
-                            are essential for a professional mobile shopping experience.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="content-group">
-                    <button class="content-toggle">
-                        Maintenance & Updates
-                    </button>
-                    <div class="content-details">
-                        <p>
-                            A shop system is not a one-time setup. Regular maintenance is required to
-                            keep the software secure, stable and compatible with new technologies.
-                        </p>
-                        <p>
-                            This includes updates, backups and monitoring to quickly detect and resolve
-                            potential issues.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <footer>
-            <p>© 2025 Shop System Guide by Jakob Stieger &amp; Timo Quass</p>
-        </footer>
-
-    </main>
-
-</div>
-
-<script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="../JavaScript/subpoints.js"></script>
-
-</body>
-</html>
+        <main class="col-12 col-md-9 col-lg-10 py-5">
+            <div class="container">
+                <div class="main-card shadow p-5" style="max-width:1000px;">

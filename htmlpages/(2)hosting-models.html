@@ -1,135 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hosting Models</title>
+    <title>Hosting Models – Shop System Guide</title>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body>
+<body class="text-light">
 
-    <div class="layout">
+<div class="container-fluid">
+    <div class="row">
 
         <!-- Sidebar -->
-        <aside class="sidebar">
-            <h2>Shop System Guide</h2>
+        <aside class="col-12 col-md-3 col-lg-2 p-4 sidebar">
+            <h4 class="mb-4">Shop System<br>Guide</h4>
 
-            <nav>
-                <a href="(1)startscreen.html">Start</a>
-                <a href="(2)hosting-models.html" class="active">Hosting Models</a>
-                <a href="(3)target-audience.html">Target Audience</a>
-                <a href="(4)cost-structure.html">Cost Structure</a>
-                <a href="(5)internationalization.html">Internationalization</a>
-                <a href="(6)technical-requirements.html">Technical Requirements</a>
-                <a href="(7)checkout.html">Checkout Process</a>
-                <a href="(8)performance-optimization-techniques.html">Performance Optimization</a>
-                <a href="(9)payment.html">Payment</a>
-                <a href="(10)templates.html">Templates</a>
+            <nav class="nav flex-column gap-2">
+                <a class="nav-link" href="(1)startscreen.html">Start</a>
+                <a class="nav-link active" href="(2)hosting-models.html">Hosting Models</a>
+                <a class="nav-link" href="(3)target-audience.html">Target Audience</a>
+                <a class="nav-link" href="(4)cost-structure.html">Cost Structure</a>
+                <a class="nav-link" href="(5)internationalization.html">Internationalization</a>
+                <a class="nav-link" href="(6)technical-requirements.html">Technical Requirements</a>
+                <a class="nav-link" href="(7)checkout.html">Checkout Process</a>
+                <a class="nav-link" href="(8)performance-optimization-techniques.html">Performance Optimization</a>
+                <a class="nav-link" href="(9)payment.html">Payment</a>
+                <a class="nav-link" href="(10)templates.html">Templates</a>
             </nav>
         </aside>
 
-        <main class="content">
+        <!-- Content -->
+        <main class="col-12 col-md-9 col-lg-10 py-5">
+            <div class="container">
 
-            <div class="center-wrapper">
-                <div class="center-box">
+                <div class="main-card shadow p-5 w-100" style="max-width: 1000px;">
+                    <h1 class="text-center mb-4">Hosting Models</h1>
 
-                    <h1>Hosting Models</h1>
-
-                    <p>
+                    <p class="text-center mb-4">
                         Hosting models describe how and where an online shop is hosted.
-                        They differ in terms of control, scalability, maintenance effort
-                        and cost. Choosing the right model depends on the size of the
-                        business and technical requirements.
+                        They differ in control, scalability, maintenance effort and cost.
                     </p>
 
-                    <div class="content-group">
-                        <button class="content-toggle">
-                            SaaS – Software as a Service
-                        </button>
-                        <div class="content-details">
-                            <p>
-                                SaaS solutions are fully hosted platforms. The provider
-                                takes care of servers, updates and security.
-                            </p>
-                            <div class="sectionForLinks">
-                                Examples:
-                                <a href="https://www.shopify.com" target="_blank">Shopify</a>,
-                                <a href="https://www.bigcommerce.com" target="_blank">BigCommerce</a>,
-                                <button id="saas">Click for more</button>
-                            </div>
-                            <p>
-                                Advantages: fast setup, low maintenance<br>
-                                Disadvantages: limited customization, ongoing fees
-                            </p>
-                            <img src="../pictures/saas.png" alt="" class="hostingPic">
-                        </div>
-                    </div>
+                    <h3>SaaS – Software as a Service</h3>
+                    <p>
+                        Fully hosted solutions where the provider manages servers, updates and security.
+                        Ideal for small businesses and quick setups.
+                    </p>
 
-                    <!-- PaaS -->
-                    <div class="content-group">
-                        <button class="content-toggle">
-                            PaaS – Platform as a Service
-                        </button>
-                        <div class="content-details">
-                            <p>
-                                PaaS provides a platform for developers to build and deploy
-                                applications without managing the underlying infrastructure.
-                            </p>
-                            <p>
-                                Examples:
-                                <a href="https://www.heroku.com" target="_blank">Heroku</a>,
-                                <a href="https://cloud.google.com/appengine" target="_blank"> Google App Engine</a>
-                                <button id="paas">Click for more</button>
-                            </p>
-                            <p>
-                                Advantages: scalable, developer-friendly<br>
-                                Disadvantages: platform dependency
-                            </p>
-                        </div>
-                    </div>
+                    <h3>PaaS – Platform as a Service</h3>
+                    <p>
+                        Provides a development platform without managing the underlying infrastructure.
+                        Suitable for developers who want flexibility.
+                    </p>
 
-                    <!-- IaaS -->
-                    <div class="content-group">
-                        <button class="content-toggle">
-                            IaaS – Infrastructure as a Service
-                        </button>
-                        <div class="content-details">
-                            <p>
-                                IaaS offers virtual servers and infrastructure with full
-                                control over the environment.
-                            </p>
-                            <p>
-                                Examples:
-                                <a href="https://aws.amazon.com/ec2/" target="_blank">AWS EC2</a>,
-                                <a href="https://azure.microsoft.com" target="_blank">Microsoft Azure </a>
-                                <button id="iaas">Click for more</button>
-                            </p>
-                            <p>
-                                Advantages: maximum flexibility, high scalability<br>
-                                Disadvantages: higher technical complexity
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="pictur">
-
-                    </div>
-
+                    <h3>IaaS – Infrastructure as a Service</h3>
+                    <p>
+                        Full control over servers and infrastructure.
+                        Best for large or technically experienced teams.
+                    </p>
                 </div>
+
             </div>
 
-            <footer>
-                <p>© 2025 Shop System Guide by Jakob Stieger &amp; Timo Quass</p>
+            <footer class="text-center text-light small mt-5">
+                © 2025 Shop System Guide by Jakob Stieger &amp; Timo Quass
             </footer>
-
         </main>
 
     </div>
-
-    <script src="../JavaScript/subpoints.js"></script>
+</div>
 
 </body>
 </html>
