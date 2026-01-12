@@ -115,3 +115,13 @@ footer {
 .old-table td {
     color: #000;
 }
+
+.subnav {
+    position: sticky;
+    top: 20px;
+}
+
+.content-scroll {
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+}
