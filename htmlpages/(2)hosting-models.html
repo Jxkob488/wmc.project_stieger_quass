@@ -5,19 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hosting Models – Shop System Guide</title>
 
-    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Eigenes CSS -->
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body>
+<body class="text-light">
 
 <div class="container-fluid">
     <div class="row">
 
-        <!-- HAUPT-SIDEBAR LINKS -->
+        <!-- Sidebar -->
         <aside class="col-12 col-md-3 col-lg-2 p-4 sidebar">
             <h4 class="mb-4">Shop System<br>Guide</h4>
             <nav class="nav flex-column gap-2">
@@ -34,158 +31,179 @@
             </nav>
         </aside>
 
-        <!-- HAUPTBEREICH -->
-          <main class="col-12 col-md-9 col-lg-10 content">
+        <!-- Main Content -->
+        <main class="col-12 col-md-9 col-lg-10 content">
+            <div class="container py-5">
+                <div class="main-card shadow p-5" style="max-width:1000px;">
 
-              <main class="col-12 col-md-9 col-lg-10 py-4">
-                  <div class="container">
-                      <div class="row">
-                          
-                          <!-- TEXTBEREICH (SCROLLT) -->
-                          <div class="col-12 col-lg-9">
-                              <div class="main-card shadow p-5 content-scroll">
-                                  
-                                  <h1 class="text-center mb-4">Hosting Models</h1>
-                                  
-                                  <section id="overview">
-                                      <p>
-                                          Hosting models describe how and where an online shop is operated.
-                                          They define who manages servers, software updates, security and
-                                          scalability. Choosing the right hosting model is an important
-                                          strategic decision that affects both costs and flexibility.
-                                        </p>
-                                        
-                                <p>
-                                    In e-commerce, three main hosting models are commonly used:
-                                    Software as a Service (SaaS), Platform as a Service (PaaS) and
-                                    Infrastructure as a Service (IaaS).
-                                </p>
-                            </section>
-                            
-                            <section id="saas">
-                                <h3>SaaS – Software as a Service</h3>
-                                
-                                <p>
-                                    SaaS solutions provide a complete shop system that is hosted and
-                                    maintained by the provider. Users access the platform via a web
-                                    browser and pay a recurring subscription fee.
-                                </p>
-                                
-                                <p>
-                                    This model is ideal for small businesses and beginners because it
-                                    requires no technical knowledge and allows fast setup.
-                                </p>
-                                
-                                <ul>
-                                    <li>No server management required</li>
-                                    <li>Fast setup</li>
-                                    <li>Predictable monthly costs</li>
-                                    <li>Limited customization</li>
-                                </ul>
-                            </section>
-                            
-                            <section id="paas">
-                                <h3>PaaS – Platform as a Service</h3>
-                                
-                                <p>
-                                    PaaS provides a platform for developers to build and deploy
-                                    applications without managing physical servers. The provider
-                                    handles infrastructure, while developers focus on functionality.
-                                </p>
-                                
-                                <p>
-                                    This model offers more flexibility than SaaS but still simplifies
-                                    server management.
-                                </p>
-                                
-                                <ul>
-                                    <li>Developer-friendly environment</li>
-                                    <li>Scalable infrastructure</li>
-                                    <li>More control than SaaS</li>
-                                    <li>Platform dependency</li>
-                                </ul>
-                            </section>
-                            
-                            <section id="iaas">
-                                <h3>IaaS – Infrastructure as a Service</h3>
-                                
-                                <p>
-                                    IaaS offers full control over servers, storage and networking.
-                                    Businesses manage the entire software stack themselves.
-                                </p>
-                                
-                                <p>
-                                    This model is suitable for large companies with experienced
-                                    technical teams and specific requirements.
-                                </p>
-                                
-                                <ul>
-                                    <li>Maximum flexibility</li>
-                                    <li>High scalability</li>
-                                    <li>High technical complexity</li>
-                                    <li>Greater responsibility</li>
-                                </ul>
-                            </section>
-                            
-                            <section id="comparison">
-                                <h3>Comparison of Hosting Models</h3>
-                                
-                                <p>
-                                    Each hosting model serves a different purpose. SaaS focuses on
-                                    simplicity, PaaS balances flexibility and convenience, while
-                                    IaaS offers full control at the cost of complexity.
-                                </p>
-                            </section>
-                            
-                            <section id="choosing">
-                                <h3>Choosing the Right Hosting Model</h3>
-                                
-                                <p>
-                                    The best hosting model depends on business size, technical skills
-                                    and long-term goals. It is important to consider future growth and
-                                    maintenance effort before making a decision.
-                                </p>
-                            </section>
-                            
-                        </div>
-                    </div>
-                    
-                    <!-- UNTERKAPITEL-LEISTE RECHTS (STEHT FEST) -->
-                    <nav class="col-12 col-lg-3 mt-4 mt-lg-0 subnav">
-                        <div class="main-card shadow p-4">
-                            <h6 class="mb-3">On this page</h6>
-                            <ul class="nav flex-column small">
-                                <li class="nav-item">
-                                    <a class="nav-link px-0" href="#overview">Overview</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link px-0" href="#saas">SaaS</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link px-0" href="#paas">PaaS</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link px-0" href="#iaas">IaaS</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link px-0" href="#comparison">Comparison</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link px-0" href="#choosing">Choosing the Right Model</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                    
+                    <h1 class="text-center mb-4">Hosting Models</h1>
+
+                    <p>
+                        Hosting models define how an online shop is hosted, operated and maintained
+                        from a technical perspective. They determine where the shop runs, which
+                        resources are available and who is responsible for infrastructure management.
+                    </p>
+
+                    <p>
+                        The hosting model has a direct impact on performance, availability, security,
+                        scalability and long-term operating costs. Even a well-designed shop system
+                        can fail if the hosting environment is poorly chosen.
+                    </p>
+
+                    <p>
+                        In practice, hosting decisions are often underestimated. Many shops start
+                        with the cheapest option and only realize the limitations once traffic grows,
+                        customers complain about loading times or outages occur.
+                    </p>
+
+                    <p>
+                        Understanding the strengths and weaknesses of different hosting models helps
+                        avoid costly migrations and technical debt later on.
+                    </p>
+
+                    <section>
+                        <h2>Shared Hosting</h2>
+                        <p>
+                            Shared hosting is the most basic and cost-effective hosting model. Multiple
+                            websites are hosted on a single server and share all available resources,
+                            including CPU, memory, disk space and network bandwidth.
+                        </p>
+                        <p>
+                            This simplicity makes shared hosting attractive for beginners and small
+                            projects. Setup is usually fast, maintenance is handled by the provider
+                            and no server administration knowledge is required.
+                        </p>
+                        <p>
+                            However, performance and reliability are limited. Traffic spikes on other
+                            websites can negatively affect the shop, and customization options are
+                            typically very restricted.
+                        </p>
+                        <p>
+                            Shared hosting is suitable for small online shops with low traffic, few
+                            products and no complex integrations.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Virtual Private Server (VPS)</h2>
+                        <p>
+                            A Virtual Private Server is a virtualized environment running on a shared
+                            physical server. Each VPS has allocated resources and operates independently
+                            from other virtual machines.
+                        </p>
+                        <p>
+                            This isolation provides more consistent performance compared to shared
+                            hosting. Server configurations, software installations and security
+                            settings can be customized.
+                        </p>
+                        <p>
+                            VPS hosting represents a balance between cost and control. It is commonly
+                            used by growing shops that need better performance without the expense of
+                            dedicated hardware.
+                        </p>
+                        <p>
+                            Basic server administration skills are usually required unless the VPS is
+                            offered as a managed service.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Dedicated Server</h2>
+                        <p>
+                            A dedicated server provides exclusive access to an entire physical machine.
+                            All computing resources are reserved for a single shop system.
+                        </p>
+                        <p>
+                            This model offers maximum performance, stability and security. It allows
+                            full control over hardware configuration, operating system and software
+                            stack.
+                        </p>
+                        <p>
+                            Dedicated servers are often used by large online shops, high-traffic
+                            platforms or businesses with strict security requirements.
+                        </p>
+                        <p>
+                            The disadvantages are higher costs and increased complexity. Maintenance,
+                            updates and monitoring must be handled internally or outsourced.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Cloud Hosting</h2>
+                        <p>
+                            Cloud hosting is based on distributed infrastructure rather than a single
+                            physical server. Resources are provided from a pool of interconnected
+                            machines.
+                        </p>
+                        <p>
+                            One of the main advantages is scalability. Computing power, storage and
+                            bandwidth can be adjusted dynamically depending on current demand.
+                        </p>
+                        <p>
+                            This makes cloud hosting particularly suitable for shops with seasonal
+                            traffic, marketing campaigns or unpredictable growth.
+                        </p>
+                        <p>
+                            Cloud pricing is usually usage-based. While this can be cost-efficient, it
+                            also requires careful monitoring to avoid unexpected expenses.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Managed Hosting</h2>
+                        <p>
+                            Managed hosting focuses on responsibility rather than infrastructure type.
+                            The hosting provider takes care of server maintenance, updates, backups,
+                            security patches and monitoring.
+                        </p>
+                        <p>
+                            This approach reduces technical workload for shop owners and development
+                            teams, allowing them to focus on business and product development.
+                        </p>
+                        <p>
+                            Managed hosting is available for VPS, dedicated and cloud environments and
+                            is typically more expensive than unmanaged alternatives.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Key Factors When Comparing Hosting Models</h2>
+                        <p>
+                            When evaluating hosting models, several factors should be considered:
+                            expected traffic volume, performance requirements, security needs,
+                            budget constraints and internal technical expertise.
+                        </p>
+                        <p>
+                            Migration effort is another important aspect. Choosing a model that allows
+                            future scaling can save time and costs as the shop grows.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Choosing the Right Hosting Model</h2>
+                        <p>
+                            There is no single best hosting model for all online shops. Small projects
+                            benefit from simplicity, while larger businesses require flexibility and
+                            reliability.
+                        </p>
+                        <p>
+                            Many successful shops start with shared or VPS hosting and move to cloud
+                            or dedicated solutions as demand increases.
+                        </p>
+                        <p>
+                            A well-chosen hosting model provides a stable technical foundation and
+                            supports long-term growth without unnecessary complexity.
+                        </p>
+                    </section>
+
                 </div>
-                
-                <footer class="text-center text-light small mt-4">
+
+                <footer class="text-center text-light small mt-5">
                     © 2025 Shop System Guide by Jakob Stieger &amp; Timo Quass
                 </footer>
             </div>
         </main>
-        </main>
-        
+
     </div>
 </div>
 
