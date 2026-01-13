@@ -14,7 +14,6 @@
 <div class="container-fluid">
     <div class="row">
 
-        <!-- Sidebar -->
         <aside class="col-12 col-md-3 col-lg-2 p-4 sidebar">
             <h4 class="mb-4">Shop System<br>Guide</h4>
             <nav class="nav flex-column gap-2">
@@ -23,7 +22,7 @@
                 <a class="nav-link" href="(3)target-audience.html">Target Audience</a>
                 <a class="nav-link" href="(4)cost-structure.html">Cost Structure</a>
                 <a class="nav-link" href="(5)internationalization.html">Internationalization</a>
-                <a class="nav-link active" href="(6)technical-requirements.html">Requirements</a>
+                <a class="nav-link active" href="(6)technical-requirements.html">Technical Requirements</a>
                 <a class="nav-link" href="(7)checkout.html">Checkout Process</a>
                 <a class="nav-link" href="(8)performance-optimization-techniques.html">Performance Optimization</a>
                 <a class="nav-link" href="(9)payment.html">Payment</a>
@@ -31,86 +30,112 @@
             </nav>
         </aside>
 
-        <!-- Main Content -->
         <main class="col-12 col-md-9 col-lg-10 content">
             <div class="container py-5">
                 <div class="main-card shadow p-5" style="max-width:1000px;">
 
-                    <h1 class="text-center mb-4">Technical Requirements</h1>
+                    <h1 class="text-center mb-4">🧰 Technical Requirements</h1>
 
                     <p>
-                        Technical requirements define the fundamental technological foundation of an online shop.
-                        They ensure that the system is stable, secure, scalable and compatible with modern web
-                        standards. Without solid technical requirements, long-term operation and future growth
-                        become difficult or even impossible.
+                        Technical requirements describe the basic technology a shop system needs in order to work
+                        reliably. They are important because an online shop must be available 24/7, protect customer
+                        data and still run fast even when many users visit the website at the same time.
                     </p>
 
-                    <section>
-                        <h2>Server & Infrastructure</h2>
+                    <p>
+                        If the technical foundation is too weak, problems like slow loading times, checkout errors or
+                        security issues can occur. That is why server performance, software compatibility and regular
+                        maintenance are essential parts of every professional shop system.
+                    </p>
+
+                    <section class="mt-4">
+                        <h2>🖥️ Server & Infrastructure</h2>
                         <p>
-                            A shop system requires a reliable server infrastructure that can handle traffic peaks,
-                            especially during promotions or seasonal sales. Depending on the hosting model, this can
-                            be achieved through shared hosting, virtual private servers or cloud-based solutions.
+                            A shop system needs a stable server infrastructure to store product data, customer accounts
+                            and orders. The server must also handle traffic peaks, for example during discounts,
+                            seasonal sales or marketing campaigns.
                         </p>
                         <p>
-                            Important factors include sufficient CPU performance, enough RAM, fast SSD storage and
-                            high network availability. Cloud environments additionally allow automatic scaling when
-                            demand increases.
+                            Important factors are enough CPU power, sufficient RAM, fast SSD storage and a reliable
+                            internet connection. Many shops start with simple hosting and upgrade later to VPS or cloud
+                            solutions when the business grows.
+                        </p>
+                        <p>
+                            Cloud environments can be helpful because they allow scaling, meaning more resources can be
+                            added when demand increases.
                         </p>
                     </section>
 
-                    <section>
-                        <h2>Software & Frameworks</h2>
+                    <section class="mt-4">
+                        <h2>🧑‍💻 Software & Technologies</h2>
                         <p>
-                            The shop system must be compatible with modern server-side technologies such as PHP,
-                            Node.js or Java, depending on the chosen platform. Databases like MySQL, PostgreSQL or
-                            MongoDB are commonly used to store product, customer and order data.
+                            Shop systems usually run with server-side technologies such as PHP or Node.js. A database
+                            is also required to store important information like products, orders and customers.
+                            Common databases are MySQL or PostgreSQL.
                         </p>
                         <p>
-                            On the frontend, HTML5, CSS3 and JavaScript are essential. Frameworks like Bootstrap help
-                            to create responsive layouts that work on all screen sizes and devices.
-                        </p>
-                    </section>
-
-                    <section>
-                        <h2>Security Requirements</h2>
-                        <p>
-                            Security is a critical technical requirement for any e-commerce platform. SSL/TLS
-                            encryption is mandatory to protect customer data during transmission. Additionally,
-                            secure authentication mechanisms and regular software updates are required.
-                        </p>
-                        <p>
-                            Protection against common threats such as SQL injection, cross-site scripting (XSS)
-                            and brute-force attacks must be implemented. Regular backups ensure data recovery
-                            in case of system failures.
+                            On the frontend, modern web standards like HTML5, CSS3 and JavaScript are necessary.
+                            Responsive design is also important so the shop works well on phones, tablets and desktops.
+                            Frameworks like Bootstrap can support this.
                         </p>
                     </section>
 
-                    <section>
-                        <h2>Performance & Scalability</h2>
+                    <section class="mt-4">
+                        <h2>🔒 Security Requirements</h2>
                         <p>
-                            Fast loading times are essential for a good user experience and search engine ranking.
-                            Caching mechanisms, optimized database queries and content delivery networks (CDNs)
-                            help to reduce response times.
+                            Security is one of the most important technical requirements in e-commerce. Shops handle
+                            personal customer data, addresses and sometimes payment information. Because of that, SSL/TLS
+                            encryption (HTTPS) is required to protect data during transmission.
                         </p>
                         <p>
-                            The system should be scalable so that it can grow with the business. Modular
-                            architectures and cloud services make it easier to add new features or increase
-                            capacity without downtime.
+                            Shop systems also need protection against typical attacks such as SQL injection, cross-site
+                            scripting (XSS) and brute-force login attempts. Regular updates and strong passwords are a
+                            basic part of security.
+                        </p>
+                        <p>
+                            Backups are another important requirement. If something breaks or data is deleted, backups
+                            allow the shop to restore important information.
                         </p>
                     </section>
 
-                    <section>
-                        <h2>Compatibility & Maintenance</h2>
+                    <section class="mt-4">
+                        <h2>⚡ Performance & Scalability</h2>
                         <p>
-                            The shop system must be compatible with different browsers and devices. Regular testing
-                            ensures consistent behavior across platforms. Maintenance tasks include updates,
-                            monitoring and performance optimization.
+                            Fast loading times improve the user experience and can increase sales because customers are
+                            less likely to leave the website. Performance is also important for SEO, because search
+                            engines prefer fast websites.
                         </p>
                         <p>
-                            A well-documented system simplifies maintenance and allows developers to extend or adapt
-                            the shop efficiently in the future.
+                            Common performance improvements include caching, optimized images and efficient database
+                            queries. Content Delivery Networks (CDNs) can also help by delivering content faster to
+                            international users.
                         </p>
+                        <p>
+                            Scalability means the shop can grow with the business. A scalable system can handle more
+                            products, more users and more orders without needing a complete rebuild.
+                        </p>
+                    </section>
+
+                    <section class="mt-4">
+                        <h2>🌐 Compatibility & Maintenance</h2>
+                        <p>
+                            A shop should work in different browsers such as Chrome, Firefox and Edge. It should also
+                            support mobile devices, because many customers shop on their smartphones.
+                        </p>
+                        <p>
+                            Maintenance includes updates, monitoring and bug fixing. A well-documented system makes it
+                            easier to maintain the shop and add new features in the future.
+                        </p>
+                    </section>
+
+                    <section class="mt-4">
+                        <h2>🔗 Example Resources</h2>
+                        <ul>
+                            <li>🔒 <a href="https://letsencrypt.org/" target="_blank">Let’s Encrypt – free SSL certificates (HTTPS)</a></li>
+                            <li>🧱 <a href="https://getbootstrap.com/" target="_blank">Bootstrap – responsive web design framework</a></li>
+                            <li>☁️ <a href="https://aws.amazon.com/" target="_blank">AWS – example cloud infrastructure</a></li>
+                            <li>🛡️ <a href="https://owasp.org/" target="_blank">OWASP – web security best practices</a></li>
+                        </ul>
                     </section>
 
                 </div>
