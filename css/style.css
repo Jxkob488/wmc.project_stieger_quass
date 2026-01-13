@@ -25,12 +25,10 @@ body {
     border-radius: 28px;
 }
 
-/* Text im Hauptinhalt schwarz */
 main {
     color: #000;
 }
 
-/* Sicherheit: auch Überschriften explizit schwarz */
 main h1,
 main h2,
 main h3,
@@ -41,21 +39,16 @@ main table {
     color: #000;
 }
 
-/* ===== Typografie wie alte Website ===== */
-
-/* Grundschrift */
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     line-height: 1.5;
 }
 
-/* Hauptinhalt: schwarz */
 main {
     color: #000;
 }
 
-/* Überschriften wie vorher */
 main h1 {
     font-size: 32px;
     font-weight: 600;
@@ -73,7 +66,6 @@ main h3 {
     margin-top: 24px;
 }
 
-/* Fließtext */
 main p,
 main li,
 main td,
@@ -83,7 +75,6 @@ main th {
     color: #000;
 }
 
-/* Tabelle wie vorher (ruhiger) */
 table {
     color: #000;
 }
@@ -92,7 +83,6 @@ footer {
     text-align: center;
 }
 
-/* ===== Tabelle wie alte Website ===== */
 .old-table {
     width: 100%;
     border-collapse: collapse;
