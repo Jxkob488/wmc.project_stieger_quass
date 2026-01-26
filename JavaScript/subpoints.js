@@ -70,3 +70,4 @@ if (iaasBtn) {
     parent.appendChild(div);
   });
 }
+
