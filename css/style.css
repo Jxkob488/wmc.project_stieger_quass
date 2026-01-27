@@ -1,5 +1,8 @@
 body {
     background: linear-gradient(125deg, #2f3d4d 0%, #4c5c6e 100%);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .sidebar {
@@ -36,16 +39,6 @@ main h4,
 main p,
 main li,
 main table {
-    color: #000;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-main {
     color: #000;
 }
 
@@ -114,4 +107,25 @@ footer {
 .content-scroll {
     max-height: calc(100vh - 120px);
     overflow-y: auto;
+}
+
+.cost-image-wrapper {
+    margin: 24px 0;
+    text-align: center;
+}
+
+.cost-image {
+    max-width: 100%;
+    max-height: 320px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+    .cost-image {
+        max-height: 220px;
+    }
 }
