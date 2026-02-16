@@ -1,5 +1,17 @@
-const currentStep = 3;
-const totalSteps = 7;
+const progressContainer = document.querySelector(".progress");
 
-const progress = (currentStep / totalSteps) * 100;
-document.getElementById("guideProgress").style.width = progress + "%";
+if (progressContainer) {
+    const bar = document.getElementById("guideProgress");
+    const currentStep = Number(progressContainer.dataset.step);
+    const totalSteps = 7;
+
+    const targetWidth = (currentStep / totalSteps) * 100;
+
+    bar.style.transition = "none";
+    bar.style.width = targetWidth + "%";
+
+    requestAnimationFrame(() => {
+        bar.style.transition = "width 0.4s ease";
+        bar.style.width = targetWidth + "%";
+    });
+}
