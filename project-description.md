@@ -1,28 +1,45 @@
 # Project Description: Shop System Guide
 
-## Requirements for Shop Systems
-When we started this project, our main goal was to break down the massive wall of technical requirements that usually scares people away from e-commerce. We realized that a good shop system isn't just about "working"—it has to meet specific needs like high security, fast loading speeds, and a user-friendly interface. We focused on the balance between "ease of use" for beginners and "customizability" for pros. Our project requirements were clear: create a platform that explains server stability, data safety, and scalability without making it sound like a boring manual.
-
 ## Project Idea
-The idea for the "Shop System Guide" came from our own frustration with confusing tutorials. We wanted to build something that feels like a personal mentor. Instead of throwing a 50-page PDF at the user, we developed a 7-step interactive journey. The core concept is to guide the user from their very first "I want to sell something" thought all the way to choosing the right technical foundation. It’s all about making big decisions feel small and manageable by providing the right information at exactly the right time.
+
+The Shop System Guide is designed to explain the process of choosing a suitable shop system in a clear and structured way. Many existing resources are difficult to understand and focus too much on technical details. This project follows a different approach by breaking the decision process into small, logical steps.
+
+The guide is built as a 7-step interactive process. It starts with a general intention to sell products online and ends with selecting an appropriate technical setup. Each step provides only the information needed at that moment to keep the process understandable and manageable.
 
 ## Target Audience
-We specifically designed this website for people like us—students, hobbyists, and first-time entrepreneurs who have a great idea but zero clue about the technical background. To keep it realistic, we divided our audience into three clear profiles:
-* **Individuals with no experience:** People who want a "ready-to-go" solution so they can focus on their products immediately.
-* **Experienced individuals:** Users who know their way around a bit of code and want the freedom to customize and tweak their setup.
-* **Large companies:** Professional setups that need heavy-duty systems to handle thousands of customers and complex logistics.
+
+The website is aimed at users with different levels of experience who are interested in setting up an online shop. The target audience is divided into three groups:
+
+- **Users with no technical experience**  
+  Individuals looking for ready-made solutions that allow quick setup and minimal configuration.
+
+- **Users with technical experience**  
+  Individuals who have basic technical knowledge and want more flexibility and customization options.
+
+- **Large companies**  
+  Organizations that require scalable systems capable of handling high traffic, advanced features, and complex operations.
 
 ## Structure of the Website
-To keep the user experience clean, we split the website into two main parts:
-1. **The Step-by-Step Guide:** This is the heart of the project. It’s a linear path using a "main-card" layout. Users move through seven logical steps, and a dynamic progress bar shows exactly how far they’ve come. It’s designed to be fast and interactive.
-2. **Basic Information:** We didn't want to clutter the guide with too much text, so we built a separate "Deep Dive" section. This is where we explain the heavy stuff—like the differences between Shared, VPS, and Managed hosting, or how cost structures actually work. Users can jump from the guide into the encyclopedia whenever they want to learn more.
+
+The website is divided into two main sections to ensure clarity and ease of use:
+
+### Step-by-Step Guide
+
+This section represents the core of the project. Users are guided through seven consecutive steps using a main-card layout. A progress indicator shows the current position in the process. The guide is designed to be linear, fast, and easy to navigate.
+
+### Basic Information (Deep Dive)
+
+Detailed background information is provided in a separate section. This includes explanations of hosting types, cost models, and other technical topics. Users can access this section at any time without interrupting the main guide.
 
 ## Design and Layout
-For the design, we went with a modern, "dark-mode-inspired" professional look using Bootstrap 5. We wanted it to feel like a high-end tech tool, not a dusty school project.
-* **Navigation:** We used a custom sidebar for the information pages so users can switch between topics like "Payment" or "Internationalization" in a single click.
-* **Simplicity:** We avoided "strong" tags and heavy formatting to keep the text easy on the eyes. Instead, we used clean spacing and intuitive icons (emojis) to highlight different sections.
-* **Responsive Flow:** Since most people check things on their phones, we made sure the layout stacks perfectly. The buttons are always in the same place (consistent height) so the navigation feels smooth and professional.
 
----
-**Created by Jakob Stieger & Timo Quass**
-© 2026 Shop System Guide
+The design follows a modern, dark-mode-inspired style implemented with Bootstrap 5. The focus is on readability, consistency, and usability.
+
+- **Navigation**  
+  A sidebar navigation is used for information pages to allow quick switching between topics.
+
+- **Clarity**  
+  Minimal formatting is used to keep the content easy to read. Icons are used to support visual orientation.
+
+- **Responsive Design**  
+  The layout adapts to different screen sizes. Elements such as buttons remain consistent across devices to ensure a smooth user experience.
