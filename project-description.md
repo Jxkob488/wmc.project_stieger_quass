@@ -43,3 +43,39 @@ The design follows a modern, dark-mode-inspired style implemented with Bootstrap
 
 - **Responsive Design**  
   The layout adapts to different screen sizes. Elements such as buttons remain consistent across devices to ensure a smooth user experience.
+
+## Web Application
+
+## Overview
+
+Shop System Guide is a web application that helps users find the most suitable e-commerce platform based on their individual needs and priorities.
+
+Instead of showing static comparisons, the application evaluates user preferences through a structured questionnaire and calculates a personalized recommendation.
+
+---
+
+## How It Works
+
+Users answer 10 key questions about their project, including:
+
+- Monthly budget
+- Number of products
+- Technical experience
+- Hosting preference (self-managed or all-in-one solution)
+- Importance of ease of setup
+- Growth and internationalization plans
+- Design flexibility
+- Need for advanced features (e.g. subscriptions, B2B, dropshipping)
+- Level of control over the source code
+- Importance of community and plugin ecosystem
+
+For each category, users can also define how important that factor is to them.  
+This weighting system ensures that the final recommendation reflects personal priorities rather than a fixed ranking.
+
+---
+
+## Recommendation Logic
+
+Each shop system is evaluated across multiple criteria such as cost, scalability, flexibility, and usability.
+
+The application calculates a weighted score based on:
