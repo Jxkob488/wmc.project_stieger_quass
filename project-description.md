@@ -1,18 +1,81 @@
-# Requirements for shop systems
+# Project Description: Shop System Guide
 
 ## Project Idea
-In our website we want to compare different shop systems. We want to differentiate things like Cloud-based and self-hosted, Open-Source and Closed-Source, managed security and self managed, target audience, Support & Community
+
+The Shop System Guide is designed to explain the process of choosing a suitable shop system in a clear and structured way. Many existing resources are difficult to understand and focus too much on technical details. This project follows a different approach by breaking the decision process into small, logical steps.
+
+The guide is built as a 7-step interactive process. It starts with a general intention to sell products online and ends with selecting an appropriate technical setup. Each step provides only the information needed at that moment to keep the process understandable and manageable.
 
 ## Target Audience
-Our website is for peolpe who want to select or operare a shop system
 
-## Structure of the website
+The website is aimed at users with different levels of experience who are interested in setting up an online shop. The target audience is divided into three groups:
+
+- **Users with no technical experience**  
+  Individuals looking for ready-made solutions that allow quick setup and minimal configuration.
+
+- **Users with technical experience**  
+  Individuals who have basic technical knowledge and want more flexibility and customization options.
+
+- **Large companies**  
+  Organizations that require scalable systems capable of handling high traffic, advanced features, and complex operations.
+
+## Structure of the Website
+
+The website is divided into two main sections to ensure clarity and ease of use:
+
+### Step-by-Step Guide
+
+This section represents the core of the project. Users are guided through seven consecutive steps using a main-card layout. A progress indicator shows the current position in the process. The guide is designed to be linear, fast, and easy to navigate.
+
+### Basic Information (Deep Dive)
+
+Detailed background information is provided in a separate section. This includes explanations of hosting types, cost models, and other technical topics. Users can access this section at any time without interrupting the main guide.
 
 ## Design and Layout
 
+The design follows a modern, dark-mode-inspired style implemented with Bootstrap 5. The focus is on readability, consistency, and usability.
 
-## Milestones
-Week 1: Researching the facts for the compare and design the Introduction page.  
-Week 2: Design the HTML Pages   
-Week 3: Start styling the pages.  
-Week 4: Finish the styling and prepare for the final presentation.  
+- **Navigation**  
+  A sidebar navigation is used for information pages to allow quick switching between topics.
+
+- **Clarity**  
+  Minimal formatting is used to keep the content easy to read. Icons are used to support visual orientation.
+
+- **Responsive Design**  
+  The layout adapts to different screen sizes. Elements such as buttons remain consistent across devices to ensure a smooth user experience.
+
+## Web Application
+
+## Overview
+
+Shop System Guide is a web application that helps users find the most suitable e-commerce platform based on their individual needs and priorities.
+
+Instead of showing static comparisons, the application evaluates user preferences through a structured questionnaire and calculates a personalized recommendation.
+
+---
+
+## How It Works
+
+Users answer 10 key questions about their project, including:
+
+- Monthly budget
+- Number of products
+- Technical experience
+- Hosting preference (self-managed or all-in-one solution)
+- Importance of ease of setup
+- Growth and internationalization plans
+- Design flexibility
+- Need for advanced features (e.g. subscriptions, B2B, dropshipping)
+- Level of control over the source code
+- Importance of community and plugin ecosystem
+
+For each category, users can also define how important that factor is to them.  
+This weighting system ensures that the final recommendation reflects personal priorities rather than a fixed ranking.
+
+---
+
+## Recommendation Logic
+
+Each shop system is evaluated across multiple criteria such as cost, scalability, flexibility, and usability.
+
+The application calculates a weighted score based on:
