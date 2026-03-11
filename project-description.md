@@ -46,36 +46,16 @@ The design follows a modern, dark-mode-inspired style implemented with Bootstrap
 
 ## Web Application
 
-## Overview
+## Project Description
 
-Shop System Guide is a web application that helps users find the most suitable e-commerce platform based on their individual needs and priorities.
+This project is a custom-built online shop developed without using existing e-commerce platforms such as Shopify or WooCommerce. The goal of the project is to understand how an online shop works internally by implementing the core functionality from scratch.
 
-Instead of showing static comparisons, the application evaluates user preferences through a structured questionnaire and calculates a personalized recommendation.
+The application uses a REST API architecture. A backend server handles product data, users, and orders, while the frontend communicates with the API to display products and process customer actions.
 
----
+Main features include:
 
-## How It Works
-
-Users answer 10 key questions about their project, including:
-
-- Monthly budget
-- Number of products
-- Technical experience
-- Hosting preference (self-managed or all-in-one solution)
-- Importance of ease of setup
-- Growth and internationalization plans
-- Design flexibility
-- Need for advanced features (e.g. subscriptions, B2B, dropshipping)
-- Level of control over the source code
-- Importance of community and plugin ecosystem
-
-For each category, users can also define how important that factor is to them.  
-This weighting system ensures that the final recommendation reflects personal priorities rather than a fixed ranking.
-
----
-
-## Recommendation Logic
-
-Each shop system is evaluated across multiple criteria such as cost, scalability, flexibility, and usability.
-
-The application calculates a weighted score based on:
+- Product catalog with product details
+- Shopping cart functionality
+- Order creation and storage
+- Basic user authentication
+- Admin functionality for managing products
