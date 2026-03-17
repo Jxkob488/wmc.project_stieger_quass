@@ -1,4 +1,4 @@
-const products = [
+export const products = [
   {
     id: 1,
     name: "Basic T-Shirt",
@@ -54,5 +54,3 @@ const products = [
     inStock: false
   }
 ];
-
-module.exports = products;
