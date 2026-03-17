@@ -48,14 +48,19 @@ The design follows a modern, dark-mode-inspired style implemented with Bootstrap
 
 ## Project Description
 
-This project is a custom-built online shop developed without using existing e-commerce platforms such as Shopify or WooCommerce. The goal of the project is to understand how an online shop works internally by implementing the core functionality from scratch.
+# Online Shop Web Application
 
-The application uses a REST API architecture. A backend server handles product data, users, and orders, while the frontend communicates with the API to display products and process customer actions.
+## Project Description
 
-Main features include:
+In this project, we are building our own online shop as a web application.
+The application is split into a frontend and a backend, which communicate through a REST API. Users can browse products, add them to a shopping cart, create an account, log in, and place orders.
 
-- Product catalog with product details
-- Shopping cart functionality
-- Order creation and storage
-- Basic user authentication
-- Admin functionality for managing products
+On the server side, the backend handles all important processes like managing users, products, and orders, as well as communicating with the database. The database stores all necessary information so the shop can function properly.
+
+## Features
+
+- Browse products and view details  
+- Add and remove items from the cart  
+- User registration and login  
+- Place and manage orders  
+- Communication via REST API  

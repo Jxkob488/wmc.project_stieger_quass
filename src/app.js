@@ -1,18 +1,17 @@
-// Simple Express app serving the public directory
-const express = require('express');
-const path = require('path');
+const express = require("express");
+const path = require("path");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
-// Serve static assets from public
-app.use(express.static(path.join(__dirname, '..', 'public')));
+// Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// Basic API placeholder
-app.get('/api/hello', (req, res) => {
-  res.json({message: 'Hello from backend'});
-});
+// Static Files
+app.use(express.static(path.join(__dirname, "../public")));
+app.use(express.static(path.join(__dirname, "../pages")));
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+// Server starten
+app.listen(3000, () => {
+  console.log("Server läuft auf http://localhost:3000");
 });
