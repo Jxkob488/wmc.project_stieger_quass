@@ -9,7 +9,6 @@ const db = new sqlite3.Database(process.env.DB_FILE, (err) => {
   }
 });
 
-// Erstelle Tabellen und fülle mit Daten
 const fs = require('fs');
 const path = require('path');
 const sqlFile = path.join(__dirname, '../../database/shop.sql');

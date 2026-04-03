@@ -1,25 +1,23 @@
 import { products, loadProducts } from './products.js';
 
-const button = document.getElementById('test');
-button.addEventListener('click', async () => {
+document.addEventListener('DOMContentLoaded', async () => {
     await loadProducts();
-    console.log(products);
     displayProducts();
 });
 
 function displayProducts() {
-    const productList = document.createElement('div');
-    productList.id = 'product-list';
+    const productList = document.getElementById('product-list');
+    productList.innerHTML = ''; // Clear previous
     products.forEach(product => {
         const productDiv = document.createElement('div');
+        productDiv.className = 'product-card';
         productDiv.innerHTML = `
+            <img src="${product.image}" alt="${product.name}" class="product-image">
             <h3>${product.name}</h3>
-            <p>Preis: €${product.price}</p>
-            <p>Kategorie: ${product.category}</p>
-            <p>${product.description}</p>
-            <img src="${product.image}" alt="${product.name}" style="width: 100px;">
+            <p class="price">€${product.price}</p>
+            <p class="category">${product.category}</p>
+            <p class="description">${product.description}</p>
         `;
         productList.appendChild(productDiv);
     });
-    document.body.appendChild(productList);
 }

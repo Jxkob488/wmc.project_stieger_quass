@@ -15,3 +15,4 @@ INSERT INTO products (name, price, category, image, description, inStock) VALUES
 ('Cap', 14.99, 'accessories', '/images/cap.png', 'Coole Cap', 1),
 ('Backpack', 39.99, 'bags', '/images/backpack.png', 'Praktischer Rucksack', 1),
 ('Watch', 99.99, 'accessories', '/images/watch.png', 'Elegante Uhr', 1);
+('Hallo', 19.99, 'test', '/images/test.png', 'dasIstEineTest', 1);
