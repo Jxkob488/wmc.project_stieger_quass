@@ -46,6 +46,13 @@ function initializeDatabase() {
           }
         });
       } else {
+        db.run("UPDATE products SET image = '/images/watch.png' WHERE name = 'Watch'", (err) => {
+          if (err) {
+            console.error('Error updating Watch image path:', err.message);
+          } else {
+            console.log('Watch image path updated in existing database');
+          }
+        });
         console.log('Database already initialized, SQL execution skipped');
       }
     });
