@@ -15,7 +15,7 @@ app.use('/api', productRoutes);
 app.use(express.static(path.join(__dirname, "../public")));
 app.use(express.static(path.join(__dirname, "../pages")));
 
-// Server starten
+// Start server
 app.listen(3000, () => {
-  console.log("Server läuft auf http://localhost:3000");
+  console.log("Server running on http://localhost:3000");
 });

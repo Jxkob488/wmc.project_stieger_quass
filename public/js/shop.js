@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 function displayProducts() {
     const productList = document.getElementById('product-list');
-    productList.innerHTML = ''; // Clear previous
+    productList.innerHTML = ''; 
 
     products.forEach(product => {
         const productDiv = document.createElement('div');
@@ -21,7 +21,7 @@ function displayProducts() {
             <p class="price">€${product.price}</p>
             <p class="category">${product.category}</p>
             <p class="description">${product.description}</p>
-            <button class="add-to-cart" data-id="${product.id}">In den Warenkorb</button>
+            <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
         `;
 
         const button = productDiv.querySelector('.add-to-cart');
@@ -67,18 +67,18 @@ function displayCart() {
     const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
     cartSection.innerHTML = `
-        <h2>Warenkorb</h2>
-        ${cart.length === 0 ? '<p>Der Warenkorb ist leer.</p>' : ''}
+        <h2>Shopping Cart</h2>
+        ${cart.length === 0 ? '<p>Your cart is empty.</p>' : ''}
         <ul class="cart-items">
             ${cart.map(item => `
                 <li>
                     ${item.name} x ${item.quantity} - €${(item.price * item.quantity).toFixed(2)}
-                    <button class="cart-remove" data-id="${item.id}">Entfernen</button>
+                    <button class="cart-remove" data-id="${item.id}">Remove</button>
                 </li>
             `).join('')}
         </ul>
-        <p class="cart-total">Gesamt: €${total.toFixed(2)}</p>
-        ${cart.length > 0 ? '<button id="clear-cart">Warenkorb leeren</button>' : ''}
+        <p class="cart-total">Total: €${total.toFixed(2)}</p>
+        ${cart.length > 0 ? '<button id="clear-cart">Clear Cart</button>' : ''}
     `;
 
     cartSection.querySelectorAll('.cart-remove').forEach(button => {

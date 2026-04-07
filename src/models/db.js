@@ -3,9 +3,9 @@ require('dotenv').config();
 
 const db = new sqlite3.Database(process.env.DB_FILE, (err) => {
   if (err) {
-    console.error('Fehler bei der Datenbankverbindung:', err.message);
+    console.error('Database connection error:', err.message);
   } else {
-    console.log('Verbunden mit SQLite Datenbank');
+    console.log('Connected to SQLite database');
   }
 });
 
@@ -17,16 +17,16 @@ const sql = fs.readFileSync(sqlFile, 'utf8');
 function initializeDatabase() {
   db.get("SELECT name FROM sqlite_master WHERE type='table' AND name='products'", (err, row) => {
     if (err) {
-      console.error('Fehler beim Überprüfen der Datenbank:', err.message);
+      console.error('Error checking database:', err.message);
       return;
     }
 
     if (!row) {
       db.exec(sql, (err) => {
         if (err) {
-          console.error('Fehler beim Ausführen der SQL:', err.message);
+          console.error('Error executing SQL:', err.message);
         } else {
-          console.log('Datenbank initialisiert');
+          console.log('Database initialized');
         }
       });
       return;
@@ -34,19 +34,19 @@ function initializeDatabase() {
 
     db.get('SELECT COUNT(*) AS count FROM products', (err, result) => {
       if (err) {
-        console.error('Fehler beim Überprüfen der Produktanzahl:', err.message);
+        console.error('Error checking product count:', err.message);
         return;
       }
       if (result.count === 0) {
         db.exec(sql, (err) => {
           if (err) {
-            console.error('Fehler beim Ausführen der SQL:', err.message);
+            console.error('Error executing SQL:', err.message);
           } else {
-            console.log('Datenbank initialisiert');
+            console.log('Database initialized');
           }
         });
       } else {
-        console.log('Datenbank bereits initialisiert, SQL-Ausführung übersprungen');
+        console.log('Database already initialized, SQL execution skipped');
       }
     });
   });
