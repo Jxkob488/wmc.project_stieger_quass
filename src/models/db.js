@@ -1,11 +1,12 @@
 const sqlite3 = require('sqlite3').verbose();
 require('dotenv').config();
 
-const db = new sqlite3.Database(process.env.DB_FILE, (err) => {
+const dbFile = process.env.DB_FILE || require('path').join(__dirname, '../../database/shop.db');
+const db = new sqlite3.Database(dbFile, (err) => {
   if (err) {
     console.error('Database connection error:', err.message);
   } else {
-    console.log('Connected to SQLite database');
+    console.log('Connected to SQLite database at', dbFile);
   }
 });
 
@@ -46,14 +47,38 @@ function initializeDatabase() {
           }
         });
       } else {
-        db.run("UPDATE products SET image = '/images/watch.jpg' WHERE name = 'Watch'", (err) => {
-          if (err) {
-            console.error('Error updating Watch image path:', err.message);
-          } else {
-            console.log('Watch image path updated in existing database');
-          }
+        db.serialize(() => {
+          // Synchronize all product descriptions from SQL file
+          const updates = [
+            { name: 'Basic T-Shirt', description: 'A comfortable basic t-shirt' },
+            { name: 'Hoodie', description: 'Warm hoodie for cold days' },
+            { name: 'Sneaker', description: 'Stylish sneakers' },
+            { name: 'Cap', description: 'Cool cap' },
+            { name: 'Backpack', description: 'Practical backpack' },
+            { name: 'Watch', description: 'Elegant watch' }
+          ];
+
+          updates.forEach(product => {
+            db.run(
+              'UPDATE products SET description = ? WHERE name = ?',
+              [product.description, product.name],
+              (err) => {
+                if (err) {
+                  console.error(`Error updating ${product.name} description:`, err.message);
+                } else {
+                  console.log(`✓ ${product.name} description synchronized`);
+                }
+              }
+            );
+          });
+
+          db.run("UPDATE products SET image = '/images/watch.jpg' WHERE name = 'Watch'", (err) => {
+            if (err) {
+              console.error('Error updating Watch image path:', err.message);
+            }
+          });
         });
-        console.log('Database already initialized, SQL execution skipped');
+        console.log('Database synchronized with SQL definitions');
       }
     });
   });

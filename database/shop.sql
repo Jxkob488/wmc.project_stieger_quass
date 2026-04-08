@@ -9,12 +9,12 @@ CREATE TABLE IF NOT EXISTS products (
 );
 
 INSERT INTO products (name, price, category, image, description, inStock) VALUES
-('Basic T-Shirt', 19.99, 'clothing', '/images/tshirt.png', 'Ein bequemes Basic T-Shirt', 1),
-('Hoodie', 49.99, 'clothing', '/images/hoodie.png', 'Warmer Hoodie für kalte Tage', 1),
-('Sneaker', 79.99, 'shoes', '/images/sneaker.png', 'Stylische Sneaker', 1),
-('Cap', 14.99, 'accessories', '/images/cap.png', 'Coole Cap', 1),
-('Backpack', 39.99, 'bags', '/images/backpack.png', 'Praktischer Rucksack', 1),
-('Watch', 99.99, 'accessories', '/images/watch.jpg', 'Elegante Uhr', 1);
+('Basic T-Shirt', 19.99, 'clothing', '/images/tshirt.png', 'A comfortable basic t-shirt', 1),
+('Hoodie', 49.99, 'clothing', '/images/hoodie.png', 'Warm hoodie for cold days', 1),
+('Sneaker', 79.99, 'shoes', '/images/sneaker.png', 'Stylish sneakers', 1),
+('Cap', 14.99, 'accessories', '/images/cap.png', 'Cool cap', 1),
+('Backpack', 39.99, 'bags', '/images/backpack.png', 'Practical backpack', 1),
+('Watch', 99.99, 'accessories', '/images/watch.jpg', 'Elegant watch', 1);
 
 
 CREATE TABLE IF NOT EXISTS customers (
