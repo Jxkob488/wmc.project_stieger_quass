@@ -46,7 +46,7 @@ function initializeDatabase() {
           }
         });
       } else {
-        db.run("UPDATE products SET image = '/images/watch.png' WHERE name = 'Watch'", (err) => {
+        db.run("UPDATE products SET image = '/images/watch.jpg' WHERE name = 'Watch'", (err) => {
           if (err) {
             console.error('Error updating Watch image path:', err.message);
           } else {
