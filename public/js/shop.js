@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     await loadProducts();
     displayCart();
     displayProducts();
+    setupCheckoutForm();
 });
 
 function displayProducts() {
@@ -78,6 +79,7 @@ function displayCart() {
             `).join('')}
         </ul>
         <p class="cart-total">Total: €${total.toFixed(2)}</p>
+        ${cart.length > 0 ? '<button id="checkout-btn">Checkout</button>' : ''}
         ${cart.length > 0 ? '<button id="clear-cart">Clear Cart</button>' : ''}
     `;
 
@@ -92,4 +94,119 @@ function displayCart() {
     if (clearButton) {
         clearButton.addEventListener('click', clearCart);
     }
+
+    const checkoutButton = document.getElementById('checkout-btn');
+    if (checkoutButton) {
+        checkoutButton.addEventListener('click', showCheckoutForm);
+    }
+}
+
+function setupCheckoutForm() {
+    const checkoutForm = document.getElementById('checkout-form');
+    const customerForm = document.getElementById('customer-form');
+    const cancelButton = document.getElementById('cancel-order');
+
+    // Form submission
+    customerForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        await submitCustomerData();
+    });
+
+    // Cancel button
+    cancelButton.addEventListener('click', hideCheckoutForm);
+}
+
+function showCheckoutForm() {
+    const checkoutForm = document.getElementById('checkout-form');
+    checkoutForm.classList.add('show');
+    checkoutForm.scrollIntoView({ behavior: 'smooth' });
+}
+
+function hideCheckoutForm() {
+    const checkoutForm = document.getElementById('checkout-form');
+    checkoutForm.classList.remove('show');
+    document.getElementById('customer-form').reset();
+    clearErrorMessages();
+}
+
+function clearErrorMessages() {
+    document.getElementById('name-error').classList.remove('show');
+    document.getElementById('email-error').classList.remove('show');
+}
+
+async function submitCustomerData() {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const address = document.getElementById('address').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+
+    // Clear previous errors
+    clearErrorMessages();
+
+    // Validation
+    let hasError = false;
+
+    if (!name) {
+        document.getElementById('name-error').textContent = 'Name is required';
+        document.getElementById('name-error').classList.add('show');
+        hasError = true;
+    }
+
+    if (!email) {
+        document.getElementById('email-error').textContent = 'Email is required';
+        document.getElementById('email-error').classList.add('show');
+        hasError = true;
+    } else if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+        document.getElementById('email-error').textContent = 'Invalid email address';
+        document.getElementById('email-error').classList.add('show');
+        hasError = true;
+    }
+
+    if (hasError) return;
+
+    try {
+        const response = await fetch('/api/customers', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name,
+                email,
+                address,
+                phone
+            })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            // Success
+            hideCheckoutForm();
+            showSuccessMessage();
+            clearCart();
+            document.getElementById('customer-form').reset();
+        } else {
+            // Error from server
+            if (data.error === 'Diese E-Mail existiert bereits') {
+                document.getElementById('email-error').textContent = 'This email already exists';
+                document.getElementById('email-error').classList.add('show');
+            } else {
+                alert('Error: ' + (data.error || 'Unknown error'));
+            }
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Error submitting order: ' + error.message);
+    }
+}
+
+function showSuccessMessage() {
+    const successMessage = document.getElementById('success-message');
+    successMessage.classList.add('show');
+
+    // Hide message after 5 seconds
+    setTimeout(() => {
+        successMessage.classList.remove('show');
+    }, 5000);
 }

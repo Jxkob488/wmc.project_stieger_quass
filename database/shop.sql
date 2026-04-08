@@ -15,3 +15,13 @@ INSERT INTO products (name, price, category, image, description, inStock) VALUES
 ('Cap', 14.99, 'accessories', '/images/cap.png', 'Coole Cap', 1),
 ('Backpack', 39.99, 'bags', '/images/backpack.png', 'Praktischer Rucksack', 1),
 ('Watch', 99.99, 'accessories', '/images/watch.jpg', 'Elegante Uhr', 1);
+
+
+CREATE TABLE IF NOT EXISTS customers (
+  id INT AUTOINCREMENT PRIMARY KEY,
+  name TEXT NOT NULL,
+  email TEXT NOT NULL UNIQUE,
+  address TEXT,
+  phone TEXT,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
