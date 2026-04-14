@@ -13,6 +13,11 @@ const customerRoutes = require('./routes/customers');
 app.use('/api', productRoutes);
 app.use('/api', customerRoutes);
 
+// Root route
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/pages/shop.html"));
+});
+
 // Static Files
 app.use(express.static(path.join(__dirname, "../public")));
 app.use(express.static(path.join(__dirname, "../pages")));
