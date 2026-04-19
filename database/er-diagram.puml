@@ -1,0 +1,45 @@
+@startuml ER-Diagram
+!define Table(name,desc) class name as "desc" << (T,#FFAAAA) >>
+!define primary_key(x) <b>x</b>
+!define foreign_key(x) <i>x</i>
+!define column(x) <u>x</u>
+
+Table(products, "Products") {
+  primary_key(id) : INTEGER
+  column(name) : TEXT
+  column(price) : REAL
+  column(category) : TEXT
+  column(image) : TEXT
+  column(description) : TEXT
+  column(inStock) : INTEGER
+}
+
+Table(customers, "Customers") {
+  primary_key(id) : INTEGER
+  column(name) : TEXT
+  column(email) : TEXT
+  column(address) : TEXT
+  column(phone) : TEXT
+  column(created_at) : DATETIME
+}
+
+Table(orders, "Orders") {
+  primary_key(id) : INTEGER
+  foreign_key(customer_id) : INTEGER
+  column(order_date) : DATETIME
+  column(total) : REAL
+  column(status) : TEXT
+}
+
+Table(order_items, "Order Items") {
+  primary_key(id) : INTEGER
+  foreign_key(order_id) : INTEGER
+  foreign_key(product_id) : INTEGER
+  column(quantity) : INTEGER
+  column(price) : REAL
+}
+
+customers ||--o{ orders : "places"
+orders ||--o{ order_items : "contains"
+products ||--o{ order_items : "included in"
+@enduml

@@ -2,14 +2,12 @@
 
 ## Backend
 
-- The backend runs with **Node.js**. That is JavaScript, but not in the browser—it runs on the computer/server.
-- We use **Express** as the web server. This means when the browser requests a page or data, Express answers that request.
-- The server starts in `src/app.js`:
-  - `app.use(express.json())` lets the server read JSON data.
-  - `app.use(express.urlencoded({ extended: true }))` lets the server read form data.
-  - `app.get('/', ...)` says: when someone opens `http://localhost:3000`, send them the `shop.html` file.
-  - `app.use(express.static(...))` makes files from the `public` folder available to the browser.
-- The API endpoints are under `/api`. For example, product and customer data come from `src/routes/products.js` and `src/routes/customers.js`.
-- `npm start` starts the server. Then the site is available at `http://localhost:3000`.
+The backend is the server-side part of the application that handles logic, data processing, and communication with the database. It runs on the server and is not directly visible to the user.
+
+- **Node.js**: This is a JavaScript runtime environment that allows JavaScript to run outside the browser. Node.js is used to run the server and write server-side scripts.
+
+- **Express.js**: Express is a minimalist web framework for Node.js that simplifies building web servers and APIs. It provides features like routing (e.g., `app.get('/')` for the homepage), middleware for request processing, and static files. In this project, the server starts in `src/app.js`, where Express is used to define routes, parse JSON data, and serve static resources from the `public` folder. Express allows creating API endpoints under `/api`, e.g., for products and customers in `src/routes/products.js` and `src/routes/customers.js`.
+
+The server is started with `npm start` and is then available at `http://localhost:3000`. Express processes requests from the frontend and returns data, often in JSON format.
 
 ## Database
