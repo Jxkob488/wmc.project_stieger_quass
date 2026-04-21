@@ -165,14 +165,14 @@ button:hover {
 }
 
 .cart-items li {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 12px;
+    display: flex;
     align-items: center;
+    gap: 10px;
     padding: 14px 16px;
     border-radius: 18px;
     background: #f6f8fd;
     color: #34425c;
+    flex-wrap: wrap;
 }
 
 .cart-items li button {
@@ -181,6 +181,34 @@ button:hover {
     background: #e3e8f6;
     color: #23304e;
     border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.quantity-btn {
+    min-width: 30px;
+    padding: 6px 10px;
+    background: #d1d9f0;
+}
+
+.quantity-btn:hover {
+    background: #c0c8e0;
+}
+
+.cart-remove {
+    background: #ff6b6b;
+    color: white;
+}
+
+.cart-remove:hover {
+    background: #e55a5a;
+}
+
+.quantity {
+    font-weight: bold;
+    min-width: 20px;
+    text-align: center;
 }
 
 .cart-total {

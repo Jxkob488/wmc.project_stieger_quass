@@ -58,6 +58,26 @@ function removeFromCart(productId) {
     }
 }
 
+function increaseQuantity(productId) {
+    const cartItem = cart.find(item => item.id === productId);
+    if (cartItem) {
+        cartItem.quantity += 1;
+        displayCart();
+    }
+}
+
+function decreaseQuantity(productId) {
+    const cartItem = cart.find(item => item.id === productId);
+    if (cartItem) {
+        cartItem.quantity -= 1;
+        if (cartItem.quantity <= 0) {
+            removeFromCart(productId);
+        } else {
+            displayCart();
+        }
+    }
+}
+
 function clearCart() {
     cart.length = 0;
     displayCart();
@@ -73,7 +93,10 @@ function displayCart() {
         <ul class="cart-items">
             ${cart.map(item => `
                 <li>
-                    ${item.name} x ${item.quantity} - €${(item.price * item.quantity).toFixed(2)}
+                    ${item.name} - €${item.price.toFixed(2)}
+                    <button class="quantity-btn" data-id="${item.id}" data-action="decrease">-</button>
+                    <span class="quantity">${item.quantity}</span>
+                    <button class="quantity-btn" data-id="${item.id}" data-action="increase">+</button>
                     <button class="cart-remove" data-id="${item.id}">Remove</button>
                 </li>
             `).join('')}
@@ -82,6 +105,18 @@ function displayCart() {
         ${cart.length > 0 ? '<button id="checkout-btn">Checkout</button>' : ''}
         ${cart.length > 0 ? '<button id="clear-cart">Clear Cart</button>' : ''}
     `;
+
+    cartSection.querySelectorAll('.quantity-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const id = Number(button.dataset.id);
+            const action = button.dataset.action;
+            if (action === 'increase') {
+                increaseQuantity(id);
+            } else if (action === 'decrease') {
+                decreaseQuantity(id);
+            }
+        });
+    });
 
     cartSection.querySelectorAll('.cart-remove').forEach(button => {
         button.addEventListener('click', () => {
@@ -181,13 +216,13 @@ async function submitCustomerData() {
         const data = await response.json();
 
         if (response.ok) {
-            // Success
+            
             hideCheckoutForm();
             showSuccessMessage();
             clearCart();
             document.getElementById('customer-form').reset();
         } else {
-            // Error from server
+
             if (data.error === 'Diese E-Mail existiert bereits') {
                 document.getElementById('email-error').textContent = 'This email already exists';
                 document.getElementById('email-error').classList.add('show');
@@ -205,7 +240,6 @@ function showSuccessMessage() {
     const successMessage = document.getElementById('success-message');
     successMessage.classList.add('show');
 
-    // Hide message after 5 seconds
     setTimeout(() => {
         successMessage.classList.remove('show');
     }, 5000);
