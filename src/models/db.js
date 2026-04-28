@@ -1,6 +1,6 @@
 const sqlite3 = require('sqlite3').verbose();
 require('dotenv').config();
- 
+
 // Dateipfad zur SQLite-Datenbank. Wird aus .env geladen oder standardmäßig aus database/shop.db.
 const dbFile = process.env.DB_FILE || require('path').join(__dirname, '../../database/shop.db');
 const db = new sqlite3.Database(dbFile, (err) => {

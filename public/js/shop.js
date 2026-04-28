@@ -1,7 +1,10 @@
+// Import der Produkte und der Lade-Funktion aus products.js
 import { products, loadProducts } from './products.js';
 
+// Globaler Warenkorb-Array, der die ausgewählten Produkte speichert
 const cart = [];
 
+// Warten, bis das DOM geladen ist, dann Produkte laden und UI initialisieren
 document.addEventListener('DOMContentLoaded', async () => {
     await loadProducts();
     displayCart();
@@ -9,6 +12,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     setupCheckoutForm();
 });
 
+// Zeigt alle Produkte in der Produktliste an
 function displayProducts() {
     const productList = document.getElementById('product-list');
     productList.innerHTML = ''; 
@@ -32,6 +36,7 @@ function displayProducts() {
     });
 }
 
+// Fügt ein Produkt zum Warenkorb hinzu oder erhöht die Menge
 function addToCart(productId) {
     const product = products.find(item => item.id === productId);
     if (!product) return;
@@ -50,6 +55,7 @@ function addToCart(productId) {
     displayCart();
 }
 
+// Entfernt ein Produkt komplett aus dem Warenkorb
 function removeFromCart(productId) {
     const index = cart.findIndex(item => item.id === productId);
     if (index >= 0) {
@@ -58,6 +64,7 @@ function removeFromCart(productId) {
     }
 }
 
+// Erhöht die Menge eines Produkts im Warenkorb
 function increaseQuantity(productId) {
     const cartItem = cart.find(item => item.id === productId);
     if (cartItem) {
@@ -66,6 +73,7 @@ function increaseQuantity(productId) {
     }
 }
 
+// Verringert die Menge eines Produkts im Warenkorb
 function decreaseQuantity(productId) {
     const cartItem = cart.find(item => item.id === productId);
     if (cartItem) {
@@ -78,11 +86,13 @@ function decreaseQuantity(productId) {
     }
 }
 
+// Leert den gesamten Warenkorb
 function clearCart() {
     cart.length = 0;
     displayCart();
 }
 
+// Rendert den Warenkorb-Bereich neu und zeigt alle Items, Gesamtpreis und Buttons
 function displayCart() {
     const cartSection = document.getElementById('cart');
     const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
@@ -106,6 +116,7 @@ function displayCart() {
         ${cart.length > 0 ? '<button id="clear-cart">Clear Cart</button>' : ''}
     `;
 
+    // Event-Listener für Mengen-Buttons hinzufügen
     cartSection.querySelectorAll('.quantity-btn').forEach(button => {
         button.addEventListener('click', () => {
             const id = Number(button.dataset.id);
@@ -118,6 +129,7 @@ function displayCart() {
         });
     });
 
+    // Event-Listener für Entfernen-Buttons hinzufügen
     cartSection.querySelectorAll('.cart-remove').forEach(button => {
         button.addEventListener('click', () => {
             const id = Number(button.dataset.id);
@@ -136,27 +148,30 @@ function displayCart() {
     }
 }
 
+// Richtet die Event-Listener für das Checkout-Formular ein
 function setupCheckoutForm() {
     const checkoutForm = document.getElementById('checkout-form');
     const customerForm = document.getElementById('customer-form');
     const cancelButton = document.getElementById('cancel-order');
 
-    // Form submission
+    // Formular-Submit-Event
     customerForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         await submitCustomerData();
     });
 
-    // Cancel button
+    // Abbrechen-Button
     cancelButton.addEventListener('click', hideCheckoutForm);
 }
 
+// Zeigt das Checkout-Formular an
 function showCheckoutForm() {
     const checkoutForm = document.getElementById('checkout-form');
     checkoutForm.classList.add('show');
     checkoutForm.scrollIntoView({ behavior: 'smooth' });
 }
 
+// Versteckt das Checkout-Formular und resettet es
 function hideCheckoutForm() {
     const checkoutForm = document.getElementById('checkout-form');
     checkoutForm.classList.remove('show');
@@ -164,21 +179,23 @@ function hideCheckoutForm() {
     clearErrorMessages();
 }
 
+// Versteckt alle Fehlermeldungen im Formular
 function clearErrorMessages() {
     document.getElementById('name-error').classList.remove('show');
     document.getElementById('email-error').classList.remove('show');
 }
 
+// Sendet die Kundendaten an den Server und verarbeitet die Bestellung
 async function submitCustomerData() {
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const address = document.getElementById('address').value.trim();
     const phone = document.getElementById('phone').value.trim();
 
-    // Clear previous errors
+    // Vorherige Fehler löschen
     clearErrorMessages();
 
-    // Validation
+    // Validierung der Eingaben
     let hasError = false;
 
     if (!name) {
