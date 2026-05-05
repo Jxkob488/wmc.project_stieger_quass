@@ -2,12 +2,25 @@
 
 ## Backend
 
-The backend is the server-side part of the application that handles logic, data processing, and communication with the database. It runs on the server and is not directly visible to the user.
+Das Backend ist der serverseitige Teil des Online-Shops. Es verarbeitet Anfragen vom Frontend, stellt API-Endpunkte bereit, liest und schreibt Daten in der Datenbank und liefert die statischen Dateien der Webseite aus. Der Einstiegspunkt des Backends ist `src/app.js`.
 
-- **Node.js**: This is a JavaScript runtime environment that allows JavaScript to run outside the browser. Node.js is used to run the server and write server-side scripts.
+- **Node.js**: Das Projekt verwendet Node.js, um JavaScript ausserhalb des Browsers auszufuehren. Dadurch kann der Server direkt mit Dateien, Umgebungsvariablen und der SQLite-Datenbank arbeiten. Gestartet wird das Backend mit `npm start`, wodurch `node src/app.js` ausgefuehrt wird. Fuer die Entwicklung gibt es ausserdem `npm run dev`, das den Server mit `nodemon` startet und bei Codeaenderungen automatisch neu laedt.
 
-- **Express.js**: Express is a minimalist web framework for Node.js that simplifies building web servers and APIs. It provides features like routing (e.g., `app.get('/')` for the homepage), middleware for request processing, and static files. In this project, the server starts in `src/app.js`, where Express is used to define routes, parse JSON data, and serve static resources from the `public` folder. Express allows creating API endpoints under `/api`, e.g., for products and customers in `src/routes/products.js` and `src/routes/customers.js`.
+- **Express.js**: Express wird als Webserver und Routing-Framework verwendet. In `src/app.js` werden Middleware-Funktionen registriert, damit JSON-Daten und URL-codierte Formulardaten aus Requests gelesen werden koennen. Ausserdem liefert Express die Dateien aus dem `public`-Ordner aus, zum Beispiel HTML-Seiten, CSS-Dateien, JavaScript-Dateien und Bilder. Die Startseite des Shops wird ueber die Route `/` geladen und verweist auf `public/pages/shop.html`.
 
-The server is started with `npm start` and is then available at `http://localhost:3000`. Express processes requests from the frontend and returns data, often in JSON format.
+- **API-Struktur**: Die API-Routen sind in eigene Dateien ausgelagert. `src/routes/products.js` enthaelt die Produkt-Endpunkte und `src/routes/customers.js` enthaelt die Kunden-Endpunkte. Beide Router werden in `src/app.js` unter dem gemeinsamen Pfad `/api` registriert. Dadurch entstehen zum Beispiel folgende Endpunkte:
+  - `GET /api/products`: gibt alle Produkte als JSON zurueck.
+  - `GET /api/products/:id`: gibt ein einzelnes Produkt anhand seiner ID zurueck.
+  - `POST /api/customers`: speichert einen neuen Kunden in der Datenbank.
+  - `GET /api/customers`: gibt alle Kunden zurueck.
+  - `GET /api/customers/:id`: gibt einen einzelnen Kunden anhand seiner ID zurueck.
+
+- **Model-Schicht**: Die Datenbankzugriffe sind in Models gekapselt. `src/models/Product.js` enthaelt Methoden zum Abrufen aller Produkte und einzelner Produkte. `src/models/Customer.js` enthaelt Methoden zum Erstellen und Abrufen von Kunden sowie zum Pruefen, ob eine E-Mail-Adresse bereits existiert. Dadurch sind Routing-Logik und Datenbanklogik voneinander getrennt.
+
+- **SQLite-Anbindung**: Die Verbindung zur Datenbank wird in `src/models/db.js` aufgebaut. Das Backend verwendet das Paket `sqlite3` und verbindet sich standardmaessig mit `database/shop.db`. Der Pfad kann ueber die Umgebungsvariable `DB_FILE` in der `.env`-Datei geaendert werden. Beim Start prueft das Backend, ob die Produkttabelle bereits existiert und ob Produktdaten vorhanden sind. Falls nicht, wird `database/shop.sql` ausgefuehrt, um die Datenbank mit Tabellen und Beispieldaten zu initialisieren.
+
+- **Fehlerbehandlung und Validierung**: Die Routen geben passende HTTP-Statuscodes zurueck. Wenn ein Produkt oder Kunde nicht gefunden wird, antwortet das Backend mit `404`. Bei Datenbankfehlern wird `500` zurueckgegeben. Beim Erstellen eines Kunden werden Name und E-Mail-Adresse als Pflichtfelder geprueft. Ausserdem kontrolliert das Backend, ob die E-Mail-Adresse bereits gespeichert ist, damit keine doppelten Kundeneintraege entstehen.
+
+Der Server laeuft nach dem Start unter `http://localhost:3000`. Das Frontend kommuniziert ueber `fetch` mit den API-Endpunkten und erhaelt die Daten im JSON-Format.
 
 ## Database
