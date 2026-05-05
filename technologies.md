@@ -10,4 +10,22 @@ The backend is the server-side part of the application that handles logic, data 
 
 The server is started with `npm start` and is then available at `http://localhost:3000`. Express processes requests from the frontend and returns data, often in JSON format.
 
+### Backend File Overview
+
+- **`src/app.js`**: Main server file. It creates the Express app, enables JSON and form data handling, connects the API routes, serves static frontend files, and starts the server on port `3000`.
+
+- **`src/routes/products.js`**: Contains the product API routes. It provides endpoints to get all products and to get one product by its ID.
+
+- **`src/routes/customers.js`**: Contains the customer API routes. It allows creating a new customer, getting all customers, and getting one customer by ID.
+
+- **`src/models/db.js`**: Connects the backend to the SQLite database. It also initializes the database with `shop.sql` if the needed tables or product data are missing.
+
+- **`src/models/Product.js`**: Contains database functions for products, for example loading all products or loading one product by ID.
+
+- **`src/models/Customer.js`**: Contains database functions for customers, for example creating a customer, loading customers, and checking if an email already exists.
+
+- **`database/shop.sql`**: Defines the database structure and inserts example data for products, customers, orders, and order items.
+
+- **`database/shop.db`**: The SQLite database file where the application data is stored.
+
 ## Database
