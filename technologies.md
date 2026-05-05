@@ -23,4 +23,22 @@ Das Backend ist der serverseitige Teil des Online-Shops. Es verarbeitet Anfragen
 
 Der Server laeuft nach dem Start unter `http://localhost:3000`. Das Frontend kommuniziert ueber `fetch` mit den API-Endpunkten und erhaelt die Daten im JSON-Format.
 
+### Backend-Dateiuebersicht
+
+- **`src/app.js`**: Hauptdatei des Servers. Erstellt die Express-App, aktiviert JSON- und Formulardatenverarbeitung, bindet die API-Routen ein, liefert statische Frontend-Dateien aus und startet den Server auf Port `3000`.
+
+- **`src/routes/products.js`**: Enthaelt die Produkt-API. Die Datei stellt Endpunkte bereit, um alle Produkte oder ein einzelnes Produkt per ID abzurufen.
+
+- **`src/routes/customers.js`**: Enthaelt die Kunden-API. Die Datei erlaubt das Erstellen eines Kunden sowie das Abrufen aller Kunden oder eines einzelnen Kunden per ID.
+
+- **`src/models/db.js`**: Stellt die Verbindung zur SQLite-Datenbank her und initialisiert sie mit `shop.sql`, wenn Tabellen oder Produktdaten fehlen.
+
+- **`src/models/Product.js`**: Enthaelt Datenbankfunktionen fuer Produkte, zum Beispiel das Laden aller Produkte oder eines Produkts per ID.
+
+- **`src/models/Customer.js`**: Enthaelt Datenbankfunktionen fuer Kunden, zum Beispiel Kunden erstellen, Kunden laden und pruefen, ob eine E-Mail-Adresse bereits existiert.
+
+- **`database/shop.sql`**: Definiert die Datenbankstruktur und fuegt Beispieldaten fuer Produkte, Kunden, Bestellungen und Bestellpositionen ein.
+
+- **`database/shop.db`**: SQLite-Datenbankdatei, in der die Anwendungsdaten gespeichert werden.
+
 ## Database
