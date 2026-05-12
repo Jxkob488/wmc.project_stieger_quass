@@ -144,8 +144,19 @@ function displayCart() {
 
     const checkoutButton = document.getElementById('checkout-btn');
     if (checkoutButton) {
-        checkoutButton.addEventListener('click', showCheckoutForm);
+        checkoutButton.addEventListener('click', goToCheckoutPage);
     }
+}
+
+// Speichert den Warenkorb fuer die Checkout-Seite und leitet weiter
+function goToCheckoutPage() {
+    if (cart.length === 0) {
+        alert('Your cart is empty.');
+        return;
+    }
+
+    localStorage.setItem('checkoutCart', JSON.stringify(cart));
+    window.location.href = '/pages/checkout.html';
 }
 
 // Richtet die Event-Listener für das Checkout-Formular ein
