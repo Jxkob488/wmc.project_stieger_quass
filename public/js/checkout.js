@@ -1,4 +1,9 @@
-const cart = JSON.parse(localStorage.getItem('checkoutCart') || '[]');
+let cart = JSON.parse(localStorage.getItem('checkoutCart') || '[]');
+// Fallback: if checkoutCart is empty, try a generic 'cart' key used elsewhere
+if (!cart || cart.length === 0) {
+    const alt = JSON.parse(localStorage.getItem('cart') || '[]');
+    if (alt && alt.length > 0) cart = alt;
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     renderOrderSummary();
@@ -33,7 +38,7 @@ function renderOrderSummary() {
     `;
 }
 
-function handleCheckoutSubmit(event) {
+async function handleCheckoutSubmit(event) {
     event.preventDefault();
 
     if (cart.length === 0) {
@@ -41,70 +46,57 @@ function handleCheckoutSubmit(event) {
         return;
     }
 
-    const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
-    const address = document.getElementById('address').value.trim();
-    const phone = document.getElementById('phone').value.trim();
 
     clearErrorMessages();
 
-    if (!validateCustomerData(name, email)) {
+    if (!validateCustomerEmail(email)) {
         return;
     }
 
-    openOrderEmail(name, email, address, phone);
-    showSuccessMessage();
-    localStorage.removeItem('checkoutCart');
+    // send cart and email to backend to send the email
+    try {
+        const resp = await fetch('/api/checkout', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, cart })
+        });
+
+            const data = await resp.json();
+            if (!resp.ok) throw new Error(data.error || 'Server error');
+
+            const msg = document.getElementById('success-message');
+            msg.innerHTML = `<p>E-Mail an <strong>${escapeHtml(email)}</strong> gesendet.</p>`;
+            if (data.previewUrl) {
+                const link = document.createElement('a');
+                link.href = data.previewUrl;
+                link.target = '_blank';
+                link.textContent = 'Vorschau der Test-E‑Mail öffnen';
+                msg.appendChild(link);
+            }
+            msg.classList.add('show');
+            localStorage.removeItem('checkoutCart');
+    } catch (err) {
+        const msg = document.getElementById('success-message');
+        msg.innerHTML = `<p style="color:#900">Fehler beim Senden der E‑Mail: ${escapeHtml(err.message)}</p>`;
+        msg.classList.add('show');
+        console.error('Send error', err);
+    }
 }
 
-function validateCustomerData(name, email) {
-    let isValid = true;
-
-    if (!name) {
-        showError('name-error', 'Name is required');
-        isValid = false;
-    }
-
+function validateCustomerEmail(email) {
     if (!email) {
         showError('email-error', 'Email is required');
-        isValid = false;
-    } else if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-        showError('email-error', 'Invalid email address');
-        isValid = false;
+        return false;
     }
-
-    return isValid;
+    if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+        showError('email-error', 'Invalid email address');
+        return false;
+    }
+    return true;
 }
 
-function openOrderEmail(name, email, address, phone) {
-    const total = calculateTotal();
-    const orderLines = cart.map(item => {
-        const itemTotal = item.price * item.quantity;
-        return `- ${item.name} x${item.quantity}: €${itemTotal.toFixed(2)}`;
-    }).join('\n');
-
-    const subject = encodeURIComponent('Order confirmation');
-    const body = encodeURIComponent(
-`Hello ${name},
-
-thank you for your order.
-
-Your order:
-${orderLines}
-
-Total: €${total.toFixed(2)}
-
-Shipping address:
-${address || '-'}
-
-Phone:
-${phone || '-'}
-
-We will process your order soon.`
-    );
-
-    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-}
+// no client-side mailto anymore; server sends the email
 
 function calculateTotal() {
     return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
@@ -117,10 +109,22 @@ function showError(id, message) {
 }
 
 function clearErrorMessages() {
-    document.getElementById('name-error').classList.remove('show');
-    document.getElementById('email-error').classList.remove('show');
+    const nameErr = document.getElementById('name-error');
+    if (nameErr) nameErr.classList.remove('show');
+    const emailErr = document.getElementById('email-error');
+    if (emailErr) emailErr.classList.remove('show');
 }
 
 function showSuccessMessage() {
-    document.getElementById('success-message').classList.add('show');
+    const msg = document.getElementById('success-message');
+    if (msg) msg.classList.add('show');
+}
+
+function escapeHtml(unsafe) {
+    return unsafe
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/\"/g, "&quot;")
+        .replace(/'/g, "&#039;");
 }

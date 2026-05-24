@@ -20,25 +20,9 @@
                 <h2>Customer Information</h2>
                 <form id="checkout-form">
                     <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" placeholder="Max Mustermann">
-                        <div class="error-message" id="name-error"></div>
-                    </div>
-
-                    <div class="form-group">
                         <label for="email">Email Address *</label>
                         <input type="email" id="email" name="email" placeholder="max@example.com">
                         <div class="error-message" id="email-error"></div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="address">Shipping Address</label>
-                        <input type="text" id="address" name="address" placeholder="123 Main Street, 1010 Vienna">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="+43 1 123 4567">
                     </div>
 
                     <div class="checkout-actions">
@@ -47,9 +31,7 @@
                     </div>
                 </form>
 
-                <div class="success-message" id="success-message">
-                    Your email program has been opened with the order details.
-                </div>
+                <div class="success-message" id="success-message" aria-live="polite"></div>
             </section>
 
             <aside class="checkout-card">

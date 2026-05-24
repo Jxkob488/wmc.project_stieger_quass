@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+require('dotenv').config();
 
 const app = express();
 
@@ -10,10 +11,12 @@ app.use(express.urlencoded({ extended: true }));
 // API-Routen importieren
 const productRoutes = require('./routes/products');
 const customerRoutes = require('./routes/customers');
+const checkoutRoutes = require('./routes/checkout');
 
 // Alle Routen aus products.js und customers.js werden unter /api registriert
 app.use('/api', productRoutes);
 app.use('/api', customerRoutes);
+app.use('/api', checkoutRoutes);
 
 // Root-Route: liefert die Haupt-Shop-Seite aus dem Public-Ordner
 app.get('/', (req, res) => {
