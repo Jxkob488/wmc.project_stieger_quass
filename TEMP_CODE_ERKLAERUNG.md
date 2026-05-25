@@ -1,6 +1,11 @@
 # Temporaere Code-Erklaerung fuer das Projekt
 
-Diese Datei ist als Orientierungshilfe gedacht. Sie erklaert, wo welcher Code liegt, wie die Teile zusammenhaengen und wo du spaeter bestimmte Funktionen findest. Weil sie nur zur Hilfe gedacht ist, kann sie spaeter wieder geloescht werden.
+Diese Datei beschreibt das Projekt in zwei Ebenen:
+
+1. Ganz oben einen schnellen Überblick: Was macht dieses Projekt? Welche Teile gibt es?
+2. Danach detailliertere Erklärungen zu den wichtigsten Dateien, Methoden, APIs und neuen Erweiterungen.
+
+Sie ist als Orientierungshilfe gedacht, um den Code schneller zu verstehen und neue Dateien einzuordnen.
 
 ## 1. Kurzueberblick
 
@@ -10,6 +15,8 @@ Das Projekt besteht aus zwei Hauptteilen:
 - Einem **Shop-System-Guide** mit statischen HTML-Seiten, der erklaert, wie man ein passendes Shopsystem auswaehlt.
 
 Der Shop laeuft ueber einen Node.js/Express-Server. Die Produkte und Kundendaten werden in einer SQLite-Datenbank gespeichert. Das Frontend liegt im Ordner `public` und kommuniziert per `fetch` mit der API im Backend.
+
+Zusätzlich gibt es eine eigene Checkout-Seite `public/pages/checkout.html`, die im Browser den Warenkorb an den Server sendet und dort eine E-Mail-Bestätigung vorbereitet und versendet.
 
 Wichtigster Startpunkt:
 
@@ -45,12 +52,14 @@ Wichtigster Startpunkt:
 |   |   |-- online-shop.css
 |   |   |-- style.css
 |   |-- js/
+|   |   |-- checkout.js
 |   |   |-- products.js
 |   |   |-- shop.js
 |   |   |-- progress.js
 |   |-- images/
 |   |-- pages/
 |       |-- shop.html
+|       |-- checkout.html
 |       |-- guide/
 |       |-- basic-informations/
 ```
@@ -89,7 +98,7 @@ Wichtige Eintraege:
   - `express`: Webserver und Routing.
   - `sqlite3`: Zugriff auf SQLite-Datenbank.
   - `dotenv`: liest `.env`-Dateien.
-  - `nodemailer`: Paket fuer E-Mail-Versand, wird aktuell im Code aber noch nicht aktiv verwendet.
+  - `nodemailer`: Paket fuer E-Mail-Versand, wird im Checkout-Backend eingesetzt.
 - `devDependencies.nodemon`: Entwicklungstool fuer automatischen Server-Neustart.
 
 ## 5. Umgebungsvariablen
@@ -102,6 +111,17 @@ PORT=3000
 ```
 
 `DB_FILE` gibt an, welche SQLite-Datei verwendet werden soll. In `src/models/db.js` wird dieser Wert gelesen. `PORT` ist zwar in `.env` vorhanden, aber `src/app.js` verwendet aktuell fest `3000` und liest `PORT` nicht aus.
+
+Optional koennen weitere Umgebungsvariablen fuer E-Mail-Versand gesetzt werden, wenn `src/routes/checkout.js` echten SMTP-Versand nutzen soll:
+
+- `SMTP_HOST`
+- `SMTP_PORT`
+- `SMTP_SECURE`
+- `SMTP_USER`
+- `SMTP_PASS`
+- `FROM_EMAIL`
+
+Wenn keine SMTP-Daten gesetzt sind, faellt das Projekt auf einen Ethereal-Testaccount zurück.
 
 Wenn du den Port wirklich aus `.env` nutzen willst, muesste in `src/app.js` statt `app.listen(3000, ...)` ungefaehr `app.listen(process.env.PORT || 3000, ...)` stehen.
 
@@ -117,12 +137,14 @@ Wichtige Schritte:
 2. `const app = express();` erstellt die Server-App.
 3. `app.use(express.json());` erlaubt JSON-Requests.
 4. `app.use(express.urlencoded({ extended: true }));` erlaubt HTML-Formulardaten.
-5. Produkt- und Kundenrouten werden importiert:
+5. Produkt-, Kunden- und Checkout-Routen werden importiert:
    - `./routes/products`
    - `./routes/customers`
-6. Beide Router werden unter `/api` registriert:
+   - `./routes/checkout`
+6. Alle drei Router werden unter `/api` registriert:
    - aus `/products` wird `/api/products`
    - aus `/customers` wird `/api/customers`
+   - aus `/checkout` wird `/api/checkout`
 7. Die Route `/` liefert `public/pages/shop.html`.
 8. `express.static(...)` macht statische Dateien erreichbar, also CSS, JS, Bilder und HTML.
 9. `app.listen(3000, ...)` startet den Server.
@@ -194,6 +216,24 @@ Gibt alle Kunden als JSON zurueck. Das ist eher fuer eine Admin-Ansicht gedacht.
 ### GET /api/customers/:id
 
 Gibt einen einzelnen Kunden anhand der ID zurueck. Wenn kein Kunde gefunden wird, kommt HTTP 404.
+
+### POST /api/checkout
+
+Datei: `src/routes/checkout.js`
+
+Diese Route verarbeitet den Checkout per E-Mail.
+
+Ablauf:
+
+1. Liest `email` und `cart` aus `req.body`.
+2. Prueft, ob eine E-Mail vorhanden ist.
+3. Prueft, ob der Warenkorb ein Array ist und mindestens einen Artikel enthaelt.
+4. Berechnet den Gesamtpreis und erstellt eine lesbare Bestelltext-Version.
+5. Erzeugt HTML und Text fuer die E-Mail.
+6. Versendet die E-Mail entweder mit echtem SMTP (wenn `SMTP_HOST`, `SMTP_USER`, `SMTP_PASS` gesetzt sind) oder mit einem Ethereal-Testaccount.
+7. Gibt als Antwort `{ success: true }` zurueck und, falls vorhanden, `previewUrl` fuer die Test-E-Mail.
+
+Wichtig: `nodemailer` wird hier aktiv verwendet. Die Bestellung wird nicht in der SQLite-Datenbank gespeichert, sondern nur per E-Mail verarbeitet.
 
 ## 9. Datenbankverbindung
 
@@ -398,6 +438,12 @@ Wichtige Bereiche:
 - `<script type="module" src="../js/shop.js"></script>` laedt die Shop-Logik.
 
 Wichtig: Die Seite enthaelt neben `online-shop.css` auch Inline-CSS fuer Checkout-Formular, Erfolgsmeldung und Fehlermeldungen.
+
+### Zusätzliche Checkout-Seite
+
+Datei: `public/pages/checkout.html`
+
+Diese Seite zeigt eine zweite Checkout-Oberflaeche, die den aktuellen Warenkorb lokal aus `localStorage` laedt und an den Server sendet. Sie nutzt `public/js/checkout.js`, um den Bestellzusammenhang anzuzeigen, die E-Mail-Adresse zu validieren und den Request an `/api/checkout` zu senden.
 
 ## 15. Produktdaten im Frontend laden
 
@@ -764,6 +810,7 @@ Der Inhalt des Warenkorbs wird aktuell nicht gespeichert. Es gibt zwar Datenbank
 - Serverstart: `src/app.js`
 - Produkt-API: `src/routes/products.js`
 - Kunden-API: `src/routes/customers.js`
+- Checkout-API: `src/routes/checkout.js`
 - Produkt-Datenbankzugriffe: `src/models/Product.js`
 - Kunden-Datenbankzugriffe: `src/models/Customer.js`
 - Datenbankverbindung: `src/models/db.js`
@@ -773,8 +820,10 @@ Der Inhalt des Warenkorbs wird aktuell nicht gespeichert. Es gibt zwar Datenbank
 - Shop-Design: `public/css/online-shop.css`
 - Shop-Frontendlogik: `public/js/shop.js`
 - Produktladen im Frontend: `public/js/products.js`
+- Checkout-Frontend: `public/js/checkout.js`
 - Guide-Fortschritt: `public/js/progress.js`
 - Allgemeines Guide-Design: `public/css/style.css`
+- Checkout-Seite: `public/pages/checkout.html`
 - Guide-Seiten: `public/pages/guide/`
 - Infoseiten: `public/pages/basic-informations/`
 - Bilder: `public/images/`
@@ -792,6 +841,7 @@ Funktioniert:
 - Produkte koennen aus dem Warenkorb entfernt werden.
 - Warenkorb kann geleert werden.
 - Checkout-Formular validiert Name und E-Mail.
+- Checkout-Seite sendet Bestellinformationen per E-Mail via `/api/checkout`.
 - Kundendaten werden in SQLite gespeichert.
 - Doppelte E-Mail-Adressen werden verhindert.
 - Guide- und Infoseiten sind statische HTML-Seiten.
@@ -801,7 +851,6 @@ Noch nicht vollstaendig umgesetzt:
 - Keine echte Bestellspeicherung beim Checkout.
 - `orders` und `order_items` werden nur in `shop.sql` angelegt, aber nicht vom Frontend genutzt.
 - Kein Login/Register-System, obwohl es in der Projektbeschreibung als Feature genannt wird.
-- `nodemailer` ist installiert, aber wird noch nicht verwendet.
 - `.env` enthaelt `PORT`, aber `src/app.js` nutzt aktuell fest Port 3000.
 
 ## 27. Typische Erweiterungen
