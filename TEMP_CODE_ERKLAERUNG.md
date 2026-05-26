@@ -1,419 +1,69 @@
-# Temporaere Code-Erklaerung fuer das Projekt
-
-Diese Datei beschreibt das Projekt in zwei Ebenen:
-
-1. Ganz oben einen schnellen Überblick: Was macht dieses Projekt? Welche Teile gibt es?
-2. Danach detailliertere Erklärungen zu den wichtigsten Dateien, Methoden, APIs und neuen Erweiterungen.
-
-Sie ist als Orientierungshilfe gedacht, um den Code schneller zu verstehen und neue Dateien einzuordnen.
+Der Shop nutzt ein Node.js/Express-Backend mit SQLite.
+
+## Backend
+
+In `src/app.js` wird der Express-Server aufgebaut:
+- `express.json()` für JSON-Requests
+- `express.urlencoded({ extended: true })` für Formdaten
+- Router aus `src/routes` werden unter `/api` eingebunden
+- statische Dateien laufen über `public`
+- der Server startet auf Port `3000`
+
+Wichtige Backend-Dateien:
+- `src/routes/products.js`: Produkt-API
+- `src/routes/customers.js`: Kunden-API
+- `src/routes/checkout.js`: Checkout-API mit E-Mail-Versand
+- `src/models/db.js`: SQLite-Verbindung und Initialisierung
+- `src/models/Product.js`: Produktdatenzugriffe
+- `src/models/Customer.js`: Kundendatenzugriffe
+
+## Datenbank
+
+`src/models/db.js` öffnet die SQLite-Datenbank:
+- `dotenv` liest `DB_FILE`
+- Standard: `database/shop.db`
+- `initializeDatabase()` führt `database/shop.sql` aus, wenn die Tabellen fehlen oder leer sind
+
+### Produktmodell
+- `Product.getAll(callback)`: `SELECT * FROM products`
+- `Product.getById(id, callback)`: `SELECT * FROM products WHERE id = ?`
+
+### Kundenmodell
+- `Customer.create(...)`: `INSERT INTO customers (name, email, address, phone) VALUES (?, ?, ?, ?)`
+- `Customer.getAll(callback)`: `SELECT * FROM customers`
+- `Customer.getById(id, callback)`: `SELECT * FROM customers WHERE id = ?`
+- `Customer.getByEmail(email, callback)`: `SELECT * FROM customers WHERE email = ?`
+
+## API-Routen
+
+### Produkte
+- `GET /api/products`: liefert alle Produkte
+- `GET /api/products/:id`: liefert ein Produkt nach ID
+
+### Kunden
+- `POST /api/customers`: legt einen neuen Kunden an
+- `GET /api/customers`: liefert alle Kunden
+- `GET /api/customers/:id`: liefert einen Kunden nach ID
+
+### Checkout
+- `POST /api/checkout`: liest `email` und `cart`
+- prüft Warenkorb und E-Mail
+- berechnet Total
+- versendet E-Mail mit `nodemailer`
+- nutzt SMTP, falls konfiguriert, sonst Ethereal
+
+Wichtig: Der Checkout speichert derzeit keine Bestellungen in der Datenbank.
+
+## Datenbankschema
+
+`database/shop.sql` legt die Tabellen fest:
+- `products`
+- `customers`
+- `orders`
+- `order_items`
+
+`orders` und `order_items` sind Teil des Schemas, werden aktuell aber nicht vom Checkout-Backend befüllt.
 
-## 1. Kurzueberblick
-
-Das Projekt besteht aus zwei Hauptteilen:
-
-- Einem **Online-Shop** mit Backend, Datenbank, Produktanzeige, Warenkorb und Checkout-Formular.
-- Einem **Shop-System-Guide** mit statischen HTML-Seiten, der erklaert, wie man ein passendes Shopsystem auswaehlt.
-
-Der Shop laeuft ueber einen Node.js/Express-Server. Die Produkte und Kundendaten werden in einer SQLite-Datenbank gespeichert. Das Frontend liegt im Ordner `public` und kommuniziert per `fetch` mit der API im Backend.
-
-Zusätzlich gibt es eine eigene Checkout-Seite `public/pages/checkout.html`, die im Browser den Warenkorb an den Server sendet und dort eine E-Mail-Bestätigung vorbereitet und versendet.
-
-Wichtigster Startpunkt:
-
-- `src/app.js`: startet den Server.
-- `public/pages/shop.html`: ist die Hauptseite des Shops.
-- `public/js/shop.js`: steuert Produktanzeige, Warenkorb und Checkout.
-- `database/shop.sql`: definiert Tabellen und Beispieldaten.
-- `database/shop.db`: echte SQLite-Datenbankdatei.
-
-## 2. Projektstruktur
-
-```text
-.
-|-- .env
-|-- package.json
-|-- project-description.md
-|-- technologies.md
-|-- database/
-|   |-- shop.sql
-|   |-- shop.db
-|   |-- er-diagram.puml
-|-- src/
-|   |-- app.js
-|   |-- models/
-|   |   |-- db.js
-|   |   |-- Product.js
-|   |   |-- Customer.js
-|   |-- routes/
-|       |-- products.js
-|       |-- customers.js
-|-- public/
-|   |-- css/
-|   |   |-- online-shop.css
-|   |   |-- style.css
-|   |-- js/
-|   |   |-- checkout.js
-|   |   |-- products.js
-|   |   |-- shop.js
-|   |   |-- progress.js
-|   |-- images/
-|   |-- pages/
-|       |-- shop.html
-|       |-- checkout.html
-|       |-- guide/
-|       |-- basic-informations/
-```
-
-## 3. Installation und Start
-
-Die verwendeten Pakete stehen in `package.json`.
-
-Wichtige Befehle:
-
-```bash
-npm start
-npm run dev
-```
-
-`npm start` fuehrt `node src/app.js` aus. `npm run dev` startet denselben Server mit `nodemon`, damit er bei Aenderungen automatisch neu startet.
-
-Der Server ist danach unter dieser Adresse erreichbar:
-
-```text
-http://localhost:3000
-```
-
-## 4. package.json
-
-Datei: `package.json`
-
-Diese Datei beschreibt das Node-Projekt.
-
-Wichtige Eintraege:
-
-- `main: "src/app.js"` sagt, dass `src/app.js` die Hauptdatei ist.
-- `scripts.start` startet den Server normal.
-- `scripts.dev` startet den Server im Entwicklungsmodus mit `nodemon`.
-- `dependencies` enthaelt die benoetigten Pakete:
-  - `express`: Webserver und Routing.
-  - `sqlite3`: Zugriff auf SQLite-Datenbank.
-  - `dotenv`: liest `.env`-Dateien.
-  - `nodemailer`: Paket fuer E-Mail-Versand, wird im Checkout-Backend eingesetzt.
-- `devDependencies.nodemon`: Entwicklungstool fuer automatischen Server-Neustart.
-
-## 5. Umgebungsvariablen
-
-Datei: `.env`
-
-```text
-DB_FILE=./database/shop.db
-PORT=3000
-```
-
-`DB_FILE` gibt an, welche SQLite-Datei verwendet werden soll. In `src/models/db.js` wird dieser Wert gelesen. `PORT` ist zwar in `.env` vorhanden, aber `src/app.js` verwendet aktuell fest `3000` und liest `PORT` nicht aus.
-
-Optional koennen weitere Umgebungsvariablen fuer E-Mail-Versand gesetzt werden, wenn `src/routes/checkout.js` echten SMTP-Versand nutzen soll:
-
-- `SMTP_HOST`
-- `SMTP_PORT`
-- `SMTP_SECURE`
-- `SMTP_USER`
-- `SMTP_PASS`
-- `FROM_EMAIL`
-
-Wenn keine SMTP-Daten gesetzt sind, faellt das Projekt auf einen Ethereal-Testaccount zurück.
-
-Wenn du den Port wirklich aus `.env` nutzen willst, muesste in `src/app.js` statt `app.listen(3000, ...)` ungefaehr `app.listen(process.env.PORT || 3000, ...)` stehen.
-
-## 6. Backend-Einstieg
-
-Datei: `src/app.js`
-
-Diese Datei erstellt die Express-App und startet den Server.
-
-Wichtige Schritte:
-
-1. `express` und `path` werden importiert.
-2. `const app = express();` erstellt die Server-App.
-3. `app.use(express.json());` erlaubt JSON-Requests.
-4. `app.use(express.urlencoded({ extended: true }));` erlaubt HTML-Formulardaten.
-5. Produkt-, Kunden- und Checkout-Routen werden importiert:
-   - `./routes/products`
-   - `./routes/customers`
-   - `./routes/checkout`
-6. Alle drei Router werden unter `/api` registriert:
-   - aus `/products` wird `/api/products`
-   - aus `/customers` wird `/api/customers`
-   - aus `/checkout` wird `/api/checkout`
-7. Die Route `/` liefert `public/pages/shop.html`.
-8. `express.static(...)` macht statische Dateien erreichbar, also CSS, JS, Bilder und HTML.
-9. `app.listen(3000, ...)` startet den Server.
-
-Wichtig: Die zweite statische Zeile `app.use(express.static(path.join(__dirname, "../pages")));` zeigt auf einen Ordner `pages` ausserhalb von `public`. Dieser Ordner existiert im Projekt aktuell nicht. Der wichtige statische Ordner ist `../public`.
-
-## 7. API-Routen fuer Produkte
-
-Datei: `src/routes/products.js`
-
-Diese Datei definiert alle Produkt-Endpunkte.
-
-### GET /api/products
-
-Code-Stelle:
-
-```js
-router.get('/products', (req, res) => {
-  Product.getAll((err, products) => {
-    ...
-  });
-});
-```
-
-Aufgabe:
-
-- Holt alle Produkte aus der Datenbank.
-- Gibt sie als JSON zurueck.
-- Bei einem Datenbankfehler wird HTTP 500 gesendet.
-
-Wird vom Frontend in `public/js/products.js` mit `fetch("/api/products")` aufgerufen.
-
-### GET /api/products/:id
-
-Aufgabe:
-
-- Holt ein Produkt anhand der ID.
-- Wenn das Produkt existiert, wird es als JSON zurueckgegeben.
-- Wenn kein Produkt gefunden wird, kommt HTTP 404.
-- Bei Datenbankfehlern kommt HTTP 500.
-
-Die eigentliche Datenbankabfrage liegt nicht in dieser Datei, sondern in `src/models/Product.js`.
-
-## 8. API-Routen fuer Kunden
-
-Datei: `src/routes/customers.js`
-
-Diese Datei definiert alle Kunden-Endpunkte.
-
-### POST /api/customers
-
-Diese Route wird beim Checkout verwendet.
-
-Ablauf:
-
-1. `name`, `email`, `address` und `phone` werden aus `req.body` gelesen.
-2. Es wird geprueft, ob `name` und `email` vorhanden sind.
-3. Mit `Customer.getByEmail(email, ...)` wird geprueft, ob die E-Mail bereits existiert.
-4. Wenn die E-Mail bereits existiert, kommt HTTP 400.
-5. Wenn nicht, wird mit `Customer.create(...)` ein neuer Kunde gespeichert.
-6. Bei Erfolg kommt HTTP 201 mit `{ success: true, customer }`.
-
-Wichtig: Diese Route speichert aktuell nur Kundendaten. Sie speichert noch keine Bestellung in der Tabelle `orders` und keine Warenkorbpositionen in `order_items`.
-
-### GET /api/customers
-
-Gibt alle Kunden als JSON zurueck. Das ist eher fuer eine Admin-Ansicht gedacht.
-
-### GET /api/customers/:id
-
-Gibt einen einzelnen Kunden anhand der ID zurueck. Wenn kein Kunde gefunden wird, kommt HTTP 404.
-
-### POST /api/checkout
-
-Datei: `src/routes/checkout.js`
-
-Diese Route verarbeitet den Checkout per E-Mail.
-
-Ablauf:
-
-1. Liest `email` und `cart` aus `req.body`.
-2. Prueft, ob eine E-Mail vorhanden ist.
-3. Prueft, ob der Warenkorb ein Array ist und mindestens einen Artikel enthaelt.
-4. Berechnet den Gesamtpreis und erstellt eine lesbare Bestelltext-Version.
-5. Erzeugt HTML und Text fuer die E-Mail.
-6. Versendet die E-Mail entweder mit echtem SMTP (wenn `SMTP_HOST`, `SMTP_USER`, `SMTP_PASS` gesetzt sind) oder mit einem Ethereal-Testaccount.
-7. Gibt als Antwort `{ success: true }` zurueck und, falls vorhanden, `previewUrl` fuer die Test-E-Mail.
-
-Wichtig: `nodemailer` wird hier aktiv verwendet. Die Bestellung wird nicht in der SQLite-Datenbank gespeichert, sondern nur per E-Mail verarbeitet.
-
-## 9. Datenbankverbindung
-
-Datei: `src/models/db.js`
-
-Diese Datei ist die zentrale Datenbankdatei. Alle Models verwenden diese Verbindung.
-
-Wichtige Aufgaben:
-
-- `sqlite3` wird geladen.
-- `dotenv` wird geladen, damit `.env` gelesen wird.
-- Der Datenbankpfad wird bestimmt:
-  - zuerst `process.env.DB_FILE`
-  - sonst automatisch `database/shop.db`
-- Mit `new sqlite3.Database(...)` wird die Verbindung geoeffnet.
-- `database/shop.sql` wird gelesen.
-- `initializeDatabase()` prueft, ob die Datenbank initialisiert werden muss.
-
-Initialisierungslogik:
-
-1. Es wird geprueft, ob die Tabelle `products` existiert.
-2. Wenn nicht, wird `shop.sql` ausgefuehrt.
-3. Wenn die Tabelle existiert, wird geprueft, ob Produkte vorhanden sind.
-4. Wenn keine Produkte vorhanden sind, wird ebenfalls `shop.sql` ausgefuehrt.
-5. Wenn Produkte vorhanden sind, werden einige Produktbeschreibungen synchronisiert.
-
-Hinweis: In der Konsolenausgabe sieht man wegen Zeichencodierung teilweise Zeichen wie `PrÃ¼fen` oder `âœ“`. Inhaltlich sind das deutsche Umlaute bzw. Sonderzeichen, die falsch dekodiert angezeigt werden.
-
-## 10. Product Model
-
-Datei: `src/models/Product.js`
-
-Diese Klasse kapselt Produkt-Datenbankzugriffe.
-
-### Product.getAll(callback)
-
-SQL:
-
-```sql
-SELECT * FROM products
-```
-
-Gibt alle Produkte zurueck.
-
-### Product.getById(id, callback)
-
-SQL:
-
-```sql
-SELECT * FROM products WHERE id = ?
-```
-
-Das `?` ist ein Platzhalter. Die ID wird als Parameter uebergeben. Das ist besser als String-Verkettung, weil es SQL-Injection verhindert.
-
-## 11. Customer Model
-
-Datei: `src/models/Customer.js`
-
-Diese Klasse kapselt Kunden-Datenbankzugriffe.
-
-### Customer.create(name, email, address, phone, callback)
-
-SQL:
-
-```sql
-INSERT INTO customers (name, email, address, phone) VALUES (?, ?, ?, ?)
-```
-
-Speichert einen neuen Kunden. Nach dem Insert wird `this.lastID` genutzt, um die neue ID zurueckzugeben.
-
-### Customer.getAll(callback)
-
-SQL:
-
-```sql
-SELECT * FROM customers
-```
-
-Gibt alle Kunden zurueck.
-
-### Customer.getById(id, callback)
-
-SQL:
-
-```sql
-SELECT * FROM customers WHERE id = ?
-```
-
-Gibt einen Kunden anhand der ID zurueck.
-
-### Customer.getByEmail(email, callback)
-
-SQL:
-
-```sql
-SELECT * FROM customers WHERE email = ?
-```
-
-Wird verwendet, um doppelte E-Mail-Adressen beim Checkout zu verhindern.
-
-## 12. Datenbankschema
-
-Datei: `database/shop.sql`
-
-Diese Datei erstellt vier Tabellen:
-
-### products
-
-Speichert Produkte.
-
-Spalten:
-
-- `id`: eindeutige Produkt-ID.
-- `name`: Produktname.
-- `price`: Preis.
-- `category`: Kategorie.
-- `image`: Bildpfad, z. B. `/images/tshirt.png`.
-- `description`: Beschreibung.
-- `inStock`: 1 bedeutet verfuegbar, 0 bedeutet nicht verfuegbar.
-
-Beispielprodukte:
-
-- Basic T-Shirt
-- Hoodie
-- Sneaker
-- Cap
-- Backpack
-- Watch
-
-### customers
-
-Speichert Kundendaten.
-
-Spalten:
-
-- `id`: eindeutige Kunden-ID.
-- `name`: Name.
-- `email`: E-Mail, eindeutig durch `UNIQUE`.
-- `address`: Adresse.
-- `phone`: Telefonnummer.
-- `created_at`: Zeitpunkt der Erstellung.
-
-### orders
-
-Speichert Bestellungen.
-
-Spalten:
-
-- `id`: eindeutige Bestell-ID.
-- `customer_id`: Verweis auf `customers.id`.
-- `order_date`: Bestelldatum.
-- `total`: Gesamtpreis.
-- `status`: z. B. `pending` oder `completed`.
-
-Aktuell existiert die Tabelle, aber der Checkout-Code schreibt noch keine neuen Orders hinein.
-
-### order_items
-
-Speichert einzelne Positionen einer Bestellung.
-
-Spalten:
-
-- `id`: eindeutige Positions-ID.
-- `order_id`: Verweis auf `orders.id`.
-- `product_id`: Verweis auf `products.id`.
-- `quantity`: Menge.
-- `price`: Preis zum Bestellzeitpunkt.
-
-Auch diese Tabelle wird aktuell vom Checkout-Code noch nicht beschrieben.
-
-## 13. ER-Diagramm
-
-Datei: `database/er-diagram.puml`
-
-Das ist ein PlantUML-Diagramm fuer die Datenbankbeziehungen.
-
-Beziehungen:
-
-- Ein Kunde kann mehrere Bestellungen haben.
-- Eine Bestellung kann mehrere Bestellpositionen haben.
 - Ein Produkt kann in mehreren Bestellpositionen vorkommen.
 
 Kurz gesagt:
