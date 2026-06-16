@@ -144,19 +144,8 @@ function displayCart() {
 
     const checkoutButton = document.getElementById('checkout-btn');
     if (checkoutButton) {
-        checkoutButton.addEventListener('click', goToCheckoutPage);
+        checkoutButton.addEventListener('click', showCheckoutForm);
     }
-}
-
-// Speichert den Warenkorb fuer die Checkout-Seite und leitet weiter
-function goToCheckoutPage() {
-    if (cart.length === 0) {
-        alert('Your cart is empty.');
-        return;
-    }
-
-    localStorage.setItem('checkoutCart', JSON.stringify(cart));
-    window.location.href = '/pages/checkout.html';
 }
 
 // Richtet die Event-Listener für das Checkout-Formular ein
@@ -228,36 +217,28 @@ async function submitCustomerData() {
     if (hasError) return;
 
     try {
-        const response = await fetch('/api/customers', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                name,
-                email,
-                address,
-                phone
-            })
-        });
+        // Speichere die Bestellung lokal im localStorage (für GitHub Pages ohne Backend)
+        const orders = JSON.parse(localStorage.getItem('orders') || '[]');
+        
+        const newOrder = {
+            id: Date.now(),
+            name,
+            email,
+            address,
+            phone,
+            items: cart,
+            total: cart.reduce((sum, item) => sum + item.price * item.quantity, 0),
+            timestamp: new Date().toISOString()
+        };
+        
+        orders.push(newOrder);
+        localStorage.setItem('orders', JSON.stringify(orders));
 
-        const data = await response.json();
-
-        if (response.ok) {
-            
-            hideCheckoutForm();
-            showSuccessMessage();
-            clearCart();
-            document.getElementById('customer-form').reset();
-        } else {
-
-            if (data.error === 'Diese E-Mail existiert bereits') {
-                document.getElementById('email-error').textContent = 'This email already exists';
-                document.getElementById('email-error').classList.add('show');
-            } else {
-                alert('Error: ' + (data.error || 'Unknown error'));
-            }
-        }
+        // Erfolg!
+        hideCheckoutForm();
+        showSuccessMessage();
+        clearCart();
+        document.getElementById('customer-form').reset();
     } catch (error) {
         console.error('Error:', error);
         alert('Error submitting order: ' + error.message);
