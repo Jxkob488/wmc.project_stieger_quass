@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Requirements – Shop System Guide</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body class="text-light">
+
+<div class="container-fluid">
+    <div class="row">
+
+            <aside class="col-12 col-md-3 col-lg-2 p-4 sidebar">
+                <h4 class="mb-4">Shop System<br>Guide</h4>
+
+                <nav class="nav flex-column gap-2">
+                    <a class="nav-link" href="../basic-informations/(1)startscreen.html">Start</a>
+                    <a class="nav-link" href="../basic-informations/overview.html">Shop Systems examples</a>
+                    <a class="nav-link" href="../basic-informations/(2)hosting-models.html">Hosting Models</a>
+                    <a class="nav-link" href="../basic-informations/(3)target-audience.html">Target Audience</a>
+                    <a class="nav-link" href="../basic-informations/(4)cost-structure.html">Cost Structure</a>
+                    <a class="nav-link" href="../basic-informations/(5)internationalization.html">Internationalization</a>
+                    <a class="nav-link active" href="../basic-informations/(6)technical-requirements.html">Technical Requirements</a>
+                    <a class="nav-link" href="../basic-informations/(7)checkout.html">Checkout Process</a>
+                    <a class="nav-link" href="../basic-informations/(8)performance-optimization-techniques.html">Performance Optimization</a>
+                    <a class="nav-link" href="../basic-informations/(9)payment.html">Payment</a>
+                    <a class="nav-link" href="../basic-informations/(10)templates.html">Templates</a>
+                </nav>
+            </aside>
+
+        <main class="col-12 col-md-9 col-lg-10 content">
+            <div class="container py-5">
+                <div class="main-card shadow p-5" style="max-width:1000px;">
+
+                    <h1 class="text-center mb-4">🧰 Technical Requirements</h1>
+
+                    <p>
+                        Technical requirements describe the basic technology a shop system needs in order to work
+                        reliably. They are important because an online shop must be available 24/7, protect customer
+                        data and still run fast even when many users visit the website at the same time.
+                    </p>
+
+                    <p>
+                        If the technical foundation is too weak, problems like slow loading times, checkout errors or
+                        security issues can occur. That is why server performance, software compatibility and regular
+                        maintenance are essential parts of every professional shop system.
+                    </p>
+
+                    <section class="mt-4">
+                        <h2>🖥️ Server & Infrastructure</h2>
+                        <p>
+                            A shop system needs a stable server infrastructure to store product data, customer accounts
+                            and orders. The server must also handle traffic peaks, for example during discounts,
+                            seasonal sales or marketing campaigns.
+                        </p>
+                        <p>
+                            Important factors are enough CPU power, sufficient RAM, fast SSD storage and a reliable
+                            internet connection. Many shops start with simple hosting and upgrade later to VPS or cloud
+                            solutions when the business grows.
+                        </p>
+                        <p>
+                            Cloud environments can be helpful because they allow scaling, meaning more resources can be
+                            added when demand increases.
+                        </p>
+                        
+                        <div class="text-center">
+                            <img src="../../images/technicalrequirement.png" alt="Technical Requirements for Server Infrastructure" class="img-fluid my-4 rounded shadow">
+                        </div>
+                    </section>
+
+                    <section class="mt-4">
+                        <h2>🧑‍💻 Software & Technologies</h2>
+                        <p>
+                            Shop systems usually run with server-side technologies such as PHP or Node.js. A database
+                            is also required to store important information like products, orders and customers.
+                            Common databases are MySQL or PostgreSQL.
+                        </p>
+                        <p>
+                            On the frontend, modern web standards like HTML5, CSS3 and JavaScript are necessary.
+                            Responsive design is also important so the shop works well on phones, tablets and desktops.
+                            Frameworks like Bootstrap can support this.
+                        </p>
+                    </section>
+
+                    <section class="mt-4">
+                        <h2>🔒 Security Requirements</h2>
+                        <p>
+                            Security is one of the most important technical requirements in e-commerce. Shops handle
+                            personal customer data, addresses and sometimes payment information. Because of that, SSL/TLS
+                            encryption (HTTPS) is required to protect data during transmission.
+                        </p>
+                        <p>
+                            Shop systems also need protection against typical attacks such as SQL injection, cross-site
+                            scripting (XSS) and brute-force login attempts. Regular updates and strong passwords are a
+                            basic part of security.
+                        </p>
+                        <p>
+                            Backups are another important requirement. If something breaks or data is deleted, backups
+                            allow the shop to restore important information.
+                        </p>
+                    </section>
+
+                    <section class="mt-4">
+                        <h2>⚡ Performance & Scalability</h2>
+                        <p>
+                            Fast loading times improve the user experience and can increase sales because customers are
+                            less likely to leave the website. Performance is also important for SEO, because search
+                            engines prefer fast websites.
+                        </p>
+                        <p>
+                            Common performance improvements include caching, optimized images and efficient database
+                            queries. Content Delivery Networks (CDNs) can also help by delivering content faster to
+                            international users.
+                        </p>
+                        <p>
+                            Scalability means the shop can grow with the business. A scalable system can handle more
+                            products, more users and more orders without needing a complete rebuild.
+                        </p>
+                    </section>
+
+                    <section class="mt-4">
+                        <h2>🌐 Compatibility & Maintenance</h2>
+                        <p>
+                            A shop should work in different browsers such as Chrome, Firefox and Edge. It should also
+                            support mobile devices, because many customers shop on their smartphones.
+                        </p>
+                        <p>
+                            Maintenance includes updates, monitoring and bug fixing. A well-documented system makes it
+                            easier to maintain the shop and add new features in the future.
+                        </p>
+                    </section>
+
+                    <section class="mt-4">
+                        <h2>🔗 Example Resources</h2>
+                        <ul>
+                            <li>🔒 <a href="https://letsencrypt.org/" target="_blank">Let’s Encrypt – free SSL certificates (HTTPS)</a></li>
+                            <li>🧱 <a href="https://getbootstrap.com/" target="_blank">Bootstrap – responsive web design framework</a></li>
+                            <li>☁️ <a href="https://aws.amazon.com/" target="_blank">AWS – example cloud infrastructure</a></li>
+                            <li>🛡️ <a href="https://owasp.org/" target="_blank">OWASP – web security best practices</a></li>
+                        </ul>
+                    </section>
+
+                </div>
+
+                <footer class="text-center text-light small mt-5">
+                    © 2025 Shop System Guide by Jakob Stieger &amp; Timo Quass
+                </footer>
+            </div>
+        </main>
+
+    </div>
+</div>
+
+</body>
+</html>

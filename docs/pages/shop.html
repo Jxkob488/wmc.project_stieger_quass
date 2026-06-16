@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shop</title>
+    <link rel="stylesheet" href="../css/online-shop.css">
+    <style>
+        .checkout-form {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .checkout-form.show {
+            display: block;
+        }
+
+        .checkout-form h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+        }
+
+        .checkout-form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        .checkout-form button:hover {
+            background-color: #45a049;
+        }
+
+        .checkout-form button.cancel {
+            background-color: #ccc;
+            color: #333;
+        }
+
+        .checkout-form button.cancel:hover {
+            background-color: #bbb;
+        }
+
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+            border: 1px solid #c3e6cb;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .error-message {
+            color: #d32f2f;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Welcome to Online Shop</h1>
+        <p>Choose your favorite items and use the shopping cart to place your order quickly.</p>
+    </header>
+
+    <main class="shop-page">
+        <div class="shop-container">
+            <div class="products-column">
+                <section class="page-intro">
+                    <p>Our products are loaded automatically. Click on "Add to Cart" to add them to your order.</p>
+                </section>
+                <div id="product-list"></div>
+            </div>
+            <aside class="cart-panel">
+                <section id="cart"></section>
+            </aside>
+        </div>
+
+        <!-- Checkout Form -->
+        <div class="checkout-form" id="checkout-form">
+            <h2>Checkout - Customer Information</h2>
+            <form id="customer-form">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="Max Mustermann">
+                    <div class="error-message" id="name-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required placeholder="max@example.com">
+                    <div class="error-message" id="email-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Shipping Address</label>
+                    <input type="text" id="address" name="address" placeholder="123 Main Street, 1010 Vienna">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+43 1 123 4567">
+                </div>
+
+                <div>
+                    <button type="submit" id="submit-order">Complete Order</button>
+                    <button type="button" id="cancel-order" class="cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="success-message" id="success-message">
+            ✓ Thank you for your order! Your customer data has been saved successfully.
+        </div>
+    </main>
+
+    <script type="module" src="../js/shop.js"></script>
+</body>
+
+</html>
