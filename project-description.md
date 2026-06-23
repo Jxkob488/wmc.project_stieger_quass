@@ -1,66 +1,60 @@
-# Project Description: Shop System Guide
+# Project Description
 
-## Project Idea
+## Overview
 
-The Shop System Guide is designed to explain the process of choosing a suitable shop system in a clear and structured way. Many existing resources are difficult to understand and focus too much on technical details. This project follows a different approach by breaking the decision process into small, logical steps.
+This project contains two connected parts: a website that explains how to choose the right shop system and an online shop web application that demonstrates a practical implementation. The goal is to provide both guidance and a working example in one project.
 
-The guide is built as a 7-step interactive process. It starts with a general intention to sell products online and ends with selecting an appropriate technical setup. Each step provides only the information needed at that moment to keep the process understandable and manageable.
+## Website
 
-## Target Audience
+The website is a Shop System Guide designed to help users choose the best solution for their business. It presents the decision process in a clear and structured way, avoiding unnecessary technical complexity.
 
-The website is aimed at users with different levels of experience who are interested in setting up an online shop. The target audience is divided into three groups:
+Key elements of the website:
 
-- **Users with no technical experience**  
-  Individuals looking for ready-made solutions that allow quick setup and minimal configuration.
+- A 7-step guide that leads users through the selection process
+- A separate section for deeper topics such as hosting, costs, and technical requirements
+- A clean layout with clear navigation and progress indicators
+- A responsive design that works well on desktop and mobile devices
 
-- **Users with technical experience**  
-  Individuals who have basic technical knowledge and want more flexibility and customization options.
+### Target Audience
 
-- **Large companies**  
-  Organizations that require scalable systems capable of handling high traffic, advanced features, and complex operations.
+The website is aimed at:
 
-## Structure of the Website
+- Beginners who want a user-friendly and easy-to-understand solution
+- Users with technical experience who need more flexibility and options
+- Companies that require scalable systems and advanced features
 
-The website is divided into two main sections to ensure clarity and ease of use:
+### Website Structure
 
-### Step-by-Step Guide
+- **Step-by-step Guide**: The main section of the website, with a linear flow that focuses on one decision at a time.
+- **Basic Information**: A deeper information section that users can access at any time for more details on hosting, payments, performance, and other important topics.
 
-This section represents the core of the project. Users are guided through seven consecutive steps using a main-card layout. A progress indicator shows the current position in the process. The guide is designed to be linear, fast, and easy to navigate.
+## Online Shop
 
-### Basic Information (Deep Dive)
+The online shop is the practical part of the project. It is implemented as a web application with separate frontend and backend components that communicate through a REST API.
 
-Detailed background information is provided in a separate section. This includes explanations of hosting types, cost models, and other technical topics. Users can access this section at any time without interrupting the main guide.
+The online shop architecture includes:
 
-## Design and Layout
+- **Frontend**: The user interface for browsing products, managing the cart, and placing orders.
+- **Backend**: The server-side logic for user management, product handling, order processing, and API endpoints.
+- **Database**: Persistent storage for products, customers, and orders.
 
-The design follows a modern, dark-mode-inspired style implemented with Bootstrap 5. The focus is on readability, consistency, and usability.
+### Features
 
-- **Navigation**  
-  A sidebar navigation is used for information pages to allow quick switching between topics.
+- Browse products and view product details
+- Add and remove items from the shopping cart
+- Register new users and log in
+- Place and manage orders
+- REST API communication between frontend and backend
 
-- **Clarity**  
-  Minimal formatting is used to keep the content easy to read. Icons are used to support visual orientation.
+## Design and Usability
 
-- **Responsive Design**  
-  The layout adapts to different screen sizes. Elements such as buttons remain consistent across devices to ensure a smooth user experience.
+The project emphasizes clear design and usability. The website is built to be easy to understand, with consistent styling and intuitive navigation.
 
-## Web Application
+The online shop focuses on a straightforward shopping experience, from product discovery to checkout.
 
-## Project Description
+## Project Goals
 
-# Online Shop Web Application
-
-## Project Description
-
-In this project, we are building our own online shop as a web application.
-The application is split into a frontend and a backend, which communicate through a REST API. Users can browse products, add them to a shopping cart, create an account, log in, and place orders.
-
-On the server side, the backend handles all important processes like managing users, products, and orders, as well as communicating with the database. The database stores all necessary information so the shop can function properly.
-
-## Features
-
-- Browse products and view details  
-- Add and remove items from the cart  
-- User registration and login  
-- Place and manage orders  
-- Communication via REST API  
+- Provide a clear guide for selecting a shop system
+- Present a working online shop implementation
+- Keep the user experience simple and accessible
+- Demonstrate a modern architecture with separate frontend and backend components
