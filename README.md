@@ -1,66 +1,79 @@
 # WMC Online Shop & Shop System Guide
 
-Willkommen zu diesem Projekt! Hier findest du eine kurze Website, die erklärt, wie man das passende Shop-System auswählt, und gleichzeitig eine einfache Online-Shop-Demo, die zeigt, wie so ein System in der Praxis funktionieren kann.
+A web development project that combines an interactive online shop with a guide to choosing the right shop system.
 
-## Was ist drin?
+## Features
 
-- `docs/`: Die Beratungswebsite mit einer Schritt-für-Schritt-Anleitung.
-- `public/`: Öffentliche Website-Inhalte, die du direkt testen oder hosten kannst.
-- `src/`: Das Backend des Online-Shops (Node.js/Express).
-- `database/`: SQL-Datei und ER-Diagramm für die Datenbank.
+### Online Shop
+- Browse products and manage a shopping cart
+- Checkout and order processing
+- Customer management
+- Order confirmation emails
 
-## Was kann das Projekt?
+### Shop System Guide
+- Interactive guide to choosing a shop system
+- Information about hosting, costs, and payments
+- Technical requirements and performance optimization
+- Responsive design
 
-- Ein Guide, der hilft, das richtige Shop-System zu wählen
-- Ein Faktenbereich zu Hosting, Kosten, Internationalisierung, Performance und Zahlungen
-- Ein einfacher Online-Shop mit Produktübersicht, Warenkorb und Checkout
-- Ein Backend mit REST-API, Express und SQLite
+## Tech Stack
 
-## Installation
+- **Frontend:** HTML, CSS, JavaScript
+- **Backend:** Node.js, Express.js
+- **Database:** SQLite
+- **Email:** Nodemailer
+- **Version Control:** Git, GitHub
 
-1. Öffne den Projektordner in der Konsole.
-2. Installiere die Abhängigkeiten:
+## Getting Started
 
-```bash
-npm install
-```
+### Prerequisites
+- [Node.js](https://nodejs.org/)
+- npm
 
-3. Starte den Entwicklungsserver:
+### Installation
 
-```bash
-npm run dev
-```
+Clone the repository:
 
-4. Starte das Projekt im normalen Modus:
+    git clone https://github.com/Jxkob488/wmc.project_stieger_quass.git
 
-```bash
-npm start
-```
+Navigate to the project directory:
 
-## So funktioniert das Backend
+    cd wmc.project_stieger_quass
 
-- Einstiegspunkt: `src/app.js`
-- Routen:
-  - `src/routes/products.js`
-  - `src/routes/customers.js`
-  - `src/routes/checkout.js`
-- Datenbank: `src/models/db.js`
-- Modelle: `src/models/Product.js`, `src/models/Customer.js`
+Install the dependencies:
 
-## Technik und Tools
+    npm install
 
-- Node.js mit Express
-- SQLite (`sqlite3`)
-- Umgebungsvariablen mit `dotenv`
-- E-Mail-Versand mit `nodemailer`
-- Automatischer Neustart in der Entwicklung mit `nodemon`
+Start the application:
 
-## So kannst du es nutzen
+    npm start
 
-- Öffne die Website im Browser und schaue dir den Leitfaden an.
-- Teste die Demo im `public/`-Ordner.
-- Rufe das Backend lokal auf und probiere die API aus.
+Open `http://localhost:3000` in your browser.
 
-## Ziel des Projekts
+For development with automatic server restarts, run:
 
-Das Projekt soll zeigen, wie man eine verständliche Entscheidungshilfe für Shop-Systeme mit einer realen Shop-Anwendung kombiniert. Es richtet sich an alle, die eine einfache und praxisnahe Lösung suchen.
+    npm run dev
+
+## API
+
+The Express backend provides REST API endpoints for managing products, customers, and checkout operations.
+
+## Project Structure
+
+    ├── database/    # Database files and SQL scripts
+    ├── docs/        # Shop System Guide
+    ├── public/      # Frontend and static assets
+    ├── src/
+    │   ├── models/  # Database models
+    │   ├── routes/  # API endpoints
+    │   └── app.js   # Express server
+    ├── package.json
+    └── README.md
+
+## Purpose
+
+This educational project demonstrates practical experience with frontend development, backend programming, REST APIs, database integration, and web application development.
+
+---
+
+**Note:** This project was created for educational purposes and is not intended for production use.

@@ -10,7 +10,7 @@ const db = new sqlite3.Database(dbFile, (err) => {
     console.log('Connected to SQLite database at', dbFile);
   }
 });
- 
+
 const fs = require('fs');
 const path = require('path');
 const sqlFile = path.join(__dirname, '../../database/shop.sql');
